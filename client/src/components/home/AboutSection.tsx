@@ -2,7 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import PuzzlePiece from "@/components/shared/PuzzlePiece";
-import { Users, CheckCircle, Info } from "lucide-react";
+import { Users, CheckCircle, Heart } from "lucide-react";
+
+// Import relationship image
+import relationshipImage from "@/assets/relationship.png";
 
 const AboutSection = () => {
   return (
@@ -19,24 +22,18 @@ const AboutSection = () => {
             <div className="relative">
               <div className="rounded-xl overflow-hidden shadow-xl z-10 relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1590650046871-92c887180603?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                  alt="Vitality team members supporting community" 
+                  src={relationshipImage} 
+                  alt="More than a service, a relationship - caregiver helping client with art" 
                   className="w-full h-auto"
                 />
               </div>
               
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -left-4 w-32 h-32 bg-[hsl(var(--vitality-green-25))] rounded-lg z-0 transform -rotate-6"></div>
+              {/* Decorative elements - reduced number for cleaner look */}
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-[hsl(var(--vitality-blue-25))] rounded-lg z-0 transform rotate-6"></div>
               <PuzzlePiece 
                 variant="green"
-                size="lg"
-                className="absolute -top-8 -right-8 z-10 animate-float" 
-              />
-              <PuzzlePiece 
-                variant="blue"
-                size="sm"
-                className="absolute -bottom-4 -left-4 z-10 animate-float-delay" 
+                size="md"
+                className="absolute -bottom-6 -left-6 z-10 animate-float-delay opacity-70" 
               />
             </div>
           </motion.div>
@@ -50,15 +47,15 @@ const AboutSection = () => {
           >
             <div className="inline-flex mb-6">
               <div className="flex items-center justify-center p-3 rounded-lg bg-gradient-to-r from-[hsl(var(--vitality-green))] to-[hsl(var(--vitality-blue))] text-white">
-                <Info size={24} />
+                <Heart size={24} />
               </div>
             </div>
-            <h2 className="text-3xl font-semibold text-[hsl(var(--neutral-dark))] mb-4">The Vitality Mission</h2>
+            <h2 className="text-3xl font-semibold text-[hsl(var(--neutral-dark))] mb-4">More Than a Service, a Relationship</h2>
             <p className="text-lg text-[hsl(var(--neutral-dark))] mb-6">
-              Vitality Community Care is a purpose-driven healthcare and support organization committed to empowering individuals through culturally-responsive, person-centered services.
+              Why human connection is at the heart of real care. At Vitality Community Care, we believe in creating lasting relationships built on trust, understanding, and genuine compassion.
             </p>
             <p className="text-lg text-[hsl(var(--neutral-dark))] mb-6">
-              Rooted in trust, respect, and community connection, Vitality stands apart by delivering consistent, high-quality care that nurtures dignity and fosters independence. Our brand reflects a warm, modern, and human-centered approach designed to resonate with diverse communities and support our vision of building a more inclusive and caring future.
+              Our support workers don't just provide assistance; they become trusted allies in your journey. We take the time to match you with specialists who understand your unique needs and preferences, ensuring a meaningful connection that goes beyond standard care.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
