@@ -158,6 +158,14 @@ const Navbar = () => {
                     <FileText size={14} className="text-[hsl(var(--vitality-green))]" />
                     Support Coordination
                   </Link>
+                  <Link 
+                    href="/services#supported-independent-living" 
+                    className="cursor-pointer flex items-center gap-2 px-4 py-2 hover:bg-gray-100"
+                    onClick={() => setServicesOpen(false)}
+                  >
+                    <Home size={14} className="text-[hsl(var(--vitality-blue))]" />
+                    Supported Independent Living
+                  </Link>
                 </div>
               )}
             </div>
@@ -259,6 +267,15 @@ const Navbar = () => {
                         >
                           <FileText size={14} className="text-[hsl(var(--vitality-green))]" />
                           Support Coordination
+                        </Link>
+                      </SheetClose>
+                      <SheetClose asChild>
+                        <Link 
+                          href="/services#supported-independent-living" 
+                          className="text-[hsl(var(--neutral-dark))] flex items-center gap-2"
+                        >
+                          <Home size={14} className="text-[hsl(var(--vitality-blue))]" />
+                          Supported Independent Living
                         </Link>
                       </SheetClose>
                     </div>

@@ -109,5 +109,25 @@ export const services: ServiceType[] = [
     ],
     quote: "Having a support coordinator made all the difference in understanding and using my NDIS plan effectively. They found services I didn't even know existed!",
     icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2' />"
+  },
+  {
+    id: "supported-independent-living",
+    title: "Supported Independent Living",
+    slug: "supported-independent-living",
+    shortDescription: "Assistance to live independently in your own home with the right level of support.",
+    description: "Our Supported Independent Living (SIL) service provides personalized support for individuals who want to live independently in their own home. We offer varying levels of support based on your needs, from a few hours a day to 24/7 care, ensuring you have the right balance of independence and assistance.",
+    color: "blue",
+    image: "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=350",
+    detailImage: "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    features: [
+      "Personalized support plans tailored to individual needs",
+      "Assistance with household tasks and daily living activities",
+      "Medication management and health support",
+      "Support to develop independent living skills",
+      "Help with social engagement and community access",
+      "24/7 support options available for those who need it"
+    ],
+    quote: "The SIL program has completely changed my life. I have my own space and independence, but also the support I need exactly when I need it.",
+    icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' />"
   }
 ];
