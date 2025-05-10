@@ -72,6 +72,11 @@ const Navbar = () => {
               <Home size={16} />
               Home
             </Link>
+
+            <Link href="/about" className={`flex items-center gap-1.5 font-medium transition-colors ${location === '/about' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}>
+              <Info size={16} />
+              About Us
+            </Link>
             
             <DropdownMenu>
               <DropdownMenuTrigger className={`flex items-center font-medium transition-colors focus:outline-none ${location.startsWith('/services') ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}>
@@ -106,17 +111,7 @@ const Navbar = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            
-            <Link href="/about" className={`flex items-center gap-1.5 font-medium transition-colors ${location === '/about' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}>
-              <Info size={16} />
-              About Us
-            </Link>
-            
-            <Link href="/team" className={`flex items-center gap-1.5 font-medium transition-colors ${location === '/team' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}>
-              <Users size={16} />
-              Our Team
-            </Link>
-            
+                        
             <Link href="/blog" className={`flex items-center gap-1.5 font-medium transition-colors ${location === '/blog' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}>
               <Book size={16} />
               Blog
@@ -215,16 +210,6 @@ const Navbar = () => {
                     >
                       <Info size={18} />
                       About Us
-                    </Link>
-                  </SheetClose>
-                  
-                  <SheetClose asChild>
-                    <Link 
-                      href="/team" 
-                      className={`py-2 font-medium transition-colors flex items-center gap-2 ${location === '/team' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))]'}`}
-                    >
-                      <Users size={18} />
-                      Our Team
                     </Link>
                   </SheetClose>
                   

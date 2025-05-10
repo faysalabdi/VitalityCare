@@ -95,17 +95,5 @@ export const team: TeamMemberType[] = [
     color: "blue",
     featured: false,
     isLeadership: false
-  },
-  {
-    id: "alex-thompson",
-    name: "Alex Thompson",
-    role: "Behavior Support Practitioner",
-    bio: "Alex develops positive behavior support strategies that enhance quality of life and promote independence.",
-    image: "https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500",
-    email: "alex@vitalitycare.com.au",
-    profile: "/team#alex-thompson",
-    color: "green",
-    featured: false,
-    isLeadership: false
   }
 ];

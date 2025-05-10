@@ -2,6 +2,9 @@ import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import PuzzlePiece from "@/components/shared/PuzzlePiece";
+import { team } from "@/data/team";
+import TeamMember from "@/components/team/TeamMember";
+import { UserCircle } from "lucide-react";
 
 const About = () => {
   return (
@@ -175,6 +178,48 @@ const About = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <div className="inline-flex mb-6">
+              <div className="flex items-center justify-center p-3 rounded-lg bg-gradient-to-r from-[hsl(var(--vitality-blue))] to-[hsl(var(--vitality-green))] text-white">
+                <UserCircle size={24} />
+              </div>
+            </div>
+            <h2 className="text-3xl font-semibold text-[hsl(var(--neutral-dark))] mb-4">Our Care Team</h2>
+            <p className="text-lg text-[hsl(var(--neutral-dark))] max-w-3xl mx-auto">
+              Meet our dedicated professionals committed to providing personalized care and support.
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {team.filter(member => member.isLeadership).map((member) => (
+              <TeamMember key={member.id} member={member} />
+            ))}
+          </div>
+
+          <div className="text-center mb-12 mt-16">
+            <h3 className="text-2xl font-semibold text-[hsl(var(--neutral-dark))] mb-4">Support Practitioners</h3>
+            <p className="text-lg max-w-3xl mx-auto">
+              Our practitioners provide direct support and specialized services to our clients.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {team.filter(member => !member.isLeadership).map((member) => (
+              <TeamMember key={member.id} member={member} />
+            ))}
           </div>
         </div>
       </section>

@@ -4,7 +4,6 @@ import Benefits from "@/components/home/Benefits";
 import ServiceHighlights from "@/components/home/ServiceHighlights";
 import AboutSection from "@/components/home/AboutSection";
 import CaseStudyHighlight from "@/components/home/CaseStudyHighlight";
-import TeamHighlights from "@/components/home/TeamHighlights";
 import Testimonials from "@/components/home/Testimonials";
 import BlogHighlights from "@/components/home/BlogHighlights";
 import FAQ from "@/components/home/FAQ";
@@ -27,7 +26,6 @@ const Home = () => {
       <ServiceHighlights />
       <AboutSection />
       <CaseStudyHighlight />
-      <TeamHighlights />
       <Testimonials />
       <BlogHighlights />
       <FAQ />
