@@ -1,4 +1,5 @@
 import Hero from "@/components/home/Hero";
+import Features from "@/components/home/Features";
 import Benefits from "@/components/home/Benefits";
 import ServiceHighlights from "@/components/home/ServiceHighlights";
 import AboutSection from "@/components/home/AboutSection";
@@ -21,6 +22,7 @@ const Home = () => {
         <meta property="og:type" content="website" />
       </Helmet>
       <Hero />
+      <Features />
       <Benefits />
       <ServiceHighlights />
       <AboutSection />
