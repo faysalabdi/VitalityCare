@@ -1,6 +1,12 @@
 import { HTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
+// Import the puzzle piece graphics
+import blueGraphic from '@/assets/Vitality CC - Graphics04.png';
+import greenGraphic from '@/assets/Vitality CC - Graphics02.png';
+import mixedGraphic from '@/assets/Vitality CC - Graphics03.png';
+import blueAllGraphic from '@/assets/Vitality CC - Graphics01.png';
+
 interface PuzzlePieceProps extends HTMLAttributes<HTMLDivElement> {
   variant?: "blue" | "green" | "mixed" | "blue-all" | "green-all";
   size?: "sm" | "md" | "lg" | "xl";
@@ -16,16 +22,16 @@ const PuzzlePiece = ({
   const getImagePath = () => {
     switch(variant) {
       case "blue":
-        return "/assets/images/Vitality CC - Graphics04.png";
+        return blueGraphic;
       case "green":
-        return "/assets/images/Vitality CC - Graphics02.png";
+        return greenGraphic;
       case "blue-all":
-        return "/assets/images/Vitality CC - Graphics01.png";
+        return blueAllGraphic;
       case "green-all":
-        return "/assets/images/Vitality CC - Graphics02.png";
+        return greenGraphic;
       case "mixed":
       default:
-        return "/assets/images/Vitality CC - Graphics03.png";
+        return mixedGraphic;
     }
   };
 

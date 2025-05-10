@@ -5,21 +5,56 @@ import PuzzlePiece from "@/components/shared/PuzzlePiece";
 import PuzzleLogo from "@/components/shared/PuzzleLogo";
 import { Heart, Clipboard, MessageCircle } from "lucide-react";
 
+// Import background graphic
+import backgroundGraphic from '@/assets/Vitality CC - Graphics05.png';
+
 const Hero = () => {
   return (
     <section className="relative overflow-hidden">
       {/* Background gradient image */}
       <div className="absolute inset-0 w-full h-full z-0">
         <img 
-          src="/assets/images/Vitality CC - Graphics05.png" 
+          src={backgroundGraphic} 
           alt="Background gradient" 
           className="w-full h-full object-cover"
         />
       </div>
       
       {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-white opacity-80 rounded-l-[80px] transform -skew-x-6 z-1"></div>
-      <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-white opacity-80 rounded-tr-[60px] z-1"></div>
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-white opacity-80 rounded-l-[80px] transform -skew-x-6 z-10"></div>
+      <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-white opacity-80 rounded-tr-[60px] z-10"></div>
+      
+      {/* Animated floating puzzle pieces */}
+      <motion.div 
+        className="absolute top-[15%] right-[10%] z-20 opacity-80"
+        animate={{
+          y: [0, -15, 0],
+          rotate: [0, 5, 0]
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      >
+        <PuzzlePiece variant="blue" size="md" />
+      </motion.div>
+      
+      <motion.div 
+        className="absolute bottom-[25%] left-[15%] z-20 opacity-60"
+        animate={{
+          y: [0, 15, 0],
+          rotate: [0, -8, 0]
+        }}
+        transition={{
+          duration: 7,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1
+        }}
+      >
+        <PuzzlePiece variant="green" size="sm" />
+      </motion.div>
       
       <div className="container mx-auto px-4 py-16 md:py-28 flex flex-col md:flex-row items-center relative z-10">
         <motion.div 
