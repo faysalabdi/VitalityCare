@@ -14,10 +14,12 @@ import Privacy from "@/pages/Privacy";
 import Referral from "@/pages/Referral";
 import NotFound from "@/pages/not-found";
 import AccessibilityWidget from "@/components/shared/AccessibilityWidget";
+import ScrollToTop from "@/components/ScrollToTop";
 
 function Router() {
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <main>
         <Switch>
