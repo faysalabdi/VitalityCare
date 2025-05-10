@@ -2,6 +2,22 @@ import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import ContactForm from "@/components/shared/ContactForm";
 import { useLocation } from "wouter";
+import { 
+  Phone, 
+  Mail, 
+  MapPin, 
+  Clock, 
+  MessageCircle,
+  Facebook, 
+  Twitter, 
+  Instagram, 
+  Linkedin,
+  CheckCircle,
+  ArrowRight,
+  Briefcase,
+  Users
+} from "lucide-react";
+import PuzzlePiece from "@/components/shared/PuzzlePiece";
 
 const Contact = () => {
   const [location] = useLocation();
@@ -18,14 +34,34 @@ const Contact = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[hsl(var(--vitality-blue-25))] to-[hsl(var(--vitality-green-25))] py-16">
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 overflow-hidden">
+        {/* Background with split colors */}
+        <div className="absolute top-0 left-0 w-full h-full bg-[hsl(var(--neutral-light))]"></div>
+        <div className="absolute top-0 left-0 w-1/2 h-full bg-[hsl(var(--vitality-blue))] opacity-5"></div>
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-[hsl(var(--vitality-green))] opacity-5"></div>
+        
+        {/* Decorative elements */}
+        <div className="absolute top-10 left-10 hidden md:block">
+          <PuzzlePiece className="w-20 h-20 bg-[hsl(var(--vitality-blue))] opacity-10 animate-float" />
+        </div>
+        <div className="absolute bottom-10 right-10 hidden md:block">
+          <PuzzlePiece className="w-16 h-16 bg-[hsl(var(--vitality-green))] opacity-10 animate-float-delay" />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="text-center max-w-3xl mx-auto"
           >
+            {/* Icon badge */}
+            <div className="inline-flex mb-6">
+              <div className="flex items-center justify-center p-3 rounded-lg bg-gradient-to-r from-[hsl(var(--vitality-blue))] to-[hsl(var(--vitality-green))] text-white">
+                {careerInquiry ? <Briefcase size={28} /> : <MessageCircle size={28} />}
+              </div>
+            </div>
+            
             <h1 className="text-4xl md:text-5xl font-semibold mb-4">
               {careerInquiry ? "Join Our Team" : "Contact Us"}
             </h1>
@@ -34,6 +70,22 @@ const Contact = () => {
                 ? "Interested in a rewarding career supporting others? Get in touch with us today." 
                 : "Have questions about our services or ready to start your journey? Reach out to our friendly team."}
             </p>
+            
+            {/* Quick contact buttons */}
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              <a href="tel:1800123456" className="flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-25))] transition-colors">
+                <Phone size={16} />
+                <span>1800 123 456</span>
+              </a>
+              <a href="mailto:info@vitalitycare.com.au" className="flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--vitality-blue-10))] text-[hsl(var(--vitality-blue))] hover:bg-[hsl(var(--vitality-blue-25))] transition-colors">
+                <Mail size={16} />
+                <span>Email Us</span>
+              </a>
+              <a href="#location" className="flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-25))] transition-colors">
+                <MapPin size={16} />
+                <span>Find Us</span>
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -54,116 +106,195 @@ const Contact = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 <div>
-                  <h3 className="font-medium text-lg text-[hsl(var(--neutral-dark))] mb-2">Contact Information</h3>
-                  <ul className="space-y-4">
-                    <li className="flex items-start">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mt-1 mr-3 text-[hsl(var(--vitality-green))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
+                  <h3 className="font-medium text-lg text-[hsl(var(--neutral-dark))] mb-4 flex items-center">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))] mr-2">
+                      <Users size={16} />
+                    </div>
+                    Contact Information
+                  </h3>
+                  <ul className="space-y-6">
+                    <li className="flex items-start group">
+                      <div className="flex-shrink-0 mr-4">
+                        <div className="w-10 h-10 rounded-full bg-[hsl(var(--vitality-green-10))] flex items-center justify-center text-[hsl(var(--vitality-green))] group-hover:bg-[hsl(var(--vitality-green))] group-hover:text-white transition-colors">
+                          <Phone size={18} />
+                        </div>
+                      </div>
                       <div>
-                        <p className="text-[hsl(var(--neutral-dark))]">Phone</p>
-                        <p className="font-medium">1800 123 456</p>
+                        <p className="text-[hsl(var(--neutral-dark))] text-sm mb-1">Phone</p>
+                        <a href="tel:1800123456" className="font-medium text-lg hover:text-[hsl(var(--vitality-green))] transition-colors">1800 123 456</a>
                       </div>
                     </li>
-                    <li className="flex items-start">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mt-1 mr-3 text-[hsl(var(--vitality-green))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
+                    <li className="flex items-start group">
+                      <div className="flex-shrink-0 mr-4">
+                        <div className="w-10 h-10 rounded-full bg-[hsl(var(--vitality-blue-10))] flex items-center justify-center text-[hsl(var(--vitality-blue))] group-hover:bg-[hsl(var(--vitality-blue))] group-hover:text-white transition-colors">
+                          <Mail size={18} />
+                        </div>
+                      </div>
                       <div>
-                        <p className="text-[hsl(var(--neutral-dark))]">Email</p>
-                        <p className="font-medium">info@vitalitycare.com.au</p>
+                        <p className="text-[hsl(var(--neutral-dark))] text-sm mb-1">Email</p>
+                        <a href="mailto:info@vitalitycare.com.au" className="font-medium text-lg hover:text-[hsl(var(--vitality-blue))] transition-colors break-all">info@vitalitycare.com.au</a>
                       </div>
                     </li>
-                    <li className="flex items-start">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mt-1 mr-3 text-[hsl(var(--vitality-green))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
+                    <li className="flex items-start group">
+                      <div className="flex-shrink-0 mr-4">
+                        <div className="w-10 h-10 rounded-full bg-[hsl(var(--vitality-green-10))] flex items-center justify-center text-[hsl(var(--vitality-green))] group-hover:bg-[hsl(var(--vitality-green))] group-hover:text-white transition-colors">
+                          <MapPin size={18} />
+                        </div>
+                      </div>
                       <div>
-                        <p className="text-[hsl(var(--neutral-dark))]">Office</p>
-                        <p className="font-medium">123 Community Drive</p>
-                        <p className="font-medium">Sydney NSW 2000</p>
+                        <p className="text-[hsl(var(--neutral-dark))] text-sm mb-1">Office</p>
+                        <a href="#location" className="font-medium hover:text-[hsl(var(--vitality-green))] transition-colors">
+                          <p>123 Community Drive</p>
+                          <p>Sydney NSW 2000</p>
+                        </a>
                       </div>
                     </li>
                   </ul>
                 </div>
                 
                 <div>
-                  <h3 className="font-medium text-lg text-[hsl(var(--neutral-dark))] mb-2">Hours of Operation</h3>
-                  <ul className="space-y-2">
-                    <li className="flex justify-between">
-                      <span className="text-[hsl(var(--neutral-dark))]">Monday - Friday</span>
-                      <span className="font-medium">8:30am - 5:30pm</span>
-                    </li>
-                    <li className="flex justify-between">
-                      <span className="text-[hsl(var(--neutral-dark))]">Saturday</span>
-                      <span className="font-medium">9:00am - 2:00pm</span>
-                    </li>
-                    <li className="flex justify-between">
-                      <span className="text-[hsl(var(--neutral-dark))]">Sunday</span>
-                      <span className="font-medium">Closed</span>
-                    </li>
-                  </ul>
-                  <p className="mt-4 text-[hsl(var(--neutral-dark))] text-sm">In-home support hours may vary based on service arrangements.</p>
+                  <h3 className="font-medium text-lg text-[hsl(var(--neutral-dark))] mb-4 flex items-center">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[hsl(var(--vitality-blue-10))] text-[hsl(var(--vitality-blue))] mr-2">
+                      <Clock size={16} />
+                    </div>
+                    Hours of Operation
+                  </h3>
+                  <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
+                    <ul className="space-y-3">
+                      <li className="flex justify-between items-center pb-2 border-b border-gray-100">
+                        <div className="flex items-center">
+                          <div className="w-8 h-8 rounded-full bg-[hsl(var(--vitality-green-10))] flex items-center justify-center text-[hsl(var(--vitality-green))] mr-3">
+                            <span className="text-xs font-semibold">M-F</span>
+                          </div>
+                          <span className="text-[hsl(var(--neutral-dark))]">Monday - Friday</span>
+                        </div>
+                        <span className="font-medium bg-[hsl(var(--vitality-green-5))] text-[hsl(var(--vitality-green))] px-3 py-1 rounded-full text-sm">8:30am - 5:30pm</span>
+                      </li>
+                      <li className="flex justify-between items-center pb-2 border-b border-gray-100">
+                        <div className="flex items-center">
+                          <div className="w-8 h-8 rounded-full bg-[hsl(var(--vitality-blue-10))] flex items-center justify-center text-[hsl(var(--vitality-blue))] mr-3">
+                            <span className="text-xs font-semibold">SA</span>
+                          </div>
+                          <span className="text-[hsl(var(--neutral-dark))]">Saturday</span>
+                        </div>
+                        <span className="font-medium bg-[hsl(var(--vitality-blue-5))] text-[hsl(var(--vitality-blue))] px-3 py-1 rounded-full text-sm">9:00am - 2:00pm</span>
+                      </li>
+                      <li className="flex justify-between items-center">
+                        <div className="flex items-center">
+                          <div className="w-8 h-8 rounded-full bg-[hsl(var(--neutral-light))] flex items-center justify-center text-[hsl(var(--neutral-dark))] mr-3">
+                            <span className="text-xs font-semibold">SU</span>
+                          </div>
+                          <span className="text-[hsl(var(--neutral-dark))]">Sunday</span>
+                        </div>
+                        <span className="font-medium bg-gray-100 text-gray-500 px-3 py-1 rounded-full text-sm">Closed</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <p className="mt-4 text-[hsl(var(--neutral-dark))] text-sm flex items-center">
+                    <span className="text-[hsl(var(--vitality-blue))] mr-2">
+                      <Clock size={14} />
+                    </span>
+                    In-home support hours may vary based on service arrangements.
+                  </p>
                 </div>
               </div>
               
               <div className="mb-8">
-                <h3 className="font-medium text-lg text-[hsl(var(--neutral-dark))] mb-4">Connect With Us</h3>
-                <div className="flex gap-4">
-                  <a href="#" className="bg-[hsl(var(--vitality-green))] text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-[hsl(var(--vitality-green-75))] transition-colors" aria-label="Facebook">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-                    </svg>
+                <h3 className="font-medium text-lg text-[hsl(var(--neutral-dark))] mb-4 flex items-center">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))] mr-2">
+                    <Users size={16} />
+                  </div>
+                  Connect With Us
+                </h3>
+                <div className="flex flex-wrap gap-4">
+                  <a 
+                    href="#" 
+                    className="group relative bg-gradient-to-r from-[hsl(var(--vitality-green-75))] to-[hsl(var(--vitality-green))] text-white w-12 h-12 rounded-lg flex items-center justify-center shadow-sm transition-all hover:shadow-md hover:-translate-y-1" 
+                    aria-label="Facebook"
+                  >
+                    <Facebook size={20} />
+                    <div className="absolute -top-2 -right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white text-[hsl(var(--vitality-green))] text-xs px-1.5 py-0.5 rounded shadow-sm">
+                      FB
+                    </div>
                   </a>
-                  <a href="#" className="bg-[hsl(var(--vitality-blue))] text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-[hsl(var(--vitality-blue-75))] transition-colors" aria-label="Twitter">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                    </svg>
+                  <a 
+                    href="#" 
+                    className="group relative bg-gradient-to-r from-[hsl(var(--vitality-blue-75))] to-[hsl(var(--vitality-blue))] text-white w-12 h-12 rounded-lg flex items-center justify-center shadow-sm transition-all hover:shadow-md hover:-translate-y-1" 
+                    aria-label="Twitter"
+                  >
+                    <Twitter size={20} />
+                    <div className="absolute -top-2 -right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white text-[hsl(var(--vitality-blue))] text-xs px-1.5 py-0.5 rounded shadow-sm">
+                      TW
+                    </div>
                   </a>
-                  <a href="#" className="bg-[hsl(var(--vitality-green))] text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-[hsl(var(--vitality-green-75))] transition-colors" aria-label="Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                    </svg>
+                  <a 
+                    href="#" 
+                    className="group relative bg-gradient-to-r from-[hsl(var(--vitality-green-75))] to-[hsl(var(--vitality-green))] text-white w-12 h-12 rounded-lg flex items-center justify-center shadow-sm transition-all hover:shadow-md hover:-translate-y-1" 
+                    aria-label="Instagram"
+                  >
+                    <Instagram size={20} />
+                    <div className="absolute -top-2 -right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white text-[hsl(var(--vitality-green))] text-xs px-1.5 py-0.5 rounded shadow-sm">
+                      IG
+                    </div>
                   </a>
-                  <a href="#" className="bg-[hsl(var(--vitality-blue))] text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-[hsl(var(--vitality-blue-75))] transition-colors" aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
-                    </svg>
+                  <a 
+                    href="#" 
+                    className="group relative bg-gradient-to-r from-[hsl(var(--vitality-blue-75))] to-[hsl(var(--vitality-blue))] text-white w-12 h-12 rounded-lg flex items-center justify-center shadow-sm transition-all hover:shadow-md hover:-translate-y-1" 
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin size={20} />
+                    <div className="absolute -top-2 -right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white text-[hsl(var(--vitality-blue))] text-xs px-1.5 py-0.5 rounded shadow-sm">
+                      IN
+                    </div>
                   </a>
                 </div>
+                <p className="mt-4 text-sm text-[hsl(var(--neutral-dark))]">
+                  Follow us on social media for updates, helpful resources, and community stories.
+                </p>
               </div>
               
-              <div className="bg-[hsl(var(--neutral-light))] p-6 rounded-lg">
-                <h3 className="font-medium text-lg mb-4">Our Service Areas</h3>
-                <p className="mb-2">We proudly serve communities throughout:</p>
-                <ul className="grid grid-cols-2 gap-2">
-                  <li className="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[hsl(var(--vitality-green))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Sydney</span>
-                  </li>
-                  <li className="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[hsl(var(--vitality-green))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Newcastle</span>
-                  </li>
-                  <li className="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[hsl(var(--vitality-green))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Central Coast</span>
-                  </li>
-                  <li className="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[hsl(var(--vitality-green))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Wollongong</span>
-                  </li>
-                </ul>
-                <p className="mt-4 text-sm">We also offer services in surrounding areas. Contact us to check availability in your location.</p>
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                <h3 className="font-medium text-lg mb-4 flex items-center">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[hsl(var(--vitality-blue-10))] text-[hsl(var(--vitality-blue))] mr-2">
+                    <MapPin size={16} />
+                  </div>
+                  Our Service Areas
+                </h3>
+                <p className="mb-4 text-[hsl(var(--neutral-dark))]">We proudly serve communities throughout:</p>
+                <div className="grid grid-cols-2 gap-3 mb-4">
+                  <div className="flex items-center bg-[hsl(var(--vitality-green-5))] p-3 rounded-lg">
+                    <div className="w-8 h-8 rounded-full bg-[hsl(var(--vitality-green-10))] flex items-center justify-center text-[hsl(var(--vitality-green))] mr-3">
+                      <CheckCircle size={16} />
+                    </div>
+                    <span className="font-medium">Sydney</span>
+                  </div>
+                  <div className="flex items-center bg-[hsl(var(--vitality-blue-5))] p-3 rounded-lg">
+                    <div className="w-8 h-8 rounded-full bg-[hsl(var(--vitality-blue-10))] flex items-center justify-center text-[hsl(var(--vitality-blue))] mr-3">
+                      <CheckCircle size={16} />
+                    </div>
+                    <span className="font-medium">Newcastle</span>
+                  </div>
+                  <div className="flex items-center bg-[hsl(var(--vitality-green-5))] p-3 rounded-lg">
+                    <div className="w-8 h-8 rounded-full bg-[hsl(var(--vitality-green-10))] flex items-center justify-center text-[hsl(var(--vitality-green))] mr-3">
+                      <CheckCircle size={16} />
+                    </div>
+                    <span className="font-medium">Central Coast</span>
+                  </div>
+                  <div className="flex items-center bg-[hsl(var(--vitality-blue-5))] p-3 rounded-lg">
+                    <div className="w-8 h-8 rounded-full bg-[hsl(var(--vitality-blue-10))] flex items-center justify-center text-[hsl(var(--vitality-blue))] mr-3">
+                      <CheckCircle size={16} />
+                    </div>
+                    <span className="font-medium">Wollongong</span>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="text-[hsl(var(--vitality-green))] mt-0.5 mr-2">
+                    <MapPin size={14} />
+                  </div>
+                  <p className="text-sm text-[hsl(var(--neutral-dark))]">
+                    We also offer services in surrounding areas. Contact us to check availability in your location.
+                  </p>
+                </div>
               </div>
             </div>
             
@@ -181,16 +312,28 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-16 bg-[hsl(var(--neutral-light))]">
+      <section id="location" className="py-16 bg-[hsl(var(--neutral-light))]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
+            <div className="inline-flex mb-6">
+              <div className="flex items-center justify-center p-3 rounded-lg bg-gradient-to-r from-[hsl(var(--vitality-blue))] to-[hsl(var(--vitality-green))] text-white">
+                <MapPin size={24} />
+              </div>
+            </div>
+            
             <h2 className="text-3xl font-semibold text-[hsl(var(--neutral-dark))] mb-4">Find Us</h2>
             <p className="text-lg max-w-3xl mx-auto">
               Visit our office or contact us to arrange an in-home consultation.
             </p>
           </div>
           
-          <div className="bg-white rounded-xl overflow-hidden shadow-md">
+          <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 relative">
+            {/* Decorative elements */}
+            <div className="absolute top-4 left-4 z-10 bg-white p-3 rounded-lg shadow-md flex items-center space-x-2">
+              <MapPin className="text-[hsl(var(--vitality-green))]" size={16} />
+              <span className="font-medium">Vitality Community Care</span>
+            </div>
+            
             <div className="aspect-w-16 aspect-h-9 w-full h-80">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52890.21468286991!2d151.16449151121455!3d-33.86882203356731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae401e8b983f%3A0x5017d681632ccc0!2sSydney%20NSW%202000!5e0!3m2!1sen!2sau!4v1623903498717!5m2!1sen!2sau" 
@@ -202,6 +345,25 @@ const Contact = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Vitality Community Care office location"
               ></iframe>
+            </div>
+            
+            <div className="p-4 bg-white border-t border-gray-100 flex justify-between items-center">
+              <div className="flex items-center gap-2">
+                <div className="flex items-center text-[hsl(var(--vitality-blue))]">
+                  <Phone size={16} className="mr-1" />
+                  <span className="text-sm font-medium">1800 123 456</span>
+                </div>
+                <span className="text-gray-300">|</span>
+                <div className="flex items-center text-[hsl(var(--vitality-green))]">
+                  <MapPin size={16} className="mr-1" />
+                  <span className="text-sm font-medium">Sydney NSW 2000</span>
+                </div>
+              </div>
+              
+              <a href="https://maps.google.com/?q=Sydney+NSW+2000" target="_blank" rel="noopener noreferrer" className="text-sm text-[hsl(var(--vitality-blue))] font-medium flex items-center">
+                Get Directions
+                <ArrowRight size={14} className="ml-1" />
+              </a>
             </div>
           </div>
         </div>
