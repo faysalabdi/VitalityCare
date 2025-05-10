@@ -2,6 +2,11 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Link } from "wouter";
 
+// Import assets
+import logoIcon from '@/assets/Vitality CC - Logo01.png';
+import logoText from '@/assets/Vitality CC - Logo02.png';
+import logoFull from '@/assets/Vitality CC - Logo03.png';
+
 interface PuzzleLogoProps {
   size?: "sm" | "md" | "lg" | "xl";
   variant?: "icon" | "full" | "text";
@@ -27,12 +32,12 @@ const PuzzleLogo = ({
   const getLogoSrc = () => {
     switch(variant) {
       case "full":
-        return "/assets/images/Vitality CC - Logo03.png";
+        return logoFull;
       case "text":
-        return "/assets/images/Vitality CC - Logo02.png";
+        return logoText;
       case "icon":
       default:
-        return "/assets/images/Vitality CC - Logo01.png";
+        return logoIcon;
     }
   };
 
