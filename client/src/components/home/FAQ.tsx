@@ -16,7 +16,7 @@ const FAQ = () => {
         >
           <h2 className="text-3xl font-semibold text-[hsl(var(--neutral-dark))] mb-4">Frequently Asked Questions</h2>
           <p className="text-lg text-[hsl(var(--neutral-dark))] max-w-3xl mx-auto">
-            Find answers to common questions about our services and support.
+            Got questions? Our FAQ section is loaded with answers to common questions. Learn more about how we can serve you best.
           </p>
         </motion.div>
         
