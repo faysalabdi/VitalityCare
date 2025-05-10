@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { 
@@ -34,6 +34,8 @@ import {
 const Navbar = () => {
   const [location] = useLocation();
   const [scrolled, setScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesDropdownRef = useRef<HTMLDivElement>(null);
 
   // Handle scroll effect
   useEffect(() => {
@@ -49,6 +51,20 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [scrolled]);
+
+  // Close dropdown when clicking outside of it
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <header 
@@ -79,7 +95,12 @@ const Navbar = () => {
             </Link>
             
             {/* Services Navigation with both link and dropdown */}
-            <div className="flex items-center relative">
+            <div 
+              ref={servicesDropdownRef}
+              className="flex items-center relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
               <Link 
                 href="/services" 
                 className={`flex items-center gap-1.5 font-medium transition-colors ${location.startsWith('/services') ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}
@@ -88,45 +109,59 @@ const Navbar = () => {
                 Services
               </Link>
               
-              <DropdownMenu>
-                <DropdownMenuTrigger className="ml-1 h-8 w-8 inline-flex items-center justify-center focus:outline-none">
-                  <ChevronDown className="h-4 w-4" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="center" className="w-60">
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#daily-living" className="cursor-pointer flex items-center gap-2">
-                      <Heart size={14} className="text-[hsl(var(--vitality-green))]" />
-                      Daily Living Support
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#personal-care" className="cursor-pointer flex items-center gap-2">
-                      <HelpingHand size={14} className="text-[hsl(var(--vitality-blue))]" />
-                      Personal Care
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#community-participation" className="cursor-pointer flex items-center gap-2">
-                      <Users size={14} className="text-[hsl(var(--vitality-green))]" />
-                      Community Participation
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#therapy" className="cursor-pointer flex items-center gap-2">
-                      <Activity size={14} className="text-[hsl(var(--vitality-blue))]" />
-                      Therapy Services
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/services#support-coordination" className="cursor-pointer flex items-center gap-2">
-                      <FileText size={14} className="text-[hsl(var(--vitality-green))]" />
-                      Support Coordination
-                    </Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+              <button 
+                onClick={() => setServicesOpen(!servicesOpen)} 
+                className="ml-1 h-8 w-8 inline-flex items-center justify-center focus:outline-none"
+              >
+                <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? 'transform rotate-180' : ''}`} />
+              </button>
+              
+              {servicesOpen && (
+                <div className="absolute top-full left-0 mt-2 w-60 bg-white rounded-md shadow-lg py-1 z-50">
+                  <Link 
+                    href="/services#daily-living" 
+                    className="cursor-pointer flex items-center gap-2 px-4 py-2 hover:bg-gray-100"
+                    onClick={() => setServicesOpen(false)}
+                  >
+                    <Heart size={14} className="text-[hsl(var(--vitality-green))]" />
+                    Daily Living Support
+                  </Link>
+                  <Link 
+                    href="/services#personal-care" 
+                    className="cursor-pointer flex items-center gap-2 px-4 py-2 hover:bg-gray-100"
+                    onClick={() => setServicesOpen(false)}
+                  >
+                    <HelpingHand size={14} className="text-[hsl(var(--vitality-blue))]" />
+                    Personal Care
+                  </Link>
+                  <Link 
+                    href="/services#community-participation" 
+                    className="cursor-pointer flex items-center gap-2 px-4 py-2 hover:bg-gray-100"
+                    onClick={() => setServicesOpen(false)}
+                  >
+                    <Users size={14} className="text-[hsl(var(--vitality-green))]" />
+                    Community Participation
+                  </Link>
+                  <Link 
+                    href="/services#therapy" 
+                    className="cursor-pointer flex items-center gap-2 px-4 py-2 hover:bg-gray-100"
+                    onClick={() => setServicesOpen(false)}
+                  >
+                    <Activity size={14} className="text-[hsl(var(--vitality-blue))]" />
+                    Therapy Services
+                  </Link>
+                  <Link 
+                    href="/services#support-coordination" 
+                    className="cursor-pointer flex items-center gap-2 px-4 py-2 hover:bg-gray-100"
+                    onClick={() => setServicesOpen(false)}
+                  >
+                    <FileText size={14} className="text-[hsl(var(--vitality-green))]" />
+                    Support Coordination
+                  </Link>
+                </div>
+              )}
             </div>
-                        
+            
             <Link href="/blog" className={`flex items-center gap-1.5 font-medium transition-colors ${location === '/blog' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}>
               <Book size={16} />
               Blog
