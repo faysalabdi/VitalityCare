@@ -5,6 +5,7 @@ import BlogCard from "@/components/blog/BlogCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { FileText, ArrowRight } from "lucide-react";
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -150,6 +151,35 @@ const Blog = () => {
               </Button>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Referral CTA */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto bg-gradient-to-r from-[hsl(var(--vitality-blue-10))] to-[hsl(var(--vitality-green-10))] p-8 rounded-xl relative overflow-hidden">
+            <div className="absolute -top-12 -right-12 w-40 h-40 bg-white opacity-5 rounded-full"></div>
+            <div className="absolute -bottom-12 -left-12 w-40 h-40 bg-white opacity-5 rounded-full"></div>
+            
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="w-16 h-16 md:w-24 md:h-24 bg-white bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0">
+                <FileText className="text-[hsl(var(--vitality-blue))] w-8 h-8 md:w-12 md:h-12" />
+              </div>
+              
+              <div className="flex-1">
+                <h3 className="text-xl md:text-2xl font-semibold mb-2 text-[hsl(var(--neutral-dark))]">Know Someone Who Could Benefit From Our Services?</h3>
+                <p className="text-[hsl(var(--neutral-dark))] mb-4">
+                  You can easily refer family members, friends, or clients who might need our support services. Our referral process is quick and straightforward.
+                </p>
+                <Button asChild className="rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))]">
+                  <a href="/referral" className="flex items-center gap-2">
+                    Make a Referral Now
+                    <ArrowRight size={16} />
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

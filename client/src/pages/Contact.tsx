@@ -15,9 +15,11 @@ import {
   CheckCircle,
   ArrowRight,
   Briefcase,
-  Users
+  Users,
+  FileText
 } from "lucide-react";
 import PuzzlePiece from "@/components/shared/PuzzlePiece";
+import { Button } from "@/components/ui/button";
 
 const Contact = () => {
   const [location] = useLocation();
@@ -401,6 +403,31 @@ const Contact = () => {
                   <Mail size={16} className="mr-1" />
                   <span className="text-sm font-medium">contact@vitalitycommunitycare.com.au</span>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Referral Note Section */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto bg-[hsl(var(--neutral-light))] p-8 rounded-xl border border-[hsl(var(--vitality-green-25))]">
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="flex-shrink-0 w-16 h-16 rounded-full bg-[hsl(var(--vitality-green-10))] flex items-center justify-center text-[hsl(var(--vitality-green))]">
+                <FileText size={24} />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Looking to Refer Someone?</h3>
+                <p className="text-[hsl(var(--neutral-dark))] mb-4">
+                  If you're a healthcare professional, support coordinator, or family member looking to refer someone to our services, you can use our dedicated referral form.
+                </p>
+                <Button asChild className="rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))]">
+                  <a href="/referral" className="flex items-center gap-2">
+                    Go to Referral Form
+                    <ArrowRight size={16} />
+                  </a>
+                </Button>
               </div>
             </div>
           </div>

@@ -102,7 +102,7 @@ const ServiceHighlights = () => {
           className="text-center mt-12"
         >
           <Button asChild variant="outline" size="lg" className="rounded-full border-[hsl(var(--vitality-blue))] text-[hsl(var(--vitality-blue))] hover:bg-[hsl(var(--vitality-blue))] hover:text-white">
-            <Link href="/services">View All Services</Link>
+            <Link href="/services" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>View All Services</Link>
           </Button>
         </motion.div>
       </div>

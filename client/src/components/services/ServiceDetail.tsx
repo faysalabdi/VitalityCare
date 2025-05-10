@@ -10,6 +10,14 @@ interface ServiceDetailProps {
 }
 
 const ServiceDetail = ({ service }: ServiceDetailProps) => {
+  // Function to scroll to top when viewing all services
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+  
   return (
     <motion.div
       key={service.id}
@@ -119,7 +127,7 @@ const ServiceDetail = ({ service }: ServiceDetailProps) => {
               </Link>
             </Button>
             <Button asChild variant="outline" className={`rounded-full border-[hsl(var(--vitality-${service.color}))] text-[hsl(var(--vitality-${service.color}))] hover:bg-[hsl(var(--vitality-${service.color}))] hover:text-white`}>
-              <Link href="/services">View All Services</Link>
+              <Link href="/services" onClick={scrollToTop}>View All Services</Link>
             </Button>
           </motion.div>
         </div>

@@ -217,11 +217,11 @@ const Services = () => {
           <div ref={servicesListRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 scroll-mt-32">
             {services.map((service) => (
               <div id={service.slug} key={service.id}>
-                <ServiceCard 
-                  service={service}
-                  isActive={selectedService.id === service.id}
+              <ServiceCard 
+                service={service}
+                isActive={selectedService.id === service.id}
                   onClick={() => handleServiceSelect(service)}
-                />
+              />
               </div>
             ))}
           </div>
@@ -237,7 +237,37 @@ const Services = () => {
                 transition={{ duration: 0.3 }}
                 className={`relative ${animateDetail ? 'ring-2 ring-[hsl(var(--vitality-green))] ring-opacity-50 rounded-xl' : ''}`}
               >
-                <ServiceDetail service={selectedService} />
+          <ServiceDetail service={selectedService} />
+
+                {/* Referral Button */}
+                <div className="mt-8 pt-6 border-t border-gray-100">
+                  <div className="flex flex-col md:flex-row items-center gap-4">
+                    <div className="bg-[hsl(var(--neutral-light))] p-4 rounded-lg flex-1">
+                      <h4 className="text-lg font-medium mb-2">Need to refer someone for this service?</h4>
+                      <p className="text-[hsl(var(--neutral-dark))] mb-4">
+                        You can quickly refer a participant to our {selectedService.title} service using our online form.
+                      </p>
+                      <Button asChild className="rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))]">
+                        <a href={`/referral?service=${selectedService.slug}`} className="flex items-center gap-2">
+                          Refer for {selectedService.title}
+                          <ArrowRight size={16} />
+                        </a>
+                      </Button>
+                    </div>
+                    <div className="bg-[hsl(var(--neutral-light))] p-4 rounded-lg flex-1">
+                      <h4 className="text-lg font-medium mb-2">Questions about this service?</h4>
+                      <p className="text-[hsl(var(--neutral-dark))] mb-4">
+                        Our team is ready to provide more information and answer any questions you might have.
+                      </p>
+                      <Button asChild variant="outline" className="rounded-full border-[hsl(var(--vitality-blue))] text-[hsl(var(--vitality-blue))] hover:bg-[hsl(var(--vitality-blue))] hover:text-white">
+                        <a href="/contact" className="flex items-center gap-2">
+                          Contact Us
+                          <ArrowRight size={16} />
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>
@@ -325,6 +355,9 @@ const Services = () => {
                     Get Started With Our Services
                     <ArrowRight size={16} />
                   </a>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="rounded-full border-[hsl(var(--vitality-blue))] text-[hsl(var(--vitality-blue))] hover:bg-[hsl(var(--vitality-blue))] hover:text-white w-full md:w-auto">
+                  <a href="/referral">Make a Referral</a>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="rounded-full border-[hsl(var(--vitality-blue))] text-[hsl(var(--vitality-blue))] hover:bg-[hsl(var(--vitality-blue))] hover:text-white w-full md:w-auto">
                   <a href="/contact?inquiry=services">Request More Information</a>

@@ -231,9 +231,14 @@ const About = () => {
               Contact our team today to discover how our person-centered support can make a difference in your life or the life of your loved one.
             </p>
             
-            <Button asChild size="lg" className="bg-white text-[hsl(var(--vitality-green))] hover:bg-opacity-90 hover:text-[hsl(var(--vitality-green))] rounded-full">
-              <a href="/contact">Contact Us Today</a>
-            </Button>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 relative z-10">
+              <Button asChild size="lg" className="bg-white text-[hsl(var(--vitality-green))] hover:bg-opacity-90 hover:text-[hsl(var(--vitality-green))] rounded-full">
+                <a href="/contact">Contact Us Today</a>
+              </Button>
+              <Button asChild size="lg" className="bg-[hsl(var(--vitality-blue-50))] bg-opacity-25 text-white hover:bg-opacity-40 rounded-full border border-white">
+                <a href="/referral">Make a Referral</a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
