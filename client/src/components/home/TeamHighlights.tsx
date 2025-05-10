@@ -27,6 +27,11 @@ const TeamHighlights = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
+          <div className="inline-flex mb-6">
+            <div className="flex items-center justify-center p-3 rounded-lg bg-gradient-to-r from-[hsl(var(--vitality-blue))] to-[hsl(var(--vitality-green))] text-white">
+              <UserCircle size={24} />
+            </div>
+          </div>
           <h2 className="text-3xl font-semibold text-[hsl(var(--neutral-dark))] mb-4">Our Care Team</h2>
           <p className="text-lg text-[hsl(var(--neutral-dark))] max-w-3xl mx-auto">
             Meet our dedicated professionals committed to providing personalized care and support.
