@@ -14,18 +14,37 @@ const About = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[hsl(var(--vitality-blue-25))] to-[hsl(var(--vitality-green-25))] py-16">
-        <div className="container mx-auto px-4">
+      <section className="relative py-16 overflow-hidden">
+        {/* Background with color sections */}
+        <div className="absolute top-0 left-0 w-1/3 h-full bg-[hsl(var(--vitality-blue))] opacity-10"></div>
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-[hsl(var(--vitality-green))] opacity-10"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="text-center max-w-3xl mx-auto"
           >
+            <div className="flex justify-center mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[hsl(var(--vitality-blue))] text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+            </div>
             <h1 className="text-4xl md:text-5xl font-semibold mb-4">About Vitality Community Care</h1>
             <p className="text-lg mb-8">
               A purpose-driven healthcare and support organization committed to making a difference.
             </p>
+            
+            {/* Decorative elements */}
+            <div className="hidden md:block absolute top-10 left-10">
+              <PuzzlePiece className="w-16 h-16 bg-[hsl(var(--vitality-green))] opacity-20 animate-float" />
+            </div>
+            <div className="hidden md:block absolute bottom-10 right-10">
+              <PuzzlePiece className="w-12 h-12 bg-[hsl(var(--vitality-blue))] opacity-20 animate-float-delay" />
+            </div>
           </motion.div>
         </div>
       </section>

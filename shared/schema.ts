@@ -35,9 +35,9 @@ export const contactSchema = z.object({
   lastName: z.string().min(2, { message: "Last name must be at least 2 characters" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
   phone: z.string().min(6, { message: "Please enter a valid phone number" }),
-  service: z.string().optional(),
-  position: z.string().optional(),
-  experience: z.string().optional(),
+  service: z.string().nullable().default(null),
+  position: z.string().nullable().default(null),
+  experience: z.string().nullable().default(null),
   message: z.string().min(10, { message: "Message must be at least 10 characters" }),
   type: z.enum(["general", "career"])
 });
