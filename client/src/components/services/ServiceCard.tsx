@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ServiceType } from "@/data/services";
-import { ArrowRight, Heart, HelpingHand, Users, Activity } from "lucide-react";
+import { ArrowRight, Heart, HelpingHand, Users, Activity, ChevronDown } from "lucide-react";
 
 interface ServiceCardProps {
   service: ServiceType;
@@ -27,9 +27,9 @@ const ServiceCard = ({ service, isActive = false, onClick }: ServiceCardProps) =
   return (
     <motion.div 
       id={service.slug}
-      className={`bg-white rounded-xl overflow-hidden shadow-md transition-all cursor-pointer ${
+      className={`bg-white rounded-xl overflow-hidden shadow-md transition-all cursor-pointer relative ${
         isActive 
-          ? 'ring-2 ring-[hsl(var(--vitality-' + service.color + '))] shadow-lg' 
+          ? 'ring-2 ring-[hsl(var(--vitality-' + service.color + '))] shadow-xl transform scale-[1.02]' 
           : 'hover:shadow-lg'
       }`}
       onClick={onClick}
@@ -39,8 +39,19 @@ const ServiceCard = ({ service, isActive = false, onClick }: ServiceCardProps) =
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
+      {/* Active indicator */}
+      {isActive && (
+        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
+          <div className={`px-3 py-1 rounded-full text-xs font-medium bg-[hsl(var(--vitality-${service.color}))] text-white flex items-center shadow-md`}>
+            Selected <ChevronDown className="ml-1 h-3 w-3 animate-bounce" />
+          </div>
+        </div>
+      )}
+      
       {/* Icon badge */}
-      <div className={`absolute top-4 left-4 z-10 w-12 h-12 rounded-lg flex items-center justify-center bg-white shadow-md`}>
+      <div className={`absolute top-4 left-4 z-10 w-12 h-12 rounded-lg flex items-center justify-center bg-white shadow-md ${
+        isActive ? `ring-2 ring-[hsl(var(--vitality-${service.color}))]` : ''
+      }`}>
         <span className={`text-[hsl(var(--vitality-${service.color}))]`}>
           {getServiceIcon(service.slug)}
         </span>
@@ -65,15 +76,9 @@ const ServiceCard = ({ service, isActive = false, onClick }: ServiceCardProps) =
             className={`text-[hsl(var(--vitality-${service.color}))] font-medium flex items-center group`}
             onClick={onClick}
           >
-            Learn More 
+            {isActive ? 'View Details' : 'Learn More'}
             <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
           </button>
-          
-          {isActive && (
-            <span className={`inline-flex items-center justify-center px-2 py-1 rounded-full text-xs font-medium bg-[hsl(var(--vitality-${service.color}-10))] text-[hsl(var(--vitality-${service.color}))]`}>
-              Selected
-            </span>
-          )}
         </div>
       </div>
     </motion.div>

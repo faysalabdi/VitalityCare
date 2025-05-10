@@ -1,15 +1,52 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { services } from "@/data/services";
 import ServiceCard from "@/components/services/ServiceCard";
 import ServiceDetail from "@/components/services/ServiceDetail";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { ArrowRight, Heart, HelpingHand, Users, Activity, ClipboardCheck, CheckCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Heart, HelpingHand, Users, Activity, ClipboardCheck, CheckCircle, Info } from "lucide-react";
 import PuzzlePiece from "@/components/shared/PuzzlePiece";
+
+const ServiceSelectionGuide = () => {
+  return (
+    <div className="bg-[hsl(var(--neutral-light))] p-4 rounded-lg mb-8 flex items-start gap-3">
+      <div className="text-[hsl(var(--vitality-blue))]">
+        <Info size={20} />
+      </div>
+      <div>
+        <h3 className="font-medium mb-1">Service Selection Guide</h3>
+        <p className="text-sm text-[hsl(var(--neutral-dark))]">
+          Click on any service card above to view its details below. You'll automatically be scrolled to the detailed information.
+        </p>
+      </div>
+    </div>
+  );
+};
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState(services[0]);
+  const [animateDetail, setAnimateDetail] = useState(false);
+  const serviceDetailRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Trigger animation when service changes
+    setAnimateDetail(true);
+    const timer = setTimeout(() => setAnimateDetail(false), 500);
+    return () => clearTimeout(timer);
+  }, [selectedService]);
+
+  const handleServiceSelect = (service: typeof services[0]) => {
+    setSelectedService(service);
+    
+    // Scroll to the service detail section with smooth animation
+    setTimeout(() => {
+      serviceDetailRef.current?.scrollIntoView({ 
+        behavior: "smooth", 
+        block: "start"
+      });
+    }, 100);
+  };
 
   return (
     <>
@@ -141,12 +178,26 @@ const Services = () => {
                 key={service.id}
                 service={service}
                 isActive={selectedService.id === service.id}
-                onClick={() => setSelectedService(service)}
+                onClick={() => handleServiceSelect(service)}
               />
             ))}
           </div>
 
-          <ServiceDetail service={selectedService} />
+          <div ref={serviceDetailRef} className="scroll-mt-24">
+            <ServiceSelectionGuide />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selectedService.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className={`relative ${animateDetail ? 'ring-2 ring-[hsl(var(--vitality-green))] ring-opacity-50 rounded-xl' : ''}`}
+              >
+                <ServiceDetail service={selectedService} />
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </section>
 
