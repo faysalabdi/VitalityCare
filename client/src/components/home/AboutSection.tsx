@@ -29,7 +29,14 @@ const AboutSection = () => {
               <div className="absolute -top-4 -left-4 w-32 h-32 bg-[hsl(var(--vitality-green-25))] rounded-lg z-0 transform -rotate-6"></div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-[hsl(var(--vitality-blue-25))] rounded-lg z-0 transform rotate-6"></div>
               <PuzzlePiece 
-                className="absolute -top-4 -right-4 w-20 h-20 bg-[hsl(var(--vitality-green))] opacity-20 animate-float" 
+                variant="green"
+                size="lg"
+                className="absolute -top-8 -right-8 z-10 animate-float" 
+              />
+              <PuzzlePiece 
+                variant="blue"
+                size="sm"
+                className="absolute -bottom-4 -left-4 z-10 animate-float-delay" 
               />
             </div>
           </motion.div>

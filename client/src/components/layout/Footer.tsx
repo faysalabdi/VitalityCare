@@ -7,12 +7,8 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <PuzzleLogo size="sm" />
-              <div>
-                <h2 className="text-xl font-semibold text-[hsl(var(--vitality-green))] leading-tight">VITALITY</h2>
-                <p className="text-sm text-[hsl(var(--vitality-blue))] leading-tight -mt-1">COMMUNITY CARE</p>
-              </div>
+            <Link href="/" className="inline-block mb-6">
+              <PuzzleLogo variant="full" size="md" />
             </Link>
             
             <p className="text-gray-400 mb-6">

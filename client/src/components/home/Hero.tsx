@@ -2,14 +2,24 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import PuzzlePiece from "@/components/shared/PuzzlePiece";
+import PuzzleLogo from "@/components/shared/PuzzleLogo";
 import { Heart, Clipboard, MessageCircle } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-white to-[hsl(var(--neutral-light))]">
+    <section className="relative overflow-hidden">
+      {/* Background gradient image */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <img 
+          src="/assets/images/Vitality CC - Graphics05.png" 
+          alt="Background gradient" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+      
       {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-[hsl(var(--vitality-blue-10))] rounded-l-[80px] transform -skew-x-6"></div>
-      <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-[hsl(var(--vitality-green-10))] rounded-tr-[60px]"></div>
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-white opacity-80 rounded-l-[80px] transform -skew-x-6 z-1"></div>
+      <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-white opacity-80 rounded-tr-[60px] z-1"></div>
       
       <div className="container mx-auto px-4 py-16 md:py-28 flex flex-col md:flex-row items-center relative z-10">
         <motion.div 
@@ -18,8 +28,9 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="md:w-1/2 text-center md:text-left md:pr-8 mb-10 md:mb-0"
         >
-          <div className="inline-block mb-6 p-2 rounded-xl bg-white shadow-md">
-            <div className="bg-gradient-to-r from-[hsl(var(--vitality-green))] to-[hsl(var(--vitality-blue))] text-white px-5 py-2 rounded-lg font-medium">
+          <div className="inline-flex mb-6 p-2 rounded-xl bg-white shadow-md">
+            <div className="bg-gradient-to-r from-[hsl(var(--vitality-green))] to-[hsl(var(--vitality-blue))] text-white px-5 py-2 rounded-lg font-medium flex items-center">
+              <PuzzleLogo variant="icon" size="sm" className="mr-2" />
               NDIS Registered Provider
             </div>
           </div>
@@ -99,9 +110,17 @@ const Hero = () => {
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-[hsl(var(--vitality-green))] opacity-20 rounded-full blur-xl"></div>
             </div>
             
-            {/* Decorative elements */}
-            <div className="absolute -top-6 -right-6 w-24 h-24 rounded-xl border-4 border-[hsl(var(--vitality-green))] opacity-30 transform rotate-12"></div>
-            <div className="absolute -bottom-6 -left-6 w-20 h-20 rounded-xl border-4 border-[hsl(var(--vitality-blue))] opacity-30 transform -rotate-12"></div>
+            {/* Decorative elements with puzzle pieces */}
+            <PuzzlePiece 
+              variant="green"
+              size="lg"
+              className="absolute -top-10 -right-10 z-20 animate-rotate"
+            />
+            <PuzzlePiece 
+              variant="blue"
+              size="md"
+              className="absolute -bottom-8 -left-8 z-20 animate-rotate-reverse animate-pulse-glow"
+            />
           </div>
         </motion.div>
       </div>
