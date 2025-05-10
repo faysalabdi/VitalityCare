@@ -6,40 +6,42 @@ import PuzzleLogo from "@/components/shared/PuzzleLogo";
 import { Heart, Clipboard, MessageCircle } from "lucide-react";
 
 // Import assets
-import backgroundGraphic from '@/assets/Vitality CC - Graphics05.png';
+import heroImage from '@/assets/vcc.png';
 import ndisLogo from '@/assets/IHeartNDIS_2020.svg';
 
 const Hero = () => {
   return (
     <section className="relative overflow-hidden">
-      {/* Background gradient image */}
+      {/* Background image */}
       <div className="absolute inset-0 w-full h-full z-0">
         <img 
-          src={backgroundGraphic} 
-          alt="Background gradient" 
+          src={heroImage} 
+          alt="Healthcare professional with laptop" 
           className="w-full h-full object-cover"
         />
       </div>
       
       {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-white opacity-80 rounded-l-[80px] transform -skew-x-6 z-10"></div>
-      <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-white opacity-80 rounded-tr-[60px] z-10"></div>
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-white opacity-70 rounded-l-[80px] transform -skew-x-6 z-10"></div>
       
       {/* Single subtle animated floating puzzle piece */}
       <motion.div 
-        className="absolute top-[20%] right-[15%] z-20 opacity-40"
+        className="absolute top-[15%] right-[10%] z-20 opacity-30"
         animate={{
-          y: [0, -10, 0],
-          rotate: [0, 3, 0]
+          y: [0, -8, 0],
+          rotate: [0, 2, 0]
         }}
         transition={{
-          duration: 7,
+          duration: 8,
           repeat: Infinity,
           ease: "easeInOut"
         }}
       >
         <PuzzlePiece variant="blue" size="sm" />
       </motion.div>
+      
+      {/* Add slight overlay for better text visibility */}
+      <div className="absolute inset-0 bg-black opacity-10 z-5"></div>
       
       <div className="container mx-auto px-4 py-16 md:py-28 flex flex-col md:flex-row items-center relative z-10">
         <motion.div 
