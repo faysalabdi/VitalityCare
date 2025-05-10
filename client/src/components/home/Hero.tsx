@@ -3,11 +3,11 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import PuzzlePiece from "@/components/shared/PuzzlePiece";
 import PuzzleLogo from "@/components/shared/PuzzleLogo";
+import NDISBadge from "@/components/shared/NDISBadge";
 import { Heart, Clipboard, MessageCircle } from "lucide-react";
 
 // Import assets
 import backgroundGraphic from '@/assets/Vitality CC - Graphics05.png';
-import ndisLogo from '@/assets/IHeartNDIS_2020.svg';
 
 const Hero = () => {
   return (
@@ -48,14 +48,16 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="md:w-1/2 text-center md:text-left md:pr-8 mb-10 md:mb-0"
         >
-          <div className="inline-flex mb-6 p-2 rounded-xl bg-white shadow-md">
-            <div className="flex items-center px-4 py-2 rounded-lg">
-              <img src={ndisLogo} alt="I Heart NDIS" className="h-10" />
-            </div>
-          </div>
+          {/* NDIS badge over the letter C */}
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-            <span className="text-[hsl(var(--vitality-blue))]">Creating Lasting </span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold relative">
+            <span className="text-[hsl(var(--vitality-blue))]">
+              <span>C</span>
+              <span className="absolute -top-6 -right-2 md:-top-8 md:-right-4 z-30 transform scale-75 md:scale-100">
+                <NDISBadge />
+              </span>
+              <span>reating Lasting </span>
+            </span>
             <span className="relative">
               <span className="relative z-10">Change</span>
               <span className="absolute bottom-0 left-0 w-full h-3 bg-[hsl(var(--vitality-green-25))] transform -rotate-1 rounded-full"></span>
