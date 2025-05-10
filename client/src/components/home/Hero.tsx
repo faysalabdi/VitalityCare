@@ -8,6 +8,7 @@ import { Heart, Clipboard, MessageCircle } from "lucide-react";
 // Import assets
 import backgroundGraphic from '@/assets/Vitality CC - Logo02.png'; // Using Logo02 instead of Graphics05 as requested
 import ndisLogo from '@/assets/IHeartNDIS_2020.svg';
+import vcc from '@/assets/vcc.png';
 
 const Hero = () => {
   return (
@@ -115,7 +116,7 @@ const Hero = () => {
           <div className="relative z-10">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
               <img 
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                src={vcc} 
                 alt="Healthcare professional supporting a client" 
                 className="w-full h-auto"
               />

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import seamlesslyImage from "@/assets/seamlessly.png";
+import seamlesslyImage from "@/assets/support.png";
 
 const Features = () => {
   return (
