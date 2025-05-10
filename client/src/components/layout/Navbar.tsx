@@ -98,8 +98,6 @@ const Navbar = () => {
             <div 
               ref={servicesDropdownRef}
               className="flex items-center relative"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
             >
               <Link 
                 href="/services" 
