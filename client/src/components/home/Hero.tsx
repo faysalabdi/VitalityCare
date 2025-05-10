@@ -5,8 +5,9 @@ import PuzzlePiece from "@/components/shared/PuzzlePiece";
 import PuzzleLogo from "@/components/shared/PuzzleLogo";
 import { Heart, Clipboard, MessageCircle } from "lucide-react";
 
-// Import background graphic
+// Import assets
 import backgroundGraphic from '@/assets/Vitality CC - Graphics05.png';
+import ndisLogo from '@/assets/IHeartNDIS_2020.svg';
 
 const Hero = () => {
   return (
@@ -24,36 +25,20 @@ const Hero = () => {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-white opacity-80 rounded-l-[80px] transform -skew-x-6 z-10"></div>
       <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-white opacity-80 rounded-tr-[60px] z-10"></div>
       
-      {/* Animated floating puzzle pieces */}
+      {/* Single subtle animated floating puzzle piece */}
       <motion.div 
-        className="absolute top-[15%] right-[10%] z-20 opacity-80"
+        className="absolute top-[20%] right-[15%] z-20 opacity-40"
         animate={{
-          y: [0, -15, 0],
-          rotate: [0, 5, 0]
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      >
-        <PuzzlePiece variant="blue" size="md" />
-      </motion.div>
-      
-      <motion.div 
-        className="absolute bottom-[25%] left-[15%] z-20 opacity-60"
-        animate={{
-          y: [0, 15, 0],
-          rotate: [0, -8, 0]
+          y: [0, -10, 0],
+          rotate: [0, 3, 0]
         }}
         transition={{
           duration: 7,
           repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1
+          ease: "easeInOut"
         }}
       >
-        <PuzzlePiece variant="green" size="sm" />
+        <PuzzlePiece variant="blue" size="sm" />
       </motion.div>
       
       <div className="container mx-auto px-4 py-16 md:py-28 flex flex-col md:flex-row items-center relative z-10">
@@ -64,9 +49,8 @@ const Hero = () => {
           className="md:w-1/2 text-center md:text-left md:pr-8 mb-10 md:mb-0"
         >
           <div className="inline-flex mb-6 p-2 rounded-xl bg-white shadow-md">
-            <div className="bg-gradient-to-r from-[hsl(var(--vitality-green))] to-[hsl(var(--vitality-blue))] text-white px-5 py-2 rounded-lg font-medium flex items-center">
-              <PuzzleLogo variant="icon" size="sm" className="mr-2" />
-              NDIS Registered Provider
+            <div className="flex items-center px-4 py-2 rounded-lg">
+              <img src={ndisLogo} alt="I Heart NDIS" className="h-10" />
             </div>
           </div>
           
