@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Base Colors */
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+
+  /* Vitality Colors - Primary Green */
+  --primary: 83 54% 40%; /* Pantone 3561 CP: #809D2E */
+  --primary-foreground: 0 0% 100%;
+  
+  /* Vitality Colors - Secondary Blue */
+  --secondary: 199 65% 53%; /* Pantone 2925 CP: #3CA1D5 */
+  --secondary-foreground: 0 0% 100%;
+  
+  /* Other UI Colors */
+  --accent: 83 54% 95%;
+  --accent-foreground: 83 54% 25%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 83 54% 40%;
+  --radius: 0.5rem;
+
+  /* Vitality Brand Colors (for components to use directly) */
+  --vitality-green: 83 54% 40%;
+  --vitality-blue: 199 65% 53%;
+  --vitality-green-75: 83 44% 54%;
+  --vitality-green-50: 83 36% 69%;
+  --vitality-green-25: 83 28% 84%;
+  --vitality-blue-75: 199 59% 65%;
+  --vitality-blue-50: 199 53% 77%;
+  --vitality-blue-25: 199 45% 88%;
+  --neutral-light: 0 0% 98%;
+  --neutral-dark: 0 0% 20%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif; /* Using Inter as fallback for Mona Sans */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+  }
+}
+
+/* Animation Utilities */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 6s ease-in-out 2s infinite;
+}
+
+/* Custom Components */
+.puzzle-piece {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.puzzle-corner {
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
