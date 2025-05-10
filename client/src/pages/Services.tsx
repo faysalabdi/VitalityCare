@@ -28,6 +28,44 @@ const Services = () => {
   const [selectedService, setSelectedService] = useState(services[0]);
   const [animateDetail, setAnimateDetail] = useState(false);
   const serviceDetailRef = useRef<HTMLDivElement>(null);
+  const servicesListRef = useRef<HTMLDivElement>(null);
+
+  // Handle hash navigation
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      
+      if (hash) {
+        const matchingService = services.find(s => s.slug === hash);
+        if (matchingService) {
+          setSelectedService(matchingService);
+          
+          // Give time for the page to load and then scroll to the services section
+          setTimeout(() => {
+            servicesListRef.current?.scrollIntoView({ 
+              behavior: "smooth", 
+              block: "start" 
+            });
+            
+            // After scrolling to services, give a short delay before scrolling to details
+            setTimeout(() => {
+              serviceDetailRef.current?.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+              });
+            }, 500);
+          }, 100);
+        }
+      }
+    };
+
+    // Handle hash on initial page load
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   useEffect(() => {
     // Trigger animation when service changes
@@ -38,6 +76,10 @@ const Services = () => {
 
   const handleServiceSelect = (service: typeof services[0]) => {
     setSelectedService(service);
+    
+    // Update URL hash without triggering page reload
+    const newUrl = window.location.pathname + '#' + service.slug;
+    window.history.pushState({}, '', newUrl);
     
     // Scroll to the service detail section with smooth animation
     setTimeout(() => {
@@ -57,7 +99,7 @@ const Services = () => {
         <meta property="og:description" content="Comprehensive disability support services tailored to your needs." />
       </Helmet>
 
-      <section className="relative py-16 overflow-hidden">
+      <section id="services-top" className="relative py-16 overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 left-0 w-full h-full bg-[hsl(var(--neutral-light))]"></div>
         <div className="absolute top-0 left-0 w-1/3 h-full bg-[hsl(var(--vitality-blue))] opacity-5"></div>
@@ -163,7 +205,7 @@ const Services = () => {
       </section>
 
       {/* Service Cards Section */}
-      <section className="py-16 bg-[hsl(var(--neutral-light))]">
+      <section id="service-list" className="py-16 bg-[hsl(var(--neutral-light))]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold mb-4">Explore Our Services</h2>
@@ -172,14 +214,15 @@ const Services = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div ref={servicesListRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 scroll-mt-32">
             {services.map((service) => (
-              <ServiceCard 
-                key={service.id}
-                service={service}
-                isActive={selectedService.id === service.id}
-                onClick={() => handleServiceSelect(service)}
-              />
+              <div id={service.slug} key={service.id}>
+                <ServiceCard 
+                  service={service}
+                  isActive={selectedService.id === service.id}
+                  onClick={() => handleServiceSelect(service)}
+                />
+              </div>
             ))}
           </div>
 

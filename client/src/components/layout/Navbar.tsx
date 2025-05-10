@@ -78,39 +78,54 @@ const Navbar = () => {
               About Us
             </Link>
             
-            <DropdownMenu>
-              <DropdownMenuTrigger className={`flex items-center font-medium transition-colors focus:outline-none ${location.startsWith('/services') ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}>
-                <FileText size={16} className="mr-1.5" />
-                Services 
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="center" className="w-60">
-                <DropdownMenuItem asChild>
-                  <Link href="/services#daily-living" className="cursor-pointer flex items-center gap-2">
-                    <Heart size={14} className="text-[hsl(var(--vitality-green))]" />
-                    Daily Living Support
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/services#personal-care" className="cursor-pointer flex items-center gap-2">
-                    <HelpingHand size={14} className="text-[hsl(var(--vitality-blue))]" />
-                    Personal Care
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/services#community-participation" className="cursor-pointer flex items-center gap-2">
-                    <Users size={14} className="text-[hsl(var(--vitality-green))]" />
-                    Community Participation
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/services#therapy" className="cursor-pointer flex items-center gap-2">
-                    <Activity size={14} className="text-[hsl(var(--vitality-blue))]" />
-                    Therapy Services
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            {/* Services Navigation with both link and dropdown */}
+            <div className="flex items-center relative">
+              <Link 
+                href="/services" 
+                className={`flex items-center gap-1.5 font-medium transition-colors ${location.startsWith('/services') ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}
+              >
+                <FileText size={16} />
+                Services
+              </Link>
+              
+              <DropdownMenu>
+                <DropdownMenuTrigger className="ml-1 h-8 w-8 inline-flex items-center justify-center focus:outline-none">
+                  <ChevronDown className="h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="center" className="w-60">
+                  <DropdownMenuItem asChild>
+                    <Link href="/services#daily-living" className="cursor-pointer flex items-center gap-2">
+                      <Heart size={14} className="text-[hsl(var(--vitality-green))]" />
+                      Daily Living Support
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/services#personal-care" className="cursor-pointer flex items-center gap-2">
+                      <HelpingHand size={14} className="text-[hsl(var(--vitality-blue))]" />
+                      Personal Care
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/services#community-participation" className="cursor-pointer flex items-center gap-2">
+                      <Users size={14} className="text-[hsl(var(--vitality-green))]" />
+                      Community Participation
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/services#therapy" className="cursor-pointer flex items-center gap-2">
+                      <Activity size={14} className="text-[hsl(var(--vitality-blue))]" />
+                      Therapy Services
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/services#support-coordination" className="cursor-pointer flex items-center gap-2">
+                      <FileText size={14} className="text-[hsl(var(--vitality-green))]" />
+                      Support Coordination
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
                         
             <Link href="/blog" className={`flex items-center gap-1.5 font-medium transition-colors ${location === '/blog' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}>
               <Book size={16} />
@@ -161,7 +176,9 @@ const Navbar = () => {
                   <div className="py-2">
                     <h3 className="font-medium mb-2 flex items-center gap-2">
                       <FileText size={18} />
-                      Services
+                      <SheetClose asChild>
+                        <Link href="/services">Services</Link>
+                      </SheetClose>
                     </h3>
                     <div className="flex flex-col space-y-2 pl-8">
                       <SheetClose asChild>
@@ -198,6 +215,15 @@ const Navbar = () => {
                         >
                           <Activity size={14} className="text-[hsl(var(--vitality-blue))]" />
                           Therapy Services
+                        </Link>
+                      </SheetClose>
+                      <SheetClose asChild>
+                        <Link 
+                          href="/services#support-coordination" 
+                          className="text-[hsl(var(--neutral-dark))] flex items-center gap-2"
+                        >
+                          <FileText size={14} className="text-[hsl(var(--vitality-green))]" />
+                          Support Coordination
                         </Link>
                       </SheetClose>
                     </div>
