@@ -6,24 +6,25 @@ import PuzzleLogo from "@/components/shared/PuzzleLogo";
 import { Heart, Clipboard, MessageCircle } from "lucide-react";
 
 // Import assets
-import backgroundGraphic from '@/assets/Vitality CC - Graphics05.png';
+import backgroundGraphic from '@/assets/Vitality CC - Logo02.png'; // Using Logo02 instead of Graphics05 as requested
 import ndisLogo from '@/assets/IHeartNDIS_2020.svg';
 
 const Hero = () => {
   return (
     <section className="relative overflow-hidden">
       {/* Background gradient image */}
-      <div className="absolute inset-0 w-full h-full z-0">
-        <img 
-          src={backgroundGraphic} 
-          alt="Background gradient" 
-          className="w-full h-full object-cover"
-        />
+      <div className="absolute inset-0 w-full h-full z-0 bg-gradient-to-br from-white to-gray-100">
+        <div className="absolute right-[-10%] top-1/4 opacity-10">
+          <img 
+            src={backgroundGraphic} 
+            alt="Vitality logo background" 
+            className="w-full max-w-2xl"
+          />
+        </div>
       </div>
       
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-white opacity-80 rounded-l-[80px] transform -skew-x-6 z-10"></div>
-      <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-white opacity-80 rounded-tr-[60px] z-10"></div>
       
       {/* Single subtle animated floating puzzle piece */}
       <motion.div 
