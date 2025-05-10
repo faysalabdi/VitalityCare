@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import TeamMember from "@/components/team/TeamMember";
+import { UserCircle } from "lucide-react";
 
 const TeamHighlights = () => {
   const container = {

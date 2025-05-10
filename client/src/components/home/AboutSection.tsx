@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import PuzzlePiece from "@/components/shared/PuzzlePiece";
+import { Users, CheckCircle, Info } from "lucide-react";
 
 const AboutSection = () => {
   return (
@@ -40,6 +41,11 @@ const AboutSection = () => {
             transition={{ duration: 0.6 }}
             className="lg:w-1/2"
           >
+            <div className="inline-flex mb-6">
+              <div className="flex items-center justify-center p-3 rounded-lg bg-gradient-to-r from-[hsl(var(--vitality-green))] to-[hsl(var(--vitality-blue))] text-white">
+                <Info size={24} />
+              </div>
+            </div>
             <h2 className="text-3xl font-semibold text-[hsl(var(--neutral-dark))] mb-4">The Vitality Mission</h2>
             <p className="text-lg text-[hsl(var(--neutral-dark))] mb-6">
               Vitality Community Care is a purpose-driven healthcare and support organization committed to empowering individuals through culturally-responsive, person-centered services.
@@ -50,10 +56,10 @@ const AboutSection = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
               <div className="flex items-start">
-                <div className="mr-4 text-[hsl(var(--vitality-green))]">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
+                <div className="mr-4">
+                  <div className="w-12 h-12 rounded-lg bg-[hsl(var(--vitality-green-10))] flex items-center justify-center text-[hsl(var(--vitality-green))]">
+                    <Users size={20} />
+                  </div>
                 </div>
                 <div>
                   <h3 className="font-medium text-lg mb-2">Community Based</h3>
@@ -62,10 +68,10 @@ const AboutSection = () => {
               </div>
               
               <div className="flex items-start">
-                <div className="mr-4 text-[hsl(var(--vitality-blue))]">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                  </svg>
+                <div className="mr-4">
+                  <div className="w-12 h-12 rounded-lg bg-[hsl(var(--vitality-blue-10))] flex items-center justify-center text-[hsl(var(--vitality-blue))]">
+                    <CheckCircle size={20} />
+                  </div>
                 </div>
                 <div>
                   <h3 className="font-medium text-lg mb-2">Years of Experience</h3>
