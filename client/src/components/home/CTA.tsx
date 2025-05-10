@@ -7,8 +7,8 @@ const CTA = () => {
   return (
     <section id="get-started" className="py-16 bg-gradient-to-r from-[hsl(var(--vitality-green))] to-[hsl(var(--vitality-blue))] text-white relative overflow-hidden">
       {/* Decorative puzzle pieces */}
-      <PuzzlePiece className="absolute -top-12 -left-12 w-48 h-48 bg-white opacity-10" />
-      <PuzzlePiece className="absolute -bottom-24 -right-24 w-64 h-64 bg-white opacity-10" />
+      <PuzzlePiece variant="mixed" size="xl" className="absolute -top-12 -left-12 opacity-10" />
+      <PuzzlePiece variant="mixed" size="xl" className="absolute -bottom-24 -right-24 opacity-10" />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div

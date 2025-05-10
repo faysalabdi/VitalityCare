@@ -32,7 +32,9 @@ const ServiceDetail = ({ service }: ServiceDetailProps) => {
             />
           </motion.div>
           <PuzzlePiece 
-            className={`absolute -bottom-4 -right-4 w-20 h-20 bg-[hsl(var(--vitality-${service.color}))] opacity-20 animate-float`} 
+            variant={service.color === "blue" ? "blue" : "green"}
+            size="md" 
+            className="absolute -bottom-4 -right-4 opacity-20 animate-float" 
           />
         </div>
         

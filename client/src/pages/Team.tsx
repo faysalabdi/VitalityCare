@@ -75,8 +75,8 @@ const Team = () => {
                   className="w-full h-auto"
                 />
               </div>
-              <PuzzlePiece className="absolute -top-4 -right-4 w-20 h-20 bg-[hsl(var(--vitality-green))] opacity-20 animate-float" />
-              <PuzzlePiece className="absolute bottom-8 -left-4 w-12 h-12 bg-[hsl(var(--vitality-blue))] opacity-30 animate-float-delay" />
+              <PuzzlePiece variant="green" size="md" className="absolute -top-4 -right-4 opacity-20 animate-float" />
+              <PuzzlePiece variant="blue" size="sm" className="absolute bottom-8 -left-4 opacity-30 animate-float-delay" />
             </div>
             
             <div className="lg:w-1/2">

@@ -42,10 +42,10 @@ const Contact = () => {
         
         {/* Decorative elements */}
         <div className="absolute top-10 left-10 hidden md:block">
-          <PuzzlePiece className="w-20 h-20 bg-[hsl(var(--vitality-blue))] opacity-10 animate-float" />
+          <PuzzlePiece variant="blue" size="md" className="opacity-10 animate-float" />
         </div>
         <div className="absolute bottom-10 right-10 hidden md:block">
-          <PuzzlePiece className="w-16 h-16 bg-[hsl(var(--vitality-green))] opacity-10 animate-float-delay" />
+          <PuzzlePiece variant="green" size="sm" className="opacity-10 animate-float-delay" />
         </div>
         
         <div className="container mx-auto px-4 relative z-10">

@@ -28,10 +28,10 @@ const Services = () => {
         
         {/* Decorative patterns */}
         <div className="absolute top-10 left-10 opacity-10">
-          <PuzzlePiece className="w-24 h-24 bg-[hsl(var(--vitality-blue))]" />
+          <PuzzlePiece variant="blue" size="md" />
         </div>
         <div className="absolute bottom-10 right-10 opacity-10">
-          <PuzzlePiece className="w-24 h-24 bg-[hsl(var(--vitality-green))]" />
+          <PuzzlePiece variant="green" size="md" />
         </div>
         
         <div className="container mx-auto px-4 relative z-10">

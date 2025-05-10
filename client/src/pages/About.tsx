@@ -40,10 +40,10 @@ const About = () => {
             
             {/* Decorative elements */}
             <div className="hidden md:block absolute top-10 left-10">
-              <PuzzlePiece className="w-16 h-16 bg-[hsl(var(--vitality-green))] opacity-20 animate-float" />
+              <PuzzlePiece variant="green" size="sm" className="opacity-20 animate-float" />
             </div>
             <div className="hidden md:block absolute bottom-10 right-10">
-              <PuzzlePiece className="w-12 h-12 bg-[hsl(var(--vitality-blue))] opacity-20 animate-float-delay" />
+              <PuzzlePiece variant="blue" size="sm" className="opacity-20 animate-float-delay" />
             </div>
           </motion.div>
         </div>
@@ -64,9 +64,7 @@ const About = () => {
               
               <div className="absolute -top-4 -left-4 w-32 h-32 bg-[hsl(var(--vitality-green-25))] rounded-lg z-0 transform -rotate-6"></div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-[hsl(var(--vitality-blue-25))] rounded-lg z-0 transform rotate-6"></div>
-              <PuzzlePiece 
-                className="absolute -top-4 -right-4 w-20 h-20 bg-[hsl(var(--vitality-green))] opacity-20 animate-float" 
-              />
+              <PuzzlePiece variant="green" size="sm" className="absolute -top-4 -right-4 opacity-20 animate-float" />
             </div>
             
             <div className="lg:w-1/2">
@@ -185,8 +183,8 @@ const About = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="bg-gradient-to-r from-[hsl(var(--vitality-green))] to-[hsl(var(--vitality-blue))] rounded-xl p-12 text-white text-center relative overflow-hidden">
-            <PuzzlePiece className="absolute -top-12 -left-12 w-48 h-48 bg-white opacity-10" />
-            <PuzzlePiece className="absolute -bottom-12 -right-12 w-48 h-48 bg-white opacity-10" />
+            <PuzzlePiece variant="mixed" size="xl" className="absolute -top-12 -left-12 opacity-10" />
+            <PuzzlePiece variant="mixed" size="xl" className="absolute -bottom-12 -right-12 opacity-10" />
             
             <h2 className="text-3xl font-semibold mb-4 relative z-10">Ready to learn more about our approach?</h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto relative z-10">
