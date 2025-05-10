@@ -1,30 +1,68 @@
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import { Link } from "wouter";
 
 interface PuzzleLogoProps {
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl";
+  variant?: "icon" | "full" | "text";
+  animated?: boolean;
+  className?: string;
+  href?: string;
 }
 
-const PuzzleLogo = ({ size = "md" }: PuzzleLogoProps) => {
+const PuzzleLogo = ({ 
+  size = "md", 
+  variant = "icon",
+  animated = true,
+  className,
+  href
+}: PuzzleLogoProps) => {
   const sizes = {
-    sm: "w-8 h-8",
-    md: "w-10 h-10 md:w-12 md:h-12",
-    lg: "w-14 h-14 md:w-16 md:h-16"
+    sm: "h-8",
+    md: "h-10 md:h-12",
+    lg: "h-14 md:h-16",
+    xl: "h-20 md:h-24"
   };
 
-  const sizeClass = sizes[size];
+  const getLogoSrc = () => {
+    switch(variant) {
+      case "full":
+        return "/assets/images/Vitality CC - Logo03.png";
+      case "text":
+        return "/assets/images/Vitality CC - Logo02.png";
+      case "icon":
+      default:
+        return "/assets/images/Vitality CC - Logo01.png";
+    }
+  };
 
-  return (
+  const Logo = (
     <motion.div 
-      className={`${sizeClass} relative`}
-      whileHover={{ rotate: 10 }}
+      className={cn(
+        sizes[size],
+        "relative",
+        className
+      )}
+      whileHover={animated ? { scale: 1.05 } : {}}
       transition={{ duration: 0.2 }}
     >
-      {/* Circle base with puzzle pieces */}
-      <div className="absolute inset-0 bg-[hsl(var(--vitality-blue))] rounded-full" style={{ clipPath: "circle(50% at 50% 50%)" }}>
-        <div className="absolute top-1/4 left-1/4 w-1/2 h-1/2 bg-[hsl(var(--vitality-green))]" style={{ clipPath: "polygon(50% 0%, 100% 35%, 100% 100%, 50% 100%, 0% 100%, 0% 35%)" }}></div>
-      </div>
+      <img 
+        src={getLogoSrc()} 
+        alt="Vitality Community Care" 
+        className="h-full w-auto object-contain"
+      />
     </motion.div>
   );
+
+  if (href) {
+    return (
+      <Link href={href}>
+        {Logo}
+      </Link>
+    );
+  }
+
+  return Logo;
 };
 
 export default PuzzleLogo;

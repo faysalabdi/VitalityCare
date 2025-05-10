@@ -62,12 +62,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <PuzzleLogo size="md" />
-            <div>
-              <h1 className="text-xl font-semibold text-[hsl(var(--vitality-green))] leading-tight">VITALITY</h1>
-              <p className="text-sm text-[hsl(var(--vitality-blue))] leading-tight -mt-1">COMMUNITY CARE</p>
-            </div>
+          <Link href="/" className="flex items-center">
+            <PuzzleLogo variant="full" size="md" />
           </Link>
           
           {/* Desktop Navigation */}
@@ -152,12 +148,8 @@ const Navbar = () => {
               <SheetContent side="right" className="w-[300px]">
                 <nav className="flex flex-col gap-6 mt-8">
                   <SheetClose asChild>
-                    <Link href="/" className="flex items-center gap-2">
-                      <PuzzleLogo size="sm" />
-                      <div>
-                        <h2 className="font-semibold text-[hsl(var(--vitality-green))]">VITALITY</h2>
-                        <p className="text-xs text-[hsl(var(--vitality-blue))]">COMMUNITY CARE</p>
-                      </div>
+                    <Link href="/" className="flex items-center">
+                      <PuzzleLogo variant="full" size="sm" />
                     </Link>
                   </SheetClose>
                   
