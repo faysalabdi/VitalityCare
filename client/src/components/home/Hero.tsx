@@ -48,10 +48,8 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="md:w-1/2 text-center md:text-left md:pr-8 mb-10 md:mb-0"
         >
-          <div className="inline-flex mb-6 p-2 rounded-xl bg-white shadow-md">
-            <div className="flex items-center px-4 py-2 rounded-lg">
-              <img src={ndisLogo} alt="I Heart NDIS" className="h-10" />
-            </div>
+          <div className="inline-flex mb-6">
+            <img src={ndisLogo} alt="I Heart NDIS" className="h-12" />
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
