@@ -2,148 +2,134 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import PuzzlePiece from "@/components/shared/PuzzlePiece";
-import PuzzleLogo from "@/components/shared/PuzzleLogo";
 import { Heart, Clipboard, MessageCircle } from "lucide-react";
 
 // Import assets
-import backgroundGraphic from '@/assets/Vitality CC - Logo02.png'; // Using Logo02 instead of Graphics05 as requested
+import backgroundGraphic from '@/assets/Vitality CC - Logo02.png';
 import ndisLogo from '@/assets/IHeartNDIS_2020.svg';
 import vcc from '@/assets/vcc.png';
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden">
-      {/* Background gradient image */}
-      <div className="absolute inset-0 w-full h-full z-0 bg-gradient-to-br from-white to-gray-100">
-        <div className="absolute right-[-10%] top-1/4 opacity-10">
-          <img 
-            src={backgroundGraphic} 
-            alt="Vitality logo background" 
-            className="w-full max-w-2xl"
-          />
-        </div>
-      </div>
+    <section className="relative bg-gradient-to-br from-[hsl(var(--vitality-blue))] to-[hsl(var(--vitality-blue-75))] text-white pt-16 pb-20 md:pb-24 lg:pb-28 overflow-hidden">
+      {/* Dotted pattern overlay */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xNSkiLz48L3N2Zz4=')] opacity-80 z-0"></div>
       
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-white opacity-80 rounded-l-[80px] transform -skew-x-6 z-10"></div>
-      
-      {/* Single subtle animated floating puzzle piece */}
-      <motion.div 
-        className="absolute top-[20%] right-[15%] z-20 opacity-40"
-        animate={{
-          y: [0, -10, 0],
-          rotate: [0, 3, 0]
-        }}
-        transition={{
-          duration: 7,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      >
-        <PuzzlePiece variant="blue" size="sm" />
-      </motion.div>
-      
-      <div className="container mx-auto px-4 py-16 md:py-28 flex flex-col md:flex-row items-center relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="md:w-1/2 text-center md:text-left md:pr-8 mb-10 md:mb-0"
-        >
-          <div className="inline-flex mb-6">
-            <img src={ndisLogo} alt="I Heart NDIS" className="h-12" />
-          </div>
-          
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-            <span className="text-[hsl(var(--vitality-blue))]">Creating Lasting </span>
-            <span className="relative">
-              <span className="relative z-10">Change</span>
-              <span className="absolute bottom-0 left-0 w-full h-3 bg-[hsl(var(--vitality-green-25))] transform -rotate-1 rounded-full"></span>
-            </span>
-          </h1>
-          
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[hsl(var(--neutral-dark))] mt-3 mb-6">
-            With Friendly In-Home Supports
-          </h2>
-          
-          <p className="text-lg md:text-xl mb-8 text-[hsl(var(--neutral-dark))]">
-            Vitality Community Care brings effective Behaviour Support, Occupational Therapy, Speech Therapy and Support Coordination to communities across Australia.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <Button asChild size="lg" className="rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))] px-8 shadow-lg">
-              <Link href="/services" className="flex items-center">
-                DISCOVER OUR SERVICES
-                <span className="ml-2">&rarr;</span>
-              </Link>
-            </Button>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="flex flex-col md:flex-row items-center">
+          {/* Left content section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="md:w-1/2 text-left md:pr-8 mb-10 md:mb-0"
+          >
+            <div className="inline-flex mb-6">
+              <img src={ndisLogo} alt="I Heart NDIS" className="h-12" />
+            </div>
             
-            <Button asChild variant="outline" size="lg" className="rounded-full border-[hsl(var(--vitality-blue))] text-[hsl(var(--vitality-blue))] hover:bg-[hsl(var(--vitality-blue-10))]">
-              <Link href="/contact">CONTACT US</Link>
-            </Button>
-          </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+              <span>Creating Lasting </span>
+              <span className="relative">
+                <span className="relative z-10">Change</span>
+                <span className="absolute bottom-0 left-0 w-full h-3 bg-[hsl(var(--vitality-green))] transform -rotate-1 rounded-full"></span>
+              </span>
+            </h1>
+            
+            <h2 className="text-2xl md:text-3xl font-medium text-white mt-3 mb-6 opacity-90">
+              With Friendly In-Home Supports
+            </h2>
+            
+            <p className="text-lg md:text-xl mb-8 text-white opacity-80">
+              Vitality Community Care brings effective Behaviour Support, Occupational Therapy, Speech Therapy and Support Coordination to communities across Australia.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+              <Button asChild size="lg" className="rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))] text-white px-8 shadow-lg">
+                <Link href="/services" className="flex items-center">
+                  GET STARTED
+                  <span className="ml-2">&rarr;</span>
+                </Link>
+              </Button>
+            </div>
+            
+            {/* Feature points */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
+              <div className="flex items-center">
+                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white mr-3">
+                  <Heart size={18} />
+                </div>
+                <span className="text-sm font-medium text-white">Person-Centered Care</span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white mr-3">
+                  <Clipboard size={18} />
+                </div>
+                <span className="text-sm font-medium text-white">NDIS Registered</span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white mr-3">
+                  <MessageCircle size={18} />
+                </div>
+                <span className="text-sm font-medium text-white">24/7 Support</span>
+              </div>
+            </div>
+          </motion.div>
           
-          {/* Feature points */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
-            <div className="flex items-center">
-              <div className="w-10 h-10 rounded-lg bg-[hsl(var(--vitality-green-10))] flex items-center justify-center text-[hsl(var(--vitality-green))] mr-3">
-                <Heart size={18} />
+          {/* Right image section with circular frame */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="md:w-1/2 relative"
+          >
+            <div className="relative">
+              {/* Circular image container */}
+              <div className="relative rounded-full overflow-hidden border-4 border-white shadow-xl aspect-square max-w-[450px] mx-auto">
+                <img 
+                  src={vcc} 
+                  alt="Healthcare professional supporting a client" 
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <span className="text-sm font-medium">Person-Centered Care</span>
-            </div>
-            <div className="flex items-center">
-              <div className="w-10 h-10 rounded-lg bg-[hsl(var(--vitality-blue-10))] flex items-center justify-center text-[hsl(var(--vitality-blue))] mr-3">
-                <Clipboard size={18} />
-              </div>
-              <span className="text-sm font-medium">NDIS Registered</span>
-            </div>
-            <div className="flex items-center">
-              <div className="w-10 h-10 rounded-lg bg-[hsl(var(--vitality-green-10))] flex items-center justify-center text-[hsl(var(--vitality-green))] mr-3">
-                <MessageCircle size={18} />
-              </div>
-              <span className="text-sm font-medium">24/7 Support</span>
-            </div>
-          </div>
-        </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="md:w-1/2 relative"
-        >
-          {/* Stylized hero image */}
-          <div className="relative z-10">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-              <img 
-                src={vcc} 
-                alt="Healthcare professional supporting a client" 
-                className="w-full h-auto"
+              
+              {/* Decorative elements */}
+              <PuzzlePiece 
+                variant="green"
+                size="lg"
+                className="absolute -top-10 -right-10 z-20 animate-rotate"
+              />
+              <PuzzlePiece 
+                variant="green"
+                size="md"
+                className="absolute -bottom-8 -left-8 z-20 animate-rotate-reverse animate-pulse-glow"
               />
               
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.3)] to-transparent"></div>
-              
-              {/* Accent dots pattern */}
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-[hsl(var(--vitality-blue))] opacity-20 rounded-full blur-2xl"></div>
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-[hsl(var(--vitality-green))] opacity-20 rounded-full blur-xl"></div>
+              {/* NDIS badge */}
+              <div className="absolute -bottom-4 -right-4 md:bottom-10 md:right-0 bg-white rounded-full p-2 shadow-md">
+                <img src={ndisLogo} alt="NDIS Registered Provider" className="h-12 w-12" />
+              </div>
             </div>
-            
-            {/* Decorative elements with puzzle pieces */}
-            <PuzzlePiece 
-              variant="green"
-              size="lg"
-              className="absolute -top-10 -right-10 z-20 animate-rotate"
-            />
-            <PuzzlePiece 
-              variant="blue"
-              size="md"
-              className="absolute -bottom-8 -left-8 z-20 animate-rotate-reverse animate-pulse-glow"
-            />
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
 
+      {/* Wave SVG divider at bottom */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden z-0">
+        <svg 
+          viewBox="0 0 1200 120" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg" 
+          className="relative block w-full"
+          preserveAspectRatio="none"
+          style={{ height: '70px' }}
+        >
+          <path 
+            d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V120H0V27.35a600.21 600.21 0 00321.39 29.09z" 
+            fill="#F3F9EC"
+          ></path>
+        </svg>
+      </div>
     </section>
   );
 };

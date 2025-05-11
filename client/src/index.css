@@ -39,9 +39,12 @@
   --vitality-green-75: 83 44% 54%;
   --vitality-green-50: 83 36% 69%;
   --vitality-green-25: 83 28% 84%;
+  --vitality-green-10: 83 28% 95%;
   --vitality-blue-75: 199 59% 65%;
   --vitality-blue-50: 199 53% 77%;
   --vitality-blue-25: 199 45% 88%;
+  --vitality-blue-10: 199 45% 95%;
+  --vitality-blue-5: 199 40% 98%;
   --neutral-light: 0 0% 98%;
   --neutral-dark: 0 0% 20%;
 }

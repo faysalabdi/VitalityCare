@@ -2,13 +2,20 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import PuzzlePiece from "@/components/shared/PuzzlePiece";
+import { Phone } from "lucide-react";
 
 const CTA = () => {
   return (
-    <section id="get-started" className="py-16 bg-gradient-to-r from-[hsl(var(--vitality-green))] to-[hsl(var(--vitality-blue))] text-white relative overflow-hidden">
-      {/* Decorative puzzle pieces */}
-      <PuzzlePiece variant="mixed" size="xl" className="absolute -top-12 -left-12 opacity-10" />
-      <PuzzlePiece variant="mixed" size="xl" className="absolute -bottom-24 -right-24 opacity-10" />
+    <section 
+      id="get-started" 
+      className="relative bg-[hsl(var(--vitality-blue))] text-white -mt-20 md:-mt-28 lg:-mt-32 pt-28 md:pt-36 lg:pt-40 pb-20 md:pb-28 lg:pb-32 overflow-hidden"
+    >
+      {/* Dot pattern overlay */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xNSkiLz48L3N2Zz4=')] opacity-80 z-0"></div>
+      
+      {/* Decorative puzzle pieces - adjusted opacity for solid background */}
+      <PuzzlePiece variant="green" size="xl" className="absolute -top-12 -left-12 opacity-[0.07]" />
+      <PuzzlePiece variant="blue" size="lg" className="absolute -bottom-16 -right-16 opacity-[0.07]" />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -18,19 +25,17 @@ const CTA = () => {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto text-center"
         >
-          <h2 className="text-3xl font-semibold mb-6">Ready to experience the Vitality difference?</h2>
-          <p className="text-lg mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to experience the <span className="text-[hsl(var(--vitality-green))]">Vitality</span> difference?</h2>
+          <p className="text-lg md:text-xl mb-10 opacity-90">
             Take the first step toward personalized, in-home support that empowers you to live your best life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-white text-[hsl(var(--vitality-green))] hover:bg-opacity-90 hover:text-[hsl(var(--vitality-green))] rounded-full">
+            <Button asChild size="lg" className="rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))] text-white px-8 shadow-lg">
               <Link href="/contact">Get Started</Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-[hsl(var(--vitality-blue))] rounded-full">
-              <a href="tel:1800123456">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
+            <Button asChild variant="outline" size="lg" className="rounded-full border-2 border-white text-white hover:bg-white hover:text-[hsl(var(--vitality-blue))] px-8">
+              <a href="tel:1800123456" className="flex items-center">
+                <Phone size={18} className="mr-2" />
                 Call 1800 123 456
               </a>
             </Button>

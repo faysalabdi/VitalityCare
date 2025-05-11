@@ -4,8 +4,11 @@ import seamlesslyImage from "@/assets/support.png";
 
 const Features = () => {
   return (
-    <section className="py-16 bg-gradient-to-br from-white to-gray-50">
-      <div className="container mx-auto px-4">
+    <section className="relative bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--neutral-dark))] py-16 md:py-24 lg:py-32 overflow-hidden">
+      {/* Dot pattern overlay - subtle */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMCwwLDAsMC4wMykiLz48L3N2Zz4=')] opacity-80 z-0"></div>
+
+      <div className="container mx-auto px-4 relative z-10">
         {/* From Hospital to Home Section */}
         <div className="flex flex-col lg:flex-row items-center gap-12 mb-16">
           <motion.div 
@@ -222,6 +225,23 @@ const Features = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Wave SVG divider at bottom */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden z-0">
+        <svg 
+          viewBox="0 0 1200 120" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg" 
+          className="relative block w-full"
+          preserveAspectRatio="none"
+          style={{ height: '70px' }}
+        >
+          <path 
+            d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V120H0V27.35a600.21 600.21 0 00321.39 29.09z" 
+            fill="white"
+          ></path>
+        </svg>
       </div>
     </section>
   );
