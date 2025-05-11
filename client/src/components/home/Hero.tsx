@@ -54,7 +54,7 @@ const Hero = () => {
             </div>
             
             {/* Feature points */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
+            {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
               <div className="flex items-center">
                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white mr-3">
                   <Heart size={18} />
@@ -73,7 +73,7 @@ const Hero = () => {
                 </div>
                 <span className="text-sm font-medium text-white">24/7 Support</span>
               </div>
-            </div>
+            </div> */}
           </motion.div>
           
           {/* Right image section with circular frame */}
@@ -106,9 +106,9 @@ const Hero = () => {
               />
               
               {/* NDIS badge */}
-              <div className="absolute -bottom-4 -right-4 md:bottom-10 md:right-0 bg-white rounded-full p-2 shadow-md">
+              {/* <div className="absolute -bottom-4 -right-4 md:bottom-10 md:right-0 bg-white rounded-full p-2 shadow-md">
                 <img src={ndisLogo} alt="NDIS Registered Provider" className="h-12 w-12" />
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </div>
