@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { FileText, ArrowRight } from "lucide-react";
+import PuzzlePiece from "@/components/shared/PuzzlePiece";
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -28,8 +29,15 @@ const Blog = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[hsl(var(--vitality-blue-25))] to-[hsl(var(--vitality-green-25))] py-16">
-        <div className="container mx-auto px-4">
+      <section className="relative bg-gradient-to-br from-[hsl(var(--vitality-green))] to-[hsl(var(--vitality-blue-75))] text-white pt-20 pb-28 md:pb-32 lg:pb-36 overflow-hidden">
+        {/* Dot pattern overlay */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xNSkiLz48L3N2Zz4=')] opacity-80 z-0"></div>
+        
+        {/* Decorative patterns */}
+        <PuzzlePiece variant="blue-all" size="lg" className="absolute -top-0 -right-0 opacity-20 animate-rotate" />
+        <PuzzlePiece variant="blue-all" size="md" className="absolute -bottom-8 -left-16 opacity-20 animate-rotate-reverse" />
+        
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -37,7 +45,7 @@ const Blog = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <h1 className="text-4xl md:text-5xl font-semibold mb-4">Vitality Insights</h1>
-            <p className="text-lg mb-8">
+            <p className="text-xl mb-8 opacity-90">
               Explore the latest insights and updates from our community care experts.
             </p>
             
@@ -66,13 +74,30 @@ const Blog = () => {
             </div>
           </motion.div>
         </div>
+        
+        {/* Wave SVG divider at bottom */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden z-0">
+          <svg 
+            viewBox="0 0 1200 120" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg" 
+            className="relative block w-full"
+            preserveAspectRatio="none"
+            style={{ height: '200px', width: '100%' }}
+          >
+            <path 
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" 
+              fill="white"
+            ></path>
+          </svg>
+        </div>
       </section>
 
       {/* Featured Article */}
       {filteredPosts.length > 0 && (
-        <section className="py-16 bg-white">
+        <section className="relative py-16 bg-white">
           <div className="container mx-auto px-4">
-            <div className="bg-[hsl(var(--neutral-light))] rounded-xl overflow-hidden shadow-lg">
+            <div className="relative bg-[hsl(var(--neutral-light))] rounded-xl overflow-hidden shadow-lg">
               <div className="flex flex-col lg:flex-row">
                 <div className="lg:w-1/2">
                   <img 
@@ -95,12 +120,37 @@ const Blog = () => {
               </div>
             </div>
           </div>
+          
+          {/* Wave SVG divider at bottom */}
+          <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+            <svg 
+              viewBox="0 0 1200 120" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg" 
+              className="relative block w-full"
+              preserveAspectRatio="none"
+              style={{ height: '200px', width: '100%' }}
+            >
+              <path 
+                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" 
+                fill="hsl(var(--vitality-blue-10))"
+              ></path>
+            </svg>
+          </div>
         </section>
       )}
 
       {/* Blog Articles Grid */}
-      <section className="py-16 bg-[hsl(var(--neutral-light))]">
+      <section className="relative py-16 bg-[hsl(var(--vitality-blue-10))]">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="text-[hsl(var(--vitality-blue))] font-medium uppercase tracking-wider">OUR ARTICLES</span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">Latest Resources</h2>
+            <p className="text-lg max-w-3xl mx-auto opacity-80">
+              Explore our collection of articles, tips, and resources to help you navigate disability support.
+            </p>
+          </div>
+          
           {searchTerm && (
             <div className="mb-8">
               <h2 className="text-2xl font-semibold mb-2">
@@ -152,60 +202,74 @@ const Blog = () => {
             </div>
           )}
         </div>
+        
+        {/* Wave SVG divider at bottom */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden z-0">
+          <svg 
+            viewBox="0 0 1200 120" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg" 
+            className="relative block w-full"
+            preserveAspectRatio="none"
+            style={{ height: '200px', width: '100%' }}
+          >
+            <path 
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" 
+              fill="white"
+            ></path>
+          </svg>
+        </div>
       </section>
 
       {/* Referral CTA */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto bg-gradient-to-r from-[hsl(var(--vitality-blue-10))] to-[hsl(var(--vitality-green-10))] p-8 rounded-xl relative overflow-hidden">
-            <div className="absolute -top-12 -right-12 w-40 h-40 bg-white opacity-5 rounded-full"></div>
-            <div className="absolute -bottom-12 -left-12 w-40 h-40 bg-white opacity-5 rounded-full"></div>
-            
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="w-16 h-16 md:w-24 md:h-24 bg-white bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0">
-                <FileText className="text-[hsl(var(--vitality-blue))] w-8 h-8 md:w-12 md:h-12" />
-              </div>
-              
-              <div className="flex-1">
-                <h3 className="text-xl md:text-2xl font-semibold mb-2 text-[hsl(var(--neutral-dark))]">Know Someone Who Could Benefit From Our Services?</h3>
-                <p className="text-[hsl(var(--neutral-dark))] mb-4">
-                  You can easily refer family members, friends, or clients who might need our support services. Our referral process is quick and straightforward.
-                </p>
-                <Button asChild className="rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))]">
-                  <a href="/referral" className="flex items-center gap-2">
-                    Make a Referral Now
-                    <ArrowRight size={16} />
-                  </a>
-                </Button>
-              </div>
-            </div>
-          </div>
+      <section className="relative py-16 bg-white">
+       
+        {/* Wave SVG divider at bottom */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden z-0">
+          <svg 
+            viewBox="0 0 1200 120" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg" 
+            className="relative block w-full"
+            preserveAspectRatio="none"
+            style={{ height: '200px', width: '100%' }}
+          >
+            <path 
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" 
+              fill="hsl(var(--neutral-light))"
+            ></path>
+          </svg>
         </div>
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[hsl(var(--neutral-light))]">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-semibold mb-4">Subscribe to Our Newsletter</h2>
-            <p className="mb-8">
-              Stay updated with the latest insights, resources, and news from Vitality Community Care.
-            </p>
+          <div className="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-[hsl(var(--vitality-green))] opacity-10 rounded-bl-xl"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-[hsl(var(--vitality-blue))] opacity-10 rounded-tr-xl"></div>
             
-            <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-              <Input
-                type="email"
-                placeholder="Your email address"
-                className="flex-grow py-6 rounded-full"
-                required
-              />
-              <Button type="submit" className="whitespace-nowrap rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))]">
-                Subscribe
-              </Button>
-            </form>
-            <p className="text-sm text-gray-500 mt-4">
-              We respect your privacy. Unsubscribe at any time.
-            </p>
+            <div className="text-center relative z-10">
+              <h2 className="text-3xl font-semibold mb-4">Subscribe to Our Newsletter</h2>
+              <p className="mb-8">
+                Stay updated with the latest insights, resources, and news from Vitality Community Care.
+              </p>
+              
+              <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <Input
+                  type="email"
+                  placeholder="Your email address"
+                  className="flex-grow py-6 rounded-full"
+                  required
+                />
+                <Button type="submit" className="whitespace-nowrap rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))]">
+                  Subscribe
+                </Button>
+              </form>
+              <p className="text-sm text-gray-500 mt-4">
+                We respect your privacy. Unsubscribe at any time.
+              </p>
+            </div>
           </div>
         </div>
       </section>

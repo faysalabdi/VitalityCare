@@ -36,19 +36,13 @@ const Contact = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        {/* Background with split colors */}
-        <div className="absolute top-0 left-0 w-full h-full bg-[hsl(var(--neutral-light))]"></div>
-        <div className="absolute top-0 left-0 w-1/2 h-full bg-[hsl(var(--vitality-blue))] opacity-5"></div>
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-[hsl(var(--vitality-green))] opacity-5"></div>
+      <section className="relative bg-gradient-to-br from-[hsl(var(--vitality-green))] to-[hsl(var(--vitality-blue-75))] text-white pt-20 pb-28 md:pb-32 lg:pb-36 overflow-hidden">
+        {/* Dot pattern overlay */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xNSkiLz48L3N2Zz4=')] opacity-80 z-0"></div>
         
-        {/* Decorative elements */}
-        <div className="absolute top-10 left-10 hidden md:block">
-          <PuzzlePiece variant="blue" size="md" className="opacity-10 animate-float" />
-        </div>
-        <div className="absolute bottom-10 right-10 hidden md:block">
-          <PuzzlePiece variant="green" size="sm" className="opacity-10 animate-float-delay" />
-        </div>
+        {/* Decorative patterns */}
+        <PuzzlePiece variant="blue" size="lg" className="absolute -top-0 -right-0 opacity-20 animate-rotate" />
+        <PuzzlePiece variant="blue" size="md" className="absolute -top-0 -left-0 opacity-20 animate-rotate-reverse" />
         
         <div className="container mx-auto px-4 relative z-10">
           <motion.div 
@@ -59,7 +53,7 @@ const Contact = () => {
           >
             {/* Icon badge */}
             <div className="inline-flex mb-6">
-              <div className="flex items-center justify-center p-3 rounded-lg bg-gradient-to-r from-[hsl(var(--vitality-blue))] to-[hsl(var(--vitality-green))] text-white">
+              <div className="flex items-center justify-center p-3 rounded-lg bg-white bg-opacity-20 text-white">
                 {careerInquiry ? <Briefcase size={28} /> : <MessageCircle size={28} />}
               </div>
             </div>
@@ -67,7 +61,7 @@ const Contact = () => {
             <h1 className="text-4xl md:text-5xl font-semibold mb-4">
               {careerInquiry ? "Join Our Team" : "Contact Us"}
             </h1>
-            <p className="text-lg mb-8">
+            <p className="text-xl mb-8 opacity-90">
               {careerInquiry 
                 ? "Interested in a rewarding career supporting others? Get in touch with us today." 
                 : "Get in touch with us today! Whether it's a quick query or a detailed discussion, we're just a call or email away."}
@@ -75,25 +69,42 @@ const Contact = () => {
             
             {/* Quick contact buttons */}
             <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <a href="tel:1300395852" className="flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-25))] transition-colors">
+              <a href="tel:1300395852" className="flex items-center gap-2 px-4 py-2 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors">
                 <Phone size={16} />
                 <span>1300 395 852</span>
               </a>
-              <a href="mailto:contact@vitalitycommunitycare.com.au" className="flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--vitality-blue-10))] text-[hsl(var(--vitality-blue))] hover:bg-[hsl(var(--vitality-blue-25))] transition-colors">
+              <a href="mailto:contact@vitalitycommunitycare.com.au" className="flex items-center gap-2 px-4 py-2 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors">
                 <Mail size={16} />
                 <span>Email Us</span>
               </a>
-              <a href="#location" className="flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-25))] transition-colors">
+              <a href="#location" className="flex items-center gap-2 px-4 py-2 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors">
                 <MapPin size={16} />
                 <span>Find Us</span>
               </a>
             </div>
           </motion.div>
         </div>
+        
+        {/* Wave SVG divider at bottom */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden z-0">
+          <svg 
+            viewBox="0 0 1200 120" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg" 
+            className="relative block w-full"
+            preserveAspectRatio="none"
+            style={{ height: '200px', width: '100%' }}
+          >
+            <path 
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" 
+              fill="white"
+            ></path>
+          </svg>
+        </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-white">
+      <section className="relative py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="lg:w-1/2">
@@ -297,26 +308,38 @@ const Contact = () => {
             </div>
           </div>
         </div>
+        
+        {/* Wave SVG divider at bottom */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden z-0">
+          <svg 
+            viewBox="0 0 1200 120" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg" 
+            className="relative block w-full"
+            preserveAspectRatio="none"
+            style={{ height: '200px', width: '100%' }}
+          >
+            <path 
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" 
+              fill="hsl(var(--vitality-blue-10))"
+            ></path>
+          </svg>
+        </div>
       </section>
 
       {/* Map Section */}
-      <section id="location" className="py-16 bg-[hsl(var(--neutral-light))]">
+      <section id="location" className="relative py-16 bg-[hsl(var(--vitality-blue-10))]">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <div className="inline-flex mb-6">
-              <div className="flex items-center justify-center p-3 rounded-lg bg-gradient-to-r from-[hsl(var(--vitality-blue))] to-[hsl(var(--vitality-green))] text-white">
-                <MapPin size={24} />
-              </div>
-            </div>
-            
-            <h2 className="text-3xl font-semibold text-[hsl(var(--neutral-dark))] mb-4">Our Locations</h2>
-            <p className="text-lg max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-[hsl(var(--vitality-blue))] font-medium uppercase tracking-wider">OUR LOCATIONS</span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">Find Us Nearby</h2>
+            <p className="text-lg max-w-3xl mx-auto opacity-80">
               Visit our offices or contact us to arrange an in-home consultation.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-            <div className="bg-white rounded-xl overflow-hidden shadow-md">
+            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Melbourne (Head Office)</h3>
                 <p className="text-[hsl(var(--neutral-dark))]">Corporate One, 84 Hotham St, Preston, 3072</p>
@@ -327,7 +350,7 @@ const Contact = () => {
               </div>
             </div>
             
-            <div className="bg-white rounded-xl overflow-hidden shadow-md">
+            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Perth (Western Australia)</h3>
                 <p className="text-[hsl(var(--neutral-dark))]">2232B Albany Hwy, Gosnells, 6110 WA</p>
@@ -338,7 +361,7 @@ const Contact = () => {
               </div>
             </div>
             
-            <div className="bg-white rounded-xl overflow-hidden shadow-md">
+            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Adelaide (South Australia)</h3>
                 <p className="text-[hsl(var(--neutral-dark))]">33 Warwick St, Walkerville, 5081 SA</p>
@@ -349,7 +372,7 @@ const Contact = () => {
               </div>
             </div>
             
-            <div className="bg-white rounded-xl overflow-hidden shadow-md">
+            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Brisbane (Queensland)</h3>
                 <p className="text-[hsl(var(--neutral-dark))]">477 Boundary St, Spring Hill, 4000 QLD</p>
@@ -360,7 +383,7 @@ const Contact = () => {
               </div>
             </div>
             
-            <div className="bg-white rounded-xl overflow-hidden shadow-md">
+            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Sydney (NSW)</h3>
                 <p className="text-[hsl(var(--neutral-dark))]">8 Parramatta Square, Parramatta, 2150 NSW</p>
@@ -407,22 +430,42 @@ const Contact = () => {
             </div>
           </div>
         </div>
+        
+        {/* Wave SVG divider at bottom */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden z-0">
+          <svg 
+            viewBox="0 0 1200 120" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg" 
+            className="relative block w-full"
+            preserveAspectRatio="none"
+            style={{ height: '200px', width: '100%' }}
+          >
+            <path 
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" 
+              fill="white"
+            ></path>
+          </svg>
+        </div>
       </section>
 
       {/* Referral Note Section */}
-      <section className="py-12 bg-white">
+      <section className="relative py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto bg-[hsl(var(--neutral-light))] p-8 rounded-xl border border-[hsl(var(--vitality-green-25))]">
-            <div className="flex flex-col md:flex-row items-center gap-6">
-              <div className="flex-shrink-0 w-16 h-16 rounded-full bg-[hsl(var(--vitality-green-10))] flex items-center justify-center text-[hsl(var(--vitality-green))]">
+          <div className="max-w-4xl mx-auto bg-gradient-to-r from-[hsl(var(--vitality-blue))] to-[hsl(var(--vitality-green))] p-8 rounded-xl relative overflow-hidden shadow-lg">
+            <div className="absolute -top-12 -right-12 w-40 h-40 bg-white opacity-5 rounded-full"></div>
+            <div className="absolute -bottom-12 -left-12 w-40 h-40 bg-white opacity-5 rounded-full"></div>
+            
+            <div className="flex flex-col md:flex-row items-center gap-6 relative z-10">
+              <div className="flex-shrink-0 w-16 h-16 rounded-full bg-white bg-opacity-20 flex items-center justify-center text-white">
                 <FileText size={24} />
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2">Looking to Refer Someone?</h3>
-                <p className="text-[hsl(var(--neutral-dark))] mb-4">
+                <h3 className="text-xl font-semibold mb-2 text-white">Looking to Refer Someone?</h3>
+                <p className="text-white mb-4 opacity-90">
                   If you're a healthcare professional, support coordinator, or family member looking to refer someone to our services, you can use our dedicated referral form.
                 </p>
-                <Button asChild className="rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))]">
+                <Button asChild className="rounded-full bg-white text-[hsl(var(--vitality-green))] hover:bg-opacity-90">
                   <a href="/referral" className="flex items-center gap-2">
                     Go to Referral Form
                     <ArrowRight size={16} />

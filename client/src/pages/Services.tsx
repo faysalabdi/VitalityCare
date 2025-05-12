@@ -99,13 +99,13 @@ const Services = () => {
         <meta property="og:description" content="Comprehensive disability support services tailored to your needs." />
       </Helmet>
 
-      <section id="services-top" className="relative bg-gradient-to-br from-[hsl(var(--vitality-blue))] to-[hsl(var(--vitality-blue-75))] text-white pt-20 pb-28 md:pb-32 lg:pb-36 overflow-hidden">
+      <section id="services-top" className="relative bg-gradient-to-br from-[hsl(var(--vitality-green))] to-[hsl(var(--vitality-blue-75))] text-white pt-20 pb-28 md:pb-32 lg:pb-36 overflow-hidden">
         {/* Dot pattern overlay */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xNSkiLz48L3N2Zz4=')] opacity-80 z-0"></div>
         
         {/* Decorative patterns */}
-        <PuzzlePiece variant="green" size="lg" className="absolute -top-10 -right-20 opacity-20 animate-rotate" />
-        <PuzzlePiece variant="green" size="md" className="absolute -bottom-8 -left-16 opacity-20 animate-rotate-reverse" />
+        <PuzzlePiece variant="blue" size="lg" className="absolute -top-10 -right-20 opacity-20 animate-rotate" />
+        <PuzzlePiece variant="blue" size="md" className="absolute -top-0 -left-1 opacity-20 animate-rotate-reverse" />
         
         <div className="container mx-auto px-4 relative z-10">
           <motion.div 
