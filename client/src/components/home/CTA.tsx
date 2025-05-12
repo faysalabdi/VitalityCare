@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import PuzzlePiece from "@/components/shared/PuzzlePiece";
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, UserPlus } from "lucide-react";
 
 const CTA = () => {
   return (
@@ -61,11 +61,17 @@ const CTA = () => {
                 Take the first step toward personalized, in-home support that empowers you to live your best life.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
                 <Button asChild size="lg" className="rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))] text-white px-8 shadow-lg">
                   <Link href="/contact" className="flex items-center">
                     <Mail size={18} className="mr-2" />
                     Contact Us
+                  </Link>
+                </Button>
+                <Button asChild size="lg" className="rounded-full bg-white text-[hsl(var(--vitality-blue))] hover:bg-white/90 hover:text-[hsl(var(--vitality-blue))] px-8 shadow-lg">
+                  <Link href="/referral" className="flex items-center">
+                    <UserPlus size={18} className="mr-2" />
+                    Make a Referral
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="rounded-full border-2 border-white text-black hover:bg-white hover:text-[hsl(var(--vitality-blue))] px-8">
