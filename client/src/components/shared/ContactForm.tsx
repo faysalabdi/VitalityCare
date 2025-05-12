@@ -77,7 +77,7 @@ const ContactForm = ({ isCareerForm = false }: ContactFormProps) => {
       // Use Formspree to send the form data
       const formType = isCareerForm ? 'career' : 'general';
       
-      const response = await fetch("https://formspree.io/f/contact@vitalitycommunityvare.com.au", {
+      const response = await fetch("https://formspree.io/f/mjkwaywz", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
