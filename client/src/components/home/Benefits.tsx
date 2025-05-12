@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import PuzzlePiece from "@/components/shared/PuzzlePiece";
+import benefitsImage from "@/assets/support.png"; // Using an existing image, replace with a better one if available
 
 const benefits = [
   {
@@ -30,6 +32,16 @@ const benefits = [
     title: "NDIS Support",
     description: "We welcome both NDIS participants and self-funded clients.",
     color: "text-[hsl(var(--vitality-green))]"
+  },
+  {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    title: "Responsive Care",
+    description: "Quick response times and flexible scheduling to meet your changing needs.",
+    color: "text-[hsl(var(--vitality-blue))]"
   }
 ];
 
@@ -56,32 +68,82 @@ const Benefits = () => {
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMyIgY3k9IjMiIHI9IjEiIGZpbGw9InJnYmEoMCwwLDAsMC4wMikiLz48L3N2Zz4=')] opacity-90 z-0"></div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          {benefits.map((benefit, index) => (
-            <motion.div 
-              key={index}
-              className="bg-white p-6 rounded-xl shadow-md flex items-start"
-              variants={item}
-            >
-              <div className={`mr-4 ${benefit.color}`}>
-                {benefit.icon}
+        <div className="flex flex-col lg:flex-row items-center gap-12 mb-12">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:w-5/12 relative"
+          >
+            <div className="relative">
+              <div className="rounded-xl overflow-hidden shadow-xl z-10 relative">
+                <img 
+                  src={benefitsImage} 
+                  alt="Caring support worker helping client" 
+                  className="w-full h-auto"
+                />
               </div>
-              <div>
-                <h3 className="font-medium text-lg mb-2">{benefit.title}</h3>
-                <p className="text-[hsl(var(--neutral-dark))]">{benefit.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[hsl(var(--vitality-green-25))] rounded-lg z-0 transform -rotate-6"></div>
+              <PuzzlePiece 
+                variant="blue"
+                size="lg"
+                className="absolute -top-10 -right-10 z-20 animate-rotate"
+              />
+              <PuzzlePiece 
+                variant="green"
+                size="md"
+                className="absolute -bottom-8 -left-8 z-20 animate-rotate-reverse animate-pulse-glow"
+              />
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:w-7/12"
+          >
+            <div className="inline-flex mb-6 items-center px-3 py-1 rounded-full bg-[hsl(var(--vitality-blue-10))] text-[hsl(var(--vitality-blue))]">
+              <span className="text-sm font-medium">#vitality_warm_care</span>
+            </div>
+            
+            <h2 className="text-4xl font-bold text-[hsl(var(--neutral-dark))] mb-6">
+              From Hospital to Home, <span className="text-[hsl(var(--vitality-blue))]">Seamlessly</span>.
+            </h2>
+            
+            <p className="text-lg text-[hsl(var(--neutral-dark))] mb-8">
+              We partner with hospitals and health professionals to ensure vulnerable individuals receive timely, high-quality support when they leave medical care.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+              {benefits.slice(0, 4).map((benefit, index) => (
+                <motion.div 
+                  key={index}
+                  className="bg-white p-6 rounded-xl shadow-md flex items-start hover:shadow-lg transition-shadow"
+                  variants={item}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                >
+                  <div className={`mr-4 ${benefit.color}`}>
+                    {benefit.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-lg mb-2">{benefit.title}</h3>
+                    <p className="text-[hsl(var(--neutral-dark))]">{benefit.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
       
-      {/* Wave SVG divider at bottom */}
+      {/* Wave SVG divider at bottom - larger and stronger */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden z-0">
         <svg 
           viewBox="0 0 1200 120" 
@@ -89,10 +151,10 @@ const Benefits = () => {
           xmlns="http://www.w3.org/2000/svg" 
           className="relative block w-full"
           preserveAspectRatio="none"
-          style={{ height: '70px' }}
+          style={{ height: '120px' }} 
         >
           <path 
-            d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V120H0V27.35a600.21 600.21 0 00321.39 29.09z" 
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" 
             fill="hsl(var(--vitality-green-10))"
           ></path>
         </svg>
