@@ -35,7 +35,7 @@ const AboutSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--neutral-dark))]">More Than a Service, a Relationship</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--neutral-dark))]">Building Meaningful Connections, <span className="text-[hsl(var(--vitality-blue))] font-bold">Together.</span></h2>
         </div>
         
         <div className="flex flex-col lg:flex-row items-center gap-12">
