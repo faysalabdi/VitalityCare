@@ -21,7 +21,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
 
 interface ContactFormProps {
   isCareerForm?: boolean;
@@ -75,10 +74,24 @@ const ContactForm = ({ isCareerForm = false }: ContactFormProps) => {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-      await apiRequest("POST", "/api/contact", {
-        ...data,
-        type: isCareerForm ? "career" : "general",
+      // Use Formspree to send the form data
+      const formType = isCareerForm ? 'career' : 'general';
+      
+      const response = await fetch("https://formspree.io/f/contact@vitalitycommunityvare.com.au", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          ...data,
+          _subject: `New ${formType} inquiry from ${data.firstName} ${data.lastName}`,
+          formType
+        }),
       });
+      
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
       
       toast({
         title: "Message Sent",
