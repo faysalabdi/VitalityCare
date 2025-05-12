@@ -99,19 +99,13 @@ const Services = () => {
         <meta property="og:description" content="Comprehensive disability support services tailored to your needs." />
       </Helmet>
 
-      <section id="services-top" className="relative py-16 overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute top-0 left-0 w-full h-full bg-[hsl(var(--neutral-light))]"></div>
-        <div className="absolute top-0 left-0 w-1/3 h-full bg-[hsl(var(--vitality-blue))] opacity-5"></div>
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-[hsl(var(--vitality-green))] opacity-5"></div>
+      <section id="services-top" className="relative bg-gradient-to-br from-[hsl(var(--vitality-blue))] to-[hsl(var(--vitality-blue-75))] text-white pt-20 pb-28 md:pb-32 lg:pb-36 overflow-hidden">
+        {/* Dot pattern overlay */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xNSkiLz48L3N2Zz4=')] opacity-80 z-0"></div>
         
         {/* Decorative patterns */}
-        <div className="absolute top-10 left-10 opacity-10">
-          <PuzzlePiece variant="blue" size="md" />
-        </div>
-        <div className="absolute bottom-10 right-10 opacity-10">
-          <PuzzlePiece variant="green" size="md" />
-        </div>
+        <PuzzlePiece variant="green" size="lg" className="absolute -top-10 -right-20 opacity-20 animate-rotate" />
+        <PuzzlePiece variant="green" size="md" className="absolute -bottom-8 -left-16 opacity-20 animate-rotate-reverse" />
         
         <div className="container mx-auto px-4 relative z-10">
           <motion.div 
@@ -120,52 +114,70 @@ const Services = () => {
             transition={{ duration: 0.5 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <div className="inline-flex mb-6">
-              <div className="flex items-center justify-center p-3 rounded-lg bg-gradient-to-r from-[hsl(var(--vitality-blue))] to-[hsl(var(--vitality-green))] text-white">
+            <div className="flex justify-center mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20 text-white">
                 <Activity size={28} />
               </div>
             </div>
             
             <h1 className="text-4xl md:text-5xl font-semibold mb-4">Our Services</h1>
-            <p className="text-lg mb-8">
+            <p className="text-xl mb-8 opacity-90">
               Vitality Community Care offers personalized therapeutic and support services,
               delivered by our team of friendly practitioners.
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))]">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white">
                 <Heart size={16} />
                 <span>Daily Living Support</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--vitality-blue-10))] text-[hsl(var(--vitality-blue))]">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white">
                 <HelpingHand size={16} />
                 <span>Personal Care</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))]">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white">
                 <Users size={16} />
                 <span>Community Participation</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--vitality-blue-10))] text-[hsl(var(--vitality-blue))]">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white">
                 <Activity size={16} />
                 <span>Therapy Services</span>
               </div>
             </div>
           </motion.div>
         </div>
+        
+        {/* Wave SVG divider at bottom */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden z-0">
+          <svg 
+            viewBox="0 0 1200 135" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg" 
+            className="relative block w-full"
+            preserveAspectRatio="none"
+            style={{ height: '200px', width: '100%' }}
+          >
+            <path 
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" 
+              fill="white"
+            ></path>
+          </svg>
+        </div>
       </section>
 
       {/* Service Process Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="relative bg-white text-[hsl(var(--neutral-dark))] -mt-16 pt-28 md:pt-32 lg:pt-36 pb-20 md:pb-24 lg:pb-28 overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-semibold mb-4">How We Deliver Our Services</h2>
-            <p className="text-lg max-w-3xl mx-auto">
+            <span className="text-[hsl(var(--vitality-blue))] font-medium uppercase tracking-wider">OUR APPROACH</span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">How We Deliver Our Services</h2>
+            <p className="text-lg max-w-3xl mx-auto opacity-80">
               Our approach ensures you receive personalized care that respects your choices and meets your unique needs.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-[hsl(var(--neutral-light))] p-8 rounded-xl text-center relative">
+            <div className="bg-white p-8 rounded-xl text-center relative shadow-md hover:shadow-lg transition-shadow">
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-[hsl(var(--vitality-green))] text-white flex items-center justify-center text-xl font-bold">1</div>
               <div className="mt-4 mb-4">
                 <ClipboardCheck className="w-12 h-12 mx-auto text-[hsl(var(--vitality-green))]" />
@@ -174,7 +186,7 @@ const Services = () => {
               <p>We meet to understand your needs, preferences, and goals to create your personalized support plan.</p>
             </div>
             
-            <div className="bg-[hsl(var(--neutral-light))] p-8 rounded-xl text-center relative">
+            <div className="bg-white p-8 rounded-xl text-center relative shadow-md hover:shadow-lg transition-shadow">
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-[hsl(var(--vitality-blue))] text-white flex items-center justify-center text-xl font-bold">2</div>
               <div className="mt-4 mb-4">
                 <Users className="w-12 h-12 mx-auto text-[hsl(var(--vitality-blue))]" />
@@ -183,7 +195,7 @@ const Services = () => {
               <p>We carefully match you with the most suitable support practitioners based on your specific requirements.</p>
             </div>
             
-            <div className="bg-[hsl(var(--neutral-light))] p-8 rounded-xl text-center relative">
+            <div className="bg-white p-8 rounded-xl text-center relative shadow-md hover:shadow-lg transition-shadow">
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-[hsl(var(--vitality-green))] text-white flex items-center justify-center text-xl font-bold">3</div>
               <div className="mt-4 mb-4">
                 <Activity className="w-12 h-12 mx-auto text-[hsl(var(--vitality-green))]" />
@@ -192,7 +204,7 @@ const Services = () => {
               <p>Our practitioners deliver high-quality support services tailored to your needs, adjusting as required.</p>
             </div>
             
-            <div className="bg-[hsl(var(--neutral-light))] p-8 rounded-xl text-center relative">
+            <div className="bg-white p-8 rounded-xl text-center relative shadow-md hover:shadow-lg transition-shadow">
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-[hsl(var(--vitality-blue))] text-white flex items-center justify-center text-xl font-bold">4</div>
               <div className="mt-4 mb-4">
                 <CheckCircle className="w-12 h-12 mx-auto text-[hsl(var(--vitality-blue))]" />
@@ -201,6 +213,23 @@ const Services = () => {
               <p>We conduct ongoing assessments to ensure services remain aligned with your evolving needs and goals.</p>
             </div>
           </div>
+        </div>
+        
+        {/* Wave SVG divider at bottom */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden z-0">
+          <svg 
+            viewBox="0 0 1200 120" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg" 
+            className="relative block w-full"
+            preserveAspectRatio="none"
+            style={{ height: '200px', width: '100%' }}
+          >
+            <path 
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" 
+              fill="hsl(var(--vitality-blue-10))"
+            ></path>
+          </svg>
         </div>
       </section>
 
