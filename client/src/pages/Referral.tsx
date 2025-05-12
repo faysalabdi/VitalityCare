@@ -26,7 +26,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { FileText, Send, Calendar, User, Users } from "lucide-react";
 import PuzzlePiece from "@/components/shared/PuzzlePiece";
-import { apiRequest } from "@/lib/queryClient";
 
 // Define options list for service interests
 const serviceOptions = [
@@ -110,10 +109,21 @@ const Referral = () => {
   const onSubmit = async (data: ReferralFormData) => {
     setIsSubmitting(true);
     try {
-      await apiRequest("POST", "/api/referral", {
-        ...data,
-        type: "referral",
+      const response = await fetch("https://formspree.io/f/mldbpjnr", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          ...data,
+          _subject: `New referral for ${data.participantName}`,
+          formType: "referral"
+        }),
       });
+      
+      if (!response.ok) {
+        throw new Error('Failed to submit referral form');
+      }
       
       toast({
         title: "Referral Sent",
