@@ -4,7 +4,7 @@ import { Shield, Zap, CheckCircle, Users } from "lucide-react";
 
 const Features = () => {
   return (
-    <section className="relative bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--neutral-dark))] -mt-16 pt-28 md:pt-32 lg:pt-36 pb-20 md:pb-24 lg:pb-28 overflow-hidden">
+    <section className="relative bg-[hsl(var(--vitality-blue-10))] text-[hsl(var(--neutral-dark))] -mt-24 pt-32 md:pt-36 lg:pt-40 pb-20 md:pb-24 lg:pb-28 overflow-hidden">
       {/* Top wave SVG divider */}
       <div className="absolute top-0 left-0 w-full overflow-hidden z-0 transform rotate-180">
         <svg 
@@ -13,7 +13,7 @@ const Features = () => {
           xmlns="http://www.w3.org/2000/svg" 
           className="relative block w-full"
           preserveAspectRatio="none"
-          style={{ height: '150px', transform: 'rotateY(180deg)' }}
+          style={{ height: '200px', width: '100%', transform: 'rotateY(180deg)' }}
         >
           <path 
             d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" 
@@ -27,7 +27,7 @@ const Features = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <span className="text-[hsl(var(--vitality-green))] font-medium uppercase tracking-wider">WHAT SETS US APART</span>
+          <span className="text-[hsl(var(--vitality-blue))] font-medium uppercase tracking-wider">WHAT SETS US APART</span>
           <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--neutral-dark))] mt-3 mb-6">Exceptional Care Features</h2>
           <p className="text-lg text-[hsl(var(--neutral-dark))] max-w-3xl mx-auto opacity-80">
             Our approach to care is built on key principles that ensure quality, consistency, and excellence in everything we do.
@@ -43,7 +43,7 @@ const Features = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="bg-white rounded-xl p-8 shadow-lg text-center hover:shadow-xl transition-shadow"
           >
-            <div className="w-16 h-16 rounded-full bg-[hsl(var(--vitality-green-25))] flex items-center justify-center text-[hsl(var(--vitality-green))] mx-auto mb-6">
+            <div className="w-16 h-16 rounded-full bg-[hsl(var(--vitality-blue-25))] flex items-center justify-center text-[hsl(var(--vitality-blue))] mx-auto mb-6">
               <Shield size={28} />
             </div>
             <h3 className="text-xl font-semibold mb-4">Quality Assurance</h3>
@@ -77,7 +77,7 @@ const Features = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="bg-white rounded-xl p-8 shadow-lg text-center hover:shadow-xl transition-shadow"
           >
-            <div className="w-16 h-16 rounded-full bg-[hsl(var(--vitality-green-25))] flex items-center justify-center text-[hsl(var(--vitality-green))] mx-auto mb-6">
+            <div className="w-16 h-16 rounded-full bg-[hsl(var(--vitality-blue-25))] flex items-center justify-center text-[hsl(var(--vitality-blue))] mx-auto mb-6">
               <CheckCircle size={28} />
             </div>
             <h3 className="text-xl font-semibold mb-4">Certified Experts</h3>

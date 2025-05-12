@@ -7,7 +7,7 @@ import { Heart, Clipboard, MessageCircle } from "lucide-react";
 // Import assets
 import backgroundGraphic from '@/assets/Vitality CC - Logo02.png';
 import ndisLogo from '@/assets/IHeartNDIS_2020.svg';
-import vcc from '@/assets/vcc.png';
+import music from '@/assets/music.png';
 
 const Hero = () => {
   return (
@@ -87,7 +87,7 @@ const Hero = () => {
               {/* Circular image container */}
               <div className="relative rounded-full overflow-hidden border-4 border-white shadow-xl aspect-square max-w-[450px] mx-auto">
                 <img 
-                  src={vcc} 
+                  src={music} 
                   alt="Healthcare professional supporting a client" 
                   className="w-full h-full object-cover"
                 />
@@ -122,7 +122,7 @@ const Hero = () => {
           xmlns="http://www.w3.org/2000/svg" 
           className="relative block w-full"
           preserveAspectRatio="none"
-          style={{ height: '180px' }}
+          style={{ height: '150px' }}
         >
           <path 
             d="M0,160L80,144C160,128,320,96,480,101.3C640,107,800,149,960,154.7C1120,160,1280,128,1360,112L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z" 
