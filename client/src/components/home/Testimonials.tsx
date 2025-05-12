@@ -127,10 +127,10 @@ const Testimonials = () => {
         </div>
       </div>
       
-      {/* Wave SVG divider at bottom - larger and stronger */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden z-0">
+{/* Wave SVG divider at bottom */}
+<div className="absolute bottom-0 left-0 w-full overflow-hidden z-0">
         <svg 
-          viewBox="0 0 1200 120" 
+          viewBox="0 0 1200 0" 
           fill="none" 
           xmlns="http://www.w3.org/2000/svg" 
           className="relative block w-full"
