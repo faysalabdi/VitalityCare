@@ -138,23 +138,6 @@ const About = () => {
             </div>
           </div>
         </div>
-        
-        {/* Wave SVG divider at bottom */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden z-0">
-          <svg 
-            viewBox="0 0 1200 120" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg" 
-            className="relative block w-full"
-            preserveAspectRatio="none"
-            style={{ height: '200px', width: '100%' }}
-          >
-            <path 
-              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" 
-              fill="hsl(var(--vitality-blue-10))"
-            ></path>
-          </svg>
-        </div>
       </section>
 
       {/* Who We Are Section */}
@@ -192,7 +175,7 @@ const About = () => {
         {/* Wave SVG divider at bottom */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden z-0">
           <svg 
-            viewBox="0 0 1200 120" 
+            viewBox="0 0 1200 160" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg" 
             className="relative block w-full"
@@ -263,86 +246,12 @@ const About = () => {
           >
             <path 
               d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" 
-              fill="hsl(var(--vitality-blue-10))"
-            ></path>
-          </svg>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="relative bg-[hsl(var(--vitality-blue-10))] text-[hsl(var(--neutral-dark))] -mt-16 pt-28 md:pt-32 lg:pt-36 pb-20 md:pb-24 lg:pb-28 overflow-hidden">
-        {/* Top wave SVG divider */}
-        <div className="absolute top-0 left-0 w-full overflow-hidden z-0 transform rotate-180">
-          <svg 
-            viewBox="0 0 1200 120" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg" 
-            className="relative block w-full"
-            preserveAspectRatio="none"
-            style={{ height: '200px', width: '100%', transform: 'rotateY(180deg)' }}
-          >
-            <path 
-              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" 
-              fill="white"
-            ></path>
-          </svg>
-        </div>
-
-        {/* Dot pattern */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMCwwLDAsMC4wNSkiLz48L3N2Zz4=')] opacity-50 z-0"></div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-            <span className="text-[hsl(var(--vitality-blue))] font-medium uppercase tracking-wider">OUR TEAM</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">Meet Our Care Team</h2>
-            <p className="text-lg text-[hsl(var(--neutral-dark))] max-w-3xl mx-auto opacity-80">
-              Meet our dedicated professionals committed to providing personalized care and support.
-            </p>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {team.filter(member => member.isLeadership).map((member) => (
-              <TeamMember key={member.id} member={member} />
-            ))}
-          </div>
-
-          <div className="text-center mb-12 mt-16">
-            <h3 className="text-2xl font-semibold text-[hsl(var(--neutral-dark))] mb-4">Support Practitioners</h3>
-            <p className="text-lg max-w-3xl mx-auto opacity-80">
-              Our practitioners provide direct support and specialized services to our clients.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.filter(member => !member.isLeadership).map((member) => (
-              <TeamMember key={member.id} member={member} />
-            ))}
-          </div>
-        </div>
-
-        {/* Wave SVG divider at bottom */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden z-0">
-          <svg 
-            viewBox="0 0 1200 120" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg" 
-            className="relative block w-full"
-            preserveAspectRatio="none"
-            style={{ height: '200px', width: '100%' }}
-          >
-            <path 
-              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" 
               fill="white"
             ></path>
           </svg>
         </div>
       </section>
+
 
       {/* CTA Section */}
       <section className="relative bg-gradient-to-br from-[hsl(var(--vitality-blue))] to-[hsl(var(--vitality-blue-75))] text-white -mt-16 pt-36 md:pt-40 lg:pt-44 pb-20 md:pb-24 lg:pb-28 overflow-hidden">
