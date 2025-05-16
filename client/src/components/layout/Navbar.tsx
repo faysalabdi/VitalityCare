@@ -96,32 +96,27 @@ const Navbar = () => {
       {/* Contact information bar - will fade and collapse smoothly on scroll */}
       <div 
         ref={topBarRef}
-        className={`bg-[hsl(var(--vitality-green))] text-white transition-all duration-500 ease-out overflow-hidden ${
-          scrolled ? 'max-h-0 py-0 opacity-0' : 'max-h-[100px] py-3 opacity-100'
+        className={`bg-[hsl(var(--vitality-green))] text-white fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-out ${
+          scrolled ? 'transform -translate-y-full' : 'transform translate-y-0'
         }`}
-        style={{
-          transform: scrolled ? 'translateY(-100%)' : 'translateY(0)',
-          transitionProperty: 'max-height, opacity, transform, padding',
-          willChange: 'transform, max-height, opacity'
-        }}
       >
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-between items-center">
-            <div className="flex items-center gap-4 text-base">
+        <div className="container mx-auto px-4 py-2">
+          <div className="flex flex-wrap justify-between items-center h-8">
+            <div className="flex items-center gap-4 text-sm">
               <a href="tel:1300395852" className="flex items-center gap-1.5 text-white hover:text-white/85 transition-colors">
-                <Phone size={18} />
+                <Phone size={16} />
                 1300 395 852
               </a>
               <a href="mailto:contact@vitalitycommunitycare.com.au" className="hidden md:flex items-center gap-1.5 text-white hover:text-white/85 transition-colors">
-                <Mail size={18} />
+                <Mail size={16} />
                 contact@vitalitycommunitycare.com.au
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <Link href="/careers" className="px-6 py-2 rounded-full bg-white text-black font-medium hover:bg-gray-100 transition-all">
+              <Link href="/careers" className="px-5 py-1 rounded-full bg-white text-black font-medium hover:bg-gray-100 transition-all text-sm">
                 Career
               </Link>
-              <Link href="/referral" className="px-6 py-2 rounded-full bg-[hsl(var(--vitality-blue))] text-white font-medium hover:bg-[hsl(var(--vitality-blue))/90] transition-all">
+              <Link href="/referral" className="px-5 py-1 rounded-full bg-[hsl(var(--vitality-blue))] text-white font-medium hover:bg-[hsl(var(--vitality-blue))/90] transition-all text-sm">
                 Referral
               </Link>
             </div>
@@ -129,8 +124,10 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Main navbar - sticky */}
-      <div className="sticky top-0 z-[100]">
+      {/* Main navbar - sticky, with padding to account for top bar when visible */}
+      <div className={`sticky z-[100] transition-all duration-300 ease-out ${
+        scrolled ? 'top-0' : 'top-[44px]'  /* Adjusted height of contact bar */
+      }`}>
         <div className="bg-white shadow-sm">
           <div 
             className={`container mx-auto px-4 transition-all duration-300 ease-out ${
