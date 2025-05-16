@@ -64,17 +64,17 @@ const initApp = async () => {
 if (process.env.NODE_ENV !== "production") {
   (async () => {
     const { server } = await initApp();
-    // ALWAYS serve the app on port 5000
-    // this serves both the API and the client.
-    // It is the only port that is not firewalled.
-    const port = process.env.PORT || 3000;
-    server.listen({
-      port,
-      host: "0.0.0.0",
-    }, () => {
-      log(`serving on port ${port}`);
-    });
-  })();
+  // ALWAYS serve the app on port 5000
+  // this serves both the API and the client.
+  // It is the only port that is not firewalled.
+  const port = process.env.PORT || 3000;
+  server.listen({
+    port,
+    host: "0.0.0.0",
+  }, () => {
+    log(`serving on port ${port}`);
+  });
+})();
 }
 
 // Export for Vercel serverless function
@@ -82,3 +82,12 @@ export default async (req: Request, res: Response) => {
   const { app } = await initApp();
   return app(req, res);
 };
+
+// Using the following conditional to handle both ESM and CommonJS
+// Remove the module.exports usage since it's not available in ESM
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = async (req: Request, res: Response) => {
+    const { app } = await initApp();
+    return app(req, res);
+  };
+}
