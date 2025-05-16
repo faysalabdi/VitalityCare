@@ -88,8 +88,10 @@ const Hero = () => {
               <div className="relative rounded-full overflow-hidden border-4 border-white shadow-xl aspect-square max-w-[450px] mx-auto">
                 <img 
                   src={music} 
-                  alt="Healthcare professional supporting a client" 
+                  alt="Healthcare support image" 
                   className="w-full h-full object-cover"
+                  aria-hidden="true"
+                  role="presentation"
                 />
               </div>
               

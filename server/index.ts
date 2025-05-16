@@ -82,9 +82,3 @@ export default async (req: Request, res: Response) => {
   const { app } = await initApp();
   return app(req, res);
 };
-
-// For CommonJS compatibility with Vercel
-module.exports = async (req: Request, res: Response) => {
-  const { app } = await initApp();
-  return app(req, res);
-};
