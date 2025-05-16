@@ -33,7 +33,9 @@ import {
   UserPlus,
   Briefcase,
   ExternalLink,
-  Mail
+  Mail,
+  Bed,
+  Sparkles
 } from "lucide-react";
 
 // Debounce function to smooth out scroll handling
@@ -52,8 +54,6 @@ const debounce = (func: Function, wait: number) => {
 const Navbar = () => {
   const [location] = useLocation();
   const [scrolled, setScrolled] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const servicesDropdownRef = useRef<HTMLDivElement>(null);
   const topBarRef = useRef<HTMLDivElement>(null);
   const topBarHeight = useRef<number>(0);
   const lastScrollY = useRef<number>(0);
@@ -91,22 +91,8 @@ const Navbar = () => {
     };
   }, []);
 
-  // Close dropdown when clicking outside of it
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
-        setServicesOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   return (
-    <div className="relative">
+    <>
       {/* Contact information bar - will fade and collapse smoothly on scroll */}
       <div 
         ref={topBarRef}
@@ -144,99 +130,47 @@ const Navbar = () => {
       </div>
 
       {/* Main navbar - sticky */}
-      <header className="sticky top-0 z-50 w-full">
-        <div 
-          className={`bg-white transition-all duration-300 ease-out will-change-[padding,box-shadow] ${
-            scrolled ? "py-3 shadow-sm" : "py-5"
-          }`}
-        >
-          <div className="container mx-auto px-4">
+      <div className="sticky top-0 z-[100]">
+        <div className="bg-white shadow-sm">
+          <div 
+            className={`container mx-auto px-4 transition-all duration-300 ease-out ${
+              scrolled ? "py-3" : "py-5"
+            }`}
+          >
             <div className="flex justify-between items-center">
               {/* Logo - increased size */}
               <Link href="/" className="flex items-center">
                 <PuzzleLogo variant="full" size="xl" />
               </Link>
               
-              {/* Desktop Navigation - removed Home link */}
+              {/* Desktop Navigation */}
               <nav className="hidden md:flex items-center space-x-10">
-                <Link href="/about" className={`flex items-center gap-1.5 text-lg font-medium transition-colors ${location === '/about' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}>
+                <Link href="/about" className={`flex items-center gap-1.5 text-lg font-bold transition-colors ${location === '/about' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}>
                   About Us
                 </Link>
                 
-                {/* Services Navigation with both link and dropdown */}
-                <div 
-                  ref={servicesDropdownRef}
-                  className="flex items-center relative"
+                <Link 
+                  href="/ndis" 
+                  className={`flex items-center gap-1.5 text-lg font-bold transition-colors ${location === '/ndis' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}
                 >
-                  <Link 
-                    href="/services" 
-                    className={`flex items-center gap-1.5 text-lg font-medium transition-colors ${location.startsWith('/services') ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}
-                  >
-                    Services
-                  </Link>
-                  
-                  <button 
-                    onClick={() => setServicesOpen(!servicesOpen)} 
-                    className="ml-1 h-8 w-8 inline-flex items-center justify-center focus:outline-none"
-                  >
-                    <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? 'transform rotate-180' : ''}`} />
-                  </button>
-                  
-                  {servicesOpen && (
-                    <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-1 z-50">
-                      <Link 
-                        href="/services#daily-living" 
-                        className="cursor-pointer flex items-center gap-2 px-4 py-2 hover:bg-gray-100"
-                        onClick={() => setServicesOpen(false)}
-                      >
-                        <Heart size={14} className="text-[hsl(var(--vitality-green))]" />
-                        Daily Living Support
-                      </Link>
-                      <Link 
-                        href="/services#personal-care" 
-                        className="cursor-pointer flex items-center gap-2 px-4 py-2 hover:bg-gray-100"
-                        onClick={() => setServicesOpen(false)}
-                      >
-                        <HelpingHand size={14} className="text-[hsl(var(--vitality-blue))]" />
-                        Personal Care
-                      </Link>
-                      <Link 
-                        href="/services#community-participation" 
-                        className="cursor-pointer flex items-center gap-2 px-4 py-2 hover:bg-gray-100"
-                        onClick={() => setServicesOpen(false)}
-                      >
-                        <Users size={14} className="text-[hsl(var(--vitality-green))]" />
-                        Community Participation
-                      </Link>
-                      <Link 
-                        href="/services#therapy" 
-                        className="cursor-pointer flex items-center gap-2 px-4 py-2 hover:bg-gray-100"
-                        onClick={() => setServicesOpen(false)}
-                      >
-                        <Activity size={14} className="text-[hsl(var(--vitality-blue))]" />
-                        Therapy Services
-                      </Link>
-                      <Link 
-                        href="/services#support-coordination" 
-                        className="cursor-pointer flex items-center gap-2 px-4 py-2 hover:bg-gray-100"
-                        onClick={() => setServicesOpen(false)}
-                      >
-                        <FileText size={14} className="text-[hsl(var(--vitality-green))]" />
-                        Support Coordination
-                      </Link>
-                      <Link 
-                        href="/services#supported-independent-living" 
-                        className="cursor-pointer flex items-center gap-2 px-4 py-2 hover:bg-gray-100"
-                        onClick={() => setServicesOpen(false)}
-                      >
-                        <Home size={14} className="text-[hsl(var(--vitality-blue))]" />
-                        Supported Independent Living
-                      </Link>
-                    </div>
-                  )}
-                </div>
+                  NDIS
+                </Link>
                 
-                <Link href="/blog" className={`flex items-center gap-1.5 text-lg font-medium transition-colors ${location === '/blog' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}>
+                <Link 
+                  href="/aged-care" 
+                  className={`flex items-center gap-1.5 text-lg font-bold transition-colors ${location === '/aged-care' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}
+                >
+                  Aged Care
+                </Link>
+                
+                <Link 
+                  href="/accommodation" 
+                  className={`flex items-center gap-1.5 text-lg font-bold transition-colors ${location === '/accommodation' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}
+                >
+                  Accommodation
+                </Link>
+                
+                <Link href="/blog" className={`flex items-center gap-1.5 text-lg font-bold transition-colors ${location === '/blog' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}>
                   Blog
                 </Link>
               </nav>
@@ -254,140 +188,93 @@ const Navbar = () => {
                 <Sheet>
                   <SheetTrigger asChild>
                     <Button variant="ghost" size="icon" className="md:hidden">
-                      <Menu className="h-7 w-7" />
+                      <Menu size={24} />
                       <span className="sr-only">Toggle menu</span>
                     </Button>
                   </SheetTrigger>
-                  <SheetContent side="right" className="w-[300px]">
-                    <nav className="flex flex-col gap-6 mt-8">
-                      <SheetClose asChild>
-                        <Link href="/" className="flex items-center">
-                          <PuzzleLogo variant="full" size="lg" />
-                        </Link>
-                      </SheetClose>
-                      
-                      <div className="py-2">
-                        <h3 className="font-medium mb-2 flex items-center gap-2 text-lg">
-                          <FileText size={20} />
+                  <SheetContent side="right" className="w-full max-w-xs p-0">
+                    <div className="flex flex-col h-full">
+                      <div className="p-6 border-b">
+                        <PuzzleLogo variant="full" size="lg" />
+                      </div>
+                      <div className="flex-1 overflow-auto py-4">
+                        <nav className="flex flex-col space-y-1 px-4">
                           <SheetClose asChild>
-                            <Link href="/services">Services</Link>
-                          </SheetClose>
-                        </h3>
-                        <div className="flex flex-col space-y-2 pl-8">
-                          <SheetClose asChild>
-                            <Link 
-                              href="/services#daily-living" 
-                              className="text-[hsl(var(--neutral-dark))] flex items-center gap-2"
-                            >
-                              <Heart size={14} className="text-[hsl(var(--vitality-green))]" />
-                              Daily Living Support
+                            <Link href="/" className={`py-3 px-4 rounded-md font-bold flex items-center ${location === '/' ? 'bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))]' : ''}`}>
+                              <Home size={18} className="mr-3" />
+                              Home
                             </Link>
                           </SheetClose>
                           <SheetClose asChild>
-                            <Link 
-                              href="/services#personal-care" 
-                              className="text-[hsl(var(--neutral-dark))] flex items-center gap-2"
-                            >
-                              <HelpingHand size={14} className="text-[hsl(var(--vitality-blue))]" />
-                              Personal Care
+                            <Link href="/about" className={`py-3 px-4 rounded-md font-bold flex items-center ${location === '/about' ? 'bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))]' : ''}`}>
+                              <Info size={18} className="mr-3" />
+                              About Us
+                            </Link>
+                          </SheetClose>
+                          
+                          <SheetClose asChild>
+                            <Link href="/ndis" className={`py-3 px-4 rounded-md font-bold flex items-center ${location === '/ndis' ? 'bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))]' : ''}`}>
+                              <Heart size={18} className="mr-3" />
+                              NDIS
+                            </Link>
+                          </SheetClose>
+                          
+                          <SheetClose asChild>
+                            <Link href="/aged-care" className={`py-3 px-4 rounded-md font-bold flex items-center ${location === '/aged-care' ? 'bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))]' : ''}`}>
+                              <Sparkles size={18} className="mr-3" />
+                              Aged Care
+                            </Link>
+                          </SheetClose>
+                          
+                          <SheetClose asChild>
+                            <Link href="/accommodation" className={`py-3 px-4 rounded-md font-bold flex items-center ${location === '/accommodation' ? 'bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))]' : ''}`}>
+                              <Bed size={18} className="mr-3" />
+                              Accommodation
+                            </Link>
+                          </SheetClose>
+                          
+                          <SheetClose asChild>
+                            <Link href="/blog" className={`py-3 px-4 rounded-md font-bold flex items-center ${location === '/blog' ? 'bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))]' : ''}`}>
+                              <Book size={18} className="mr-3" />
+                              Blog
                             </Link>
                           </SheetClose>
                           <SheetClose asChild>
-                            <Link 
-                              href="/services#community-participation" 
-                              className="text-[hsl(var(--neutral-dark))] flex items-center gap-2"
-                            >
-                              <Users size={14} className="text-[hsl(var(--vitality-green))]" />
-                              Community Participation
+                            <Link href="/contact" className={`py-3 px-4 rounded-md font-bold flex items-center ${location === '/contact' ? 'bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))]' : ''}`}>
+                              <Phone size={18} className="mr-3" />
+                              Contact
                             </Link>
                           </SheetClose>
+                          
                           <SheetClose asChild>
-                            <Link 
-                              href="/services#therapy" 
-                              className="text-[hsl(var(--neutral-dark))] flex items-center gap-2"
-                            >
-                              <Activity size={14} className="text-[hsl(var(--vitality-blue))]" />
-                              Therapy Services
+                            <Link href="/referral" className={`py-3 px-4 rounded-md font-bold flex items-center ${location === '/referral' ? 'bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))]' : ''}`}>
+                              <FileText size={18} className="mr-3" />
+                              Make a Referral
                             </Link>
                           </SheetClose>
-                          <SheetClose asChild>
-                            <Link 
-                              href="/services#support-coordination" 
-                              className="text-[hsl(var(--neutral-dark))] flex items-center gap-2"
-                            >
-                              <FileText size={14} className="text-[hsl(var(--vitality-green))]" />
-                              Support Coordination
-                            </Link>
-                          </SheetClose>
-                          <SheetClose asChild>
-                            <Link 
-                              href="/services#supported-independent-living" 
-                              className="text-[hsl(var(--neutral-dark))] flex items-center gap-2"
-                            >
-                              <Home size={14} className="text-[hsl(var(--vitality-blue))]" />
-                              Supported Independent Living
-                            </Link>
-                          </SheetClose>
+                        </nav>
+                      </div>
+                      <div className="p-6 border-t">
+                        <div className="space-y-3">
+                          <div className="flex items-center gap-2">
+                            <Phone size={18} className="text-[hsl(var(--vitality-blue))]" />
+                            <a href="tel:1300395852" className="text-[hsl(var(--vitality-blue))] hover:underline">1300 395 852</a>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Mail size={18} className="text-[hsl(var(--vitality-blue))]" />
+                            <a href="mailto:contact@vitalitycommunitycare.com.au" className="text-[hsl(var(--vitality-blue))] hover:underline text-sm">contact@vitalitycommunitycare.com.au</a>
+                          </div>
                         </div>
                       </div>
-                      
-                      <SheetClose asChild>
-                        <Link 
-                          href="/about" 
-                          className={`py-2 font-medium transition-colors flex items-center gap-2 text-lg ${location === '/about' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))]'}`}
-                        >
-                          <Info size={20} />
-                          About Us
-                        </Link>
-                      </SheetClose>
-                      
-                      <SheetClose asChild>
-                        <Link 
-                          href="/blog" 
-                          className={`py-2 font-medium transition-colors flex items-center gap-2 text-lg ${location === '/blog' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))]'}`}
-                        >
-                          <Book size={20} />
-                          Blog
-                        </Link>
-                      </SheetClose>
-                      
-                      <SheetClose asChild>
-                        <Link 
-                          href="/referral" 
-                          className={`py-2 font-medium transition-colors flex items-center gap-2 text-lg ${location === '/referral' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))]'}`}
-                        >
-                          <UserPlus size={20} />
-                          Referral
-                        </Link>
-                      </SheetClose>
-                      
-                      <SheetClose asChild>
-                        <Link 
-                          href="/careers" 
-                          className={`py-2 font-medium transition-colors flex items-center gap-2 text-lg ${location === '/careers' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))]'}`}
-                        >
-                          <Briefcase size={20} />
-                          Career
-                        </Link>
-                      </SheetClose>
-                      
-                      <SheetClose asChild>
-                        <Button asChild className="mt-4 w-full py-6 rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))] flex items-center justify-center text-base">
-                          <Link href="/contact">
-                            CONTACT US
-                            <ArrowRight size={18} className="ml-1" />
-                          </Link>
-                        </Button>
-                      </SheetClose>
-                    </nav>
+                    </div>
                   </SheetContent>
                 </Sheet>
               </div>
             </div>
           </div>
         </div>
-      </header>
-    </div>
+      </div>
+    </>
   );
 };
 
