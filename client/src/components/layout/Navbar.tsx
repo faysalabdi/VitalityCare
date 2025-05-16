@@ -36,6 +36,19 @@ import {
   Mail
 } from "lucide-react";
 
+// Debounce function to smooth out scroll handling
+const debounce = (func: Function, wait: number) => {
+  let timeout: ReturnType<typeof setTimeout>;
+  return function executedFunction(...args: any[]) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+};
+
 const Navbar = () => {
   const [location] = useLocation();
   const [scrolled, setScrolled] = useState(false);
@@ -43,6 +56,7 @@ const Navbar = () => {
   const servicesDropdownRef = useRef<HTMLDivElement>(null);
   const topBarRef = useRef<HTMLDivElement>(null);
   const topBarHeight = useRef<number>(0);
+  const lastScrollY = useRef<number>(0);
 
   // Get initial height of top bar for smooth transitions
   useEffect(() => {
@@ -51,15 +65,29 @@ const Navbar = () => {
     }
   }, []);
 
-  // Improved scroll handler
+  // Improved scroll handler with debouncing
   useEffect(() => {
+    // Threshold for minimum scroll movement to trigger state change (in px)
+    const SCROLL_THRESHOLD = 3;
+    
     const handleScroll = () => {
-      setScrolled(window.scrollY > 5);
+      // More nuanced scroll detection
+      const currentScrollY = window.scrollY;
+      const scrollDifference = Math.abs(currentScrollY - lastScrollY.current);
+      
+      // Only update state if scroll difference exceeds threshold
+      if (scrollDifference >= SCROLL_THRESHOLD) {
+        setScrolled(currentScrollY > 5);
+        lastScrollY.current = currentScrollY;
+      }
     };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    
+    // Apply debounce to the scroll handler for smooth performance
+    const debouncedHandleScroll = debounce(handleScroll, 10);
+    
+    window.addEventListener("scroll", debouncedHandleScroll, { passive: true });
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", debouncedHandleScroll);
     };
   }, []);
 
@@ -82,11 +110,13 @@ const Navbar = () => {
       {/* Contact information bar - will fade and collapse smoothly on scroll */}
       <div 
         ref={topBarRef}
-        className={`bg-[hsl(var(--vitality-green))] text-white transition-all duration-300 ease-in-out overflow-hidden ${
+        className={`bg-[hsl(var(--vitality-green))] text-white transition-all duration-500 ease-out overflow-hidden ${
           scrolled ? 'max-h-0 py-0 opacity-0' : 'max-h-[100px] py-3 opacity-100'
         }`}
         style={{
           transform: scrolled ? 'translateY(-100%)' : 'translateY(0)',
+          transitionProperty: 'max-height, opacity, transform, padding',
+          willChange: 'transform, max-height, opacity'
         }}
       >
         <div className="container mx-auto px-4">
@@ -116,7 +146,7 @@ const Navbar = () => {
       {/* Main navbar - sticky */}
       <header className="sticky top-0 z-50 w-full">
         <div 
-          className={`bg-white transition-all duration-300 ease-in-out ${
+          className={`bg-white transition-all duration-300 ease-out will-change-[padding,box-shadow] ${
             scrolled ? "py-3 shadow-sm" : "py-5"
           }`}
         >
