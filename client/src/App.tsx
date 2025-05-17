@@ -10,6 +10,7 @@ import Services from "@/pages/Services";
 import NDIS from "@/pages/NDIS";
 import AgedCare from "@/pages/AgedCare";
 import Accommodation from "@/pages/Accommodation";
+import AccommodationDetail from "@/pages/accommodation/[id]";
 import About from "@/pages/About";
 import Blog from "@/pages/Blog";
 import Contact from "@/pages/Contact";
@@ -31,6 +32,7 @@ function Router() {
           <Route path="/ndis" component={NDIS} />
           <Route path="/aged-care" component={AgedCare} />
           <Route path="/accommodation" component={Accommodation} />
+          <Route path="/accommodation/:id" component={AccommodationDetail} />
           <Route path="/about" component={About} />
           <Route path="/blog" component={Blog} />
           <Route path="/contact" component={Contact} />
