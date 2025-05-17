@@ -52,9 +52,6 @@ const ServiceCard = ({ service, isActive = false, onClick }: ServiceCardProps) =
       {/* Active indicator */}
       {isActive && (
         <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
-          <div className={`px-3 py-1 rounded-full text-xs font-medium bg-[hsl(var(--vitality-${service.color}))] text-white flex items-center shadow-md`}>
-            Selected <ChevronDown className="ml-1 h-3 w-3 animate-bounce" />
-          </div>
         </div>
       )}
       
