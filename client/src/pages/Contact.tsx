@@ -9,9 +9,44 @@ import {
   MessageCircle,
   Briefcase,
   ArrowRight,
+  Clock,
+  Building,
+  Map,
+  Headphones,
+  Send,
+  CalendarClock
 } from "lucide-react";
 import PuzzlePiece from "@/components/shared/PuzzlePiece";
 import { Button } from "@/components/ui/button";
+
+const locations = [
+  {
+    city: "Melbourne (Head Office)",
+    address: "Corporate One, 84 Hotham St, Preston, 3072",
+    icon: <Building className="h-6 w-6 text-[hsl(var(--vitality-green))]" />,
+    primary: true
+  },
+  {
+    city: "Perth (Western Australia)",
+    address: "2232B Albany Hwy, Gosnells, 6110 WA",
+    icon: <MapPin className="h-6 w-6 text-[hsl(var(--vitality-blue))]" />
+  },
+  {
+    city: "Adelaide (South Australia)",
+    address: "33 Warwick St, Walkerville, 5081 SA",
+    icon: <MapPin className="h-6 w-6 text-[hsl(var(--vitality-blue))]" />
+  },
+  {
+    city: "Brisbane (Queensland)",
+    address: "477 Boundary St, Spring Hill, 4000 QLD",
+    icon: <MapPin className="h-6 w-6 text-[hsl(var(--vitality-blue))]" />
+  },
+  {
+    city: "Sydney (NSW)",
+    address: "8 Parramatta Square, Parramatta, 2150 NSW",
+    icon: <MapPin className="h-6 w-6 text-[hsl(var(--vitality-blue))]" />
+  }
+];
 
 const Contact = () => {
   const [location] = useLocation();
@@ -43,6 +78,11 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
             className="text-center max-w-3xl mx-auto"
           >
+            <div className="flex justify-center mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white bg-opacity-20">
+                <Headphones className="h-8 w-8" />
+              </div>
+            </div>
             <h1 className="text-4xl md:text-5xl font-semibold mb-4">
               {careerInquiry ? "Join Our Team" : "Contact Us"}
             </h1>
@@ -54,16 +94,16 @@ const Contact = () => {
             
             {/* Quick contact buttons */}
             <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <a href="tel:1300395852" className="flex items-center gap-2 px-4 py-2 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors">
-                <Phone size={16} />
+              <a href="tel:1300395852" className="flex items-center gap-2 px-5 py-3 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors">
+                <Phone size={18} />
                 <span>1300 395 852</span>
               </a>
-              <a href="mailto:contact@vitalitycommunitycare.com.au" className="flex items-center gap-2 px-4 py-2 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors">
-                <Mail size={16} />
+              <a href="mailto:contact@vitalitycommunitycare.com.au" className="flex items-center gap-2 px-5 py-3 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors">
+                <Mail size={18} />
                 <span>Email Us</span>
               </a>
-              <a href="#location" className="flex items-center gap-2 px-4 py-2 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors">
-                <MapPin size={16} />
+              <a href="#location" className="flex items-center gap-2 px-5 py-3 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors">
+                <Map size={18} />
                 <span>Find Us</span>
               </a>
             </div>
@@ -93,74 +133,104 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="lg:w-1/2">
-              <h2 className="text-3xl font-semibold text-[hsl(var(--neutral-dark))] mb-4">
-                Our Contact Details
-              </h2>
+              <div className="border-l-4 border-[hsl(var(--vitality-green))] pl-4 mb-8">
+                <h2 className="text-3xl font-semibold text-[hsl(var(--neutral-dark))]">
+                  Our Contact Details
+                </h2>
+                <p className="text-[hsl(var(--vitality-green))]">We're here to help</p>
+              </div>
               <p className="text-lg mb-8">
                 Our friendly team is here to answer your questions and help you find the right support for your needs.
               </p>
               
-              <div className="space-y-8 mb-10">
-                <div>
-                  <h3 className="font-medium text-lg text-[hsl(var(--neutral-dark))] mb-4">
-                    Our Phone
-                  </h3>
-                  <a href="tel:1300395852" className="font-medium text-xl hover:text-[hsl(var(--vitality-green))] transition-colors block">
-                    1300 395 852
-                  </a>
+              <div className="space-y-10 mb-10">
+                <div className="flex gap-5">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[hsl(var(--vitality-green-10))] flex items-center justify-center">
+                    <Phone className="w-6 h-6 text-[hsl(var(--vitality-green))]" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-lg text-[hsl(var(--neutral-dark))] mb-2">
+                      Our Phone
+                    </h3>
+                    <a href="tel:1300395852" className="font-medium text-xl hover:text-[hsl(var(--vitality-green))] transition-colors block">
+                      1300 395 852
+                    </a>
+                  </div>
                 </div>
                 
-                <div>
-                  <h3 className="font-medium text-lg text-[hsl(var(--neutral-dark))] mb-4">
-                    Opening Hours
-                  </h3>
-                  <p className="text-lg">Mon – Sun: 9 am to 5 pm</p>
+                <div className="flex gap-5">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[hsl(var(--vitality-blue-10))] flex items-center justify-center">
+                    <Clock className="w-6 h-6 text-[hsl(var(--vitality-blue))]" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-lg text-[hsl(var(--neutral-dark))] mb-2">
+                      Opening Hours
+                    </h3>
+                    <div className="flex items-center gap-2">
+                      <CalendarClock className="w-4 h-4 text-[hsl(var(--vitality-blue))]" />
+                      <p className="text-lg">Mon – Sun: 9 am to 5 pm</p>
+                    </div>
+                  </div>
                 </div>
                 
-                <div>
-                  <h3 className="font-medium text-lg text-[hsl(var(--neutral-dark))] mb-4">
-                    Our Email
-                  </h3>
-                  <a href="mailto:contact@vitalitycommunitycare.com.au" className="font-medium text-lg hover:text-[hsl(var(--vitality-blue))] transition-colors break-all">
-                    contact@vitalitycommunitycare.com.au
-                  </a>
+                <div className="flex gap-5">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[hsl(var(--vitality-green-10))] flex items-center justify-center">
+                    <Mail className="w-6 h-6 text-[hsl(var(--vitality-green))]" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-lg text-[hsl(var(--neutral-dark))] mb-2">
+                      Our Email
+                    </h3>
+                    <a href="mailto:contact@vitalitycommunitycare.com.au" className="font-medium text-lg hover:text-[hsl(var(--vitality-blue))] transition-colors break-all">
+                      contact@vitalitycommunitycare.com.au
+                    </a>
+                  </div>
                 </div>
               </div>
               
-              <div className="mt-10">
-                <h3 className="text-2xl font-semibold text-[hsl(var(--neutral-dark))] mb-6" id="location">
-                  Our Locations
-                </h3>
-                <ul className="space-y-6">
-                  <li>
-                    <h4 className="font-medium text-lg">Melbourne (Head Office)</h4>
-                    <p>Corporate One, 84 Hotham St, Preston, 3072</p>
-                  </li>
-                  <li>
-                    <h4 className="font-medium text-lg">Perth (Western Australia)</h4>
-                    <p>2232B Albany Hwy, Gosnells, 6110 WA</p>
-                  </li>
-                  <li>
-                    <h4 className="font-medium text-lg">Adelaide (South Australia)</h4>
-                    <p>33 Warwick St, Walkerville, 5081 SA</p>
-                  </li>
-                  <li>
-                    <h4 className="font-medium text-lg">Brisbane (Queensland)</h4>
-                    <p>477 Boundary St, Spring Hill, 4000 QLD</p>
-                  </li>
-                  <li>
-                    <h4 className="font-medium text-lg">Sydney (NSW)</h4>
-                    <p>8 Parramatta Square, Parramatta, 2150 NSW</p>
-                  </li>
-                </ul>
+              <div className="mt-12">
+                <div className="border-l-4 border-[hsl(var(--vitality-blue))] pl-4 mb-8" id="location">
+                  <h3 className="text-2xl font-semibold text-[hsl(var(--neutral-dark))]">
+                    Our Locations
+                  </h3>
+                  <p className="text-[hsl(var(--vitality-blue))]">Find us nationwide</p>
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {locations.map((loc, index) => (
+                    <div 
+                      key={index} 
+                      className={`p-5 rounded-xl ${loc.primary 
+                        ? "bg-gradient-to-br from-[hsl(var(--vitality-green-10))] to-[hsl(var(--vitality-blue-10))] border border-[hsl(var(--vitality-green-25))]" 
+                        : "bg-[hsl(var(--neutral-light))]"}`}
+                    >
+                      <div className="flex items-start gap-3">
+                        {loc.icon}
+                        <div>
+                          <h4 className="font-medium text-lg">{loc.city}</h4>
+                          <p>{loc.address}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
             
             <div className="lg:w-1/2">
-              <div className="bg-[hsl(var(--neutral-light))] p-8 rounded-xl">
-                <h3 className="text-2xl font-semibold text-[hsl(var(--neutral-dark))] mb-6">
-                  Let's Get In Touch
-                </h3>
+              <div className="bg-[hsl(var(--neutral-light))] p-8 rounded-xl shadow-sm border border-gray-100">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-full bg-[hsl(var(--vitality-green))] flex items-center justify-center">
+                    <MessageCircle className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-semibold text-[hsl(var(--neutral-dark))]">
+                      Let's Get In Touch
+                    </h3>
+                    <p className="text-sm text-gray-500">Fill out the form below</p>
+                  </div>
+                </div>
+                
                 <p className="mb-6">
                   If you have questions or want to discuss your needs, feel free to contact us. We're eager to hear from you and help.
                 </p>
@@ -175,6 +245,19 @@ const Contact = () => {
       {/* Map Section */}
       <section className="py-16 bg-[hsl(var(--neutral-light))]">
         <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <div className="flex justify-center mb-4">
+              <div className="w-12 h-12 rounded-full bg-[hsl(var(--vitality-blue))] flex items-center justify-center">
+                <Map className="w-6 h-6 text-white" />
+              </div>
+            </div>
+            <h2 className="text-3xl font-semibold text-[hsl(var(--neutral-dark))] mb-3">
+              Find Us on the Map
+            </h2>
+            <p className="text-lg">
+              Visit our main office or contact us for directions to any of our locations
+            </p>
+          </div>
           <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 relative">
             <div className="aspect-w-16 aspect-h-9 w-full h-80">
               <iframe 
@@ -195,7 +278,12 @@ const Contact = () => {
       {/* Referral CTA */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto bg-[hsl(var(--neutral-light))] p-8 rounded-xl text-center">
+          <div className="max-w-3xl mx-auto bg-gradient-to-r from-[hsl(var(--vitality-green-10))] to-[hsl(var(--vitality-blue-10))] p-8 rounded-xl text-center border border-[hsl(var(--vitality-green-25))]">
+            <div className="flex justify-center mb-4">
+              <div className="w-12 h-12 rounded-full bg-[hsl(var(--vitality-green))] flex items-center justify-center">
+                <Send className="w-5 h-5 text-white" />
+              </div>
+            </div>
             <h3 className="text-xl font-semibold mb-4">Get Your Custom Care Plan, Contact Us Today!</h3>
             <Button asChild className="rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))]">
               <a href="/referral" className="flex items-center gap-2">
