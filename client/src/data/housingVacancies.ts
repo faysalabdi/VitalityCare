@@ -4,6 +4,7 @@ const housingVacancies = [
     id: 1,
     location: "Beacon Place",
     title: "Broadmeadows, VIC 3047",
+    type: "SIL - Improved Liveability",
     description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
     images: [
       "/src/assets/houses/Beacon-place3.png",
@@ -26,6 +27,7 @@ const housingVacancies = [
     id: 2,
     location: "Silver Fern House",
     title: "Strathtulloh, VIC 3338",
+    type: "SIL - High Fully Accessible",
     description: "A contemporary supported living environment designed to promote independence and community engagement in a vibrant neighborhood.",
     images: [
       "/src/assets/houses/Silver-fern-house1.png",
@@ -48,6 +50,7 @@ const housingVacancies = [
     id: 3,
     location: "Aurora House",
     title: "Mickleham, VIC 3064",
+    type: "SIL - Improved Liveability",
     description: "This exceptional SIL home features fully furnished bedrooms with kitchenettes, private ensuites, and spacious common areas in Melbourne's vibrant Western suburbs.",
     images: [
       "/src/assets/houses/Aurora-house1.png",
@@ -71,6 +74,7 @@ const housingVacancies = [
   id: 4,
   location: "Eden Grove",
   title: "Dandenong North, VIC 3175",
+  type: "SIL - Improved Liveability",
   description: "A welcoming SIL home offering accessible living spaces, modern amenities, and a supportive environment in a peaceful neighborhood of Melbourne's eastern suburbs. Perfect for those seeking independence with dedicated support.",
   images: [
     "/src/assets/houses/Eden-grove1.png",
@@ -94,6 +98,7 @@ const housingVacancies = [
   id: 5,
   location: "Serenity Place",
   title: "Gosnells, WA 6110",
+  type: "SIL - High Physical Support",
   description: "A modern SIL home nestled in Perth's southeastern suburbs, offering spacious accessible living areas, contemporary amenities, and a tranquil garden setting. Ideal for residents seeking a supportive community environment with independence.",
   images: [
     "/src/assets/houses/Serenity-place1.png",
@@ -117,6 +122,7 @@ const housingVacancies = [
   id: 6,
   location: "Harmony Lodge",
   title: "Southern River, WA 6110",
+  type: "SIL Robust",
   description: "A welcoming SIL residence in Southern River featuring contemporary design, accessible living spaces, and a vibrant community atmosphere. This thoughtfully designed home provides 24/7 support while promoting independence, with easy access to local amenities and recreational activities.",
   images: [
     "/src/assets/houses/Harmony-lodge1.png",
