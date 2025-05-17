@@ -183,7 +183,7 @@ const SupportedLivingHighlights = () => {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild variant="default" size="lg" className="rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))]">
-              <Link to="/accommodation">View All Properties <ArrowRight className="ml-2 h-5 w-5" /></Link>
+              <Link to="/ndis#supported-independent-living">View All Properties <ArrowRight className="ml-2 h-5 w-5" /></Link>
             </Button>
             
             <ServicePageButton 

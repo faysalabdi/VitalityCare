@@ -26,7 +26,7 @@ const ServiceSelectionGuide = () => {
 
 // Filter NDIS services only
 const ndisServices = services.filter(service => 
-  ["daily-living", "personal-care", "community-participation", "therapy", "support-coordination"].includes(service.id)
+  ["daily-living", "personal-care", "community-participation", "therapy", "support-coordination", "supported-independent-living", "transport", "cleaning", "early-childhood"].includes(service.id)
 );
 
 const NDIS = () => {

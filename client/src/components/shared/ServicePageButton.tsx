@@ -28,7 +28,11 @@ const ServicePageButton = ({
       "personal-care", 
       "community-participation", 
       "therapy", 
-      "support-coordination"
+      "support-coordination",
+      "supported-independent-living",
+      "transport",
+      "cleaning",
+      "early-childhood"
     ];
     
     // Set of Aged Care service IDs
