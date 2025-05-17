@@ -113,7 +113,7 @@ const Navbar = () => {
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <Link href="/careers" className="px-5 py-1 rounded-full bg-white text-black font-medium hover:bg-gray-100 transition-all text-sm">
+              <Link href="/career" className="px-5 py-1 rounded-full bg-white text-black font-medium hover:bg-gray-100 transition-all text-sm">
                 Career
               </Link>
               <Link href="/referral" className="px-5 py-1 rounded-full bg-[hsl(var(--vitality-blue))] text-white font-medium hover:bg-[hsl(var(--vitality-blue))/90] transition-all text-sm">
@@ -247,6 +247,13 @@ const Navbar = () => {
                             <Link href="/referral" className={`py-3 px-4 rounded-md font-bold flex items-center ${location === '/referral' ? 'bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))]' : ''}`}>
                               <FileText size={18} className="mr-3" />
                               Make a Referral
+                            </Link>
+                          </SheetClose>
+                          
+                          <SheetClose asChild>
+                            <Link href="/career" className={`py-3 px-4 rounded-md font-bold flex items-center ${location === '/career' ? 'bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))]' : ''}`}>
+                              <Briefcase size={18} className="mr-3" />
+                              Join Our Team
                             </Link>
                           </SheetClose>
                         </nav>

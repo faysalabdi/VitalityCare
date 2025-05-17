@@ -16,6 +16,7 @@ import Blog from "@/pages/Blog";
 import Contact from "@/pages/Contact";
 import Privacy from "@/pages/Privacy";
 import Referral from "@/pages/Referral";
+import Career from "@/pages/Career";
 import NotFound from "@/pages/not-found";
 import AccessibilityWidget from "@/components/shared/AccessibilityWidget";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -38,6 +39,7 @@ function Router() {
           <Route path="/contact" component={Contact} />
           <Route path="/privacy" component={Privacy} />
           <Route path="/referral" component={Referral} />
+          <Route path="/career" component={Career} />
           <Route component={NotFound} />
         </Switch>
       </main>

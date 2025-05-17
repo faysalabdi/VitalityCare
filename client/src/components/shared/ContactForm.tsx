@@ -77,7 +77,12 @@ const ContactForm = ({ isCareerForm = false }: ContactFormProps) => {
       // Use Formspree to send the form data
       const formType = isCareerForm ? 'career' : 'general';
       
-      const response = await fetch("https://formspree.io/f/mjkwaywz", {
+      // Use different endpoint for career form
+      const endpoint = isCareerForm 
+        ? "https://formspree.io/f/xldbzagj" 
+        : "https://formspree.io/f/mjkwaywz";
+      
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
