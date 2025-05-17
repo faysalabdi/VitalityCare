@@ -1,10 +1,100 @@
+import { useState, useRef, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Heart, Sparkles, Clock, Home, FileText, ClipboardCheck, CheckCircle, Info, Calendar, Briefcase } from "lucide-react";
 import PuzzlePiece from "@/components/shared/PuzzlePiece";
+import { services } from "@/data/services";
+import ServiceCard from "@/components/services/ServiceCard";
+import ServiceDetail from "@/components/services/ServiceDetail";
+
+const ServiceSelectionGuide = () => {
+  return (
+    <div className="bg-[hsl(var(--neutral-light))] p-4 rounded-lg mb-8 flex items-start gap-3">
+      <div className="text-[hsl(var(--vitality-blue))]">
+        <Info size={20} />
+      </div>
+      <div>
+        <h3 className="font-medium mb-1">Service Selection Guide</h3>
+        <p className="text-sm text-[hsl(var(--neutral-dark))]">
+          Click on any service card above to view its details below. You'll automatically be scrolled to the detailed information.
+        </p>
+      </div>
+    </div>
+  );
+};
+
+// Filter aged care services only
+const agedCareServices = services.filter(service => 
+  ["home-care-package", "chsp", "private-care"].includes(service.id)
+);
 
 const AgedCare = () => {
+  const [selectedService, setSelectedService] = useState(agedCareServices[0]);
+  const [animateDetail, setAnimateDetail] = useState(false);
+  const serviceDetailRef = useRef<HTMLDivElement>(null);
+  const servicesListRef = useRef<HTMLDivElement>(null);
+
+  // Handle hash navigation
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      
+      if (hash) {
+        const matchingService = agedCareServices.find(s => s.slug === hash);
+        if (matchingService) {
+          setSelectedService(matchingService);
+          
+          // Give time for the page to load and then scroll to the services section
+          setTimeout(() => {
+            servicesListRef.current?.scrollIntoView({ 
+              behavior: "smooth", 
+              block: "start" 
+            });
+            
+            // After scrolling to services, give a short delay before scrolling to details
+            setTimeout(() => {
+              serviceDetailRef.current?.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+              });
+            }, 500);
+          }, 100);
+        }
+      }
+    };
+
+    // Handle hash on initial page load
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  useEffect(() => {
+    // Trigger animation when service changes
+    setAnimateDetail(true);
+    const timer = setTimeout(() => setAnimateDetail(false), 500);
+    return () => clearTimeout(timer);
+  }, [selectedService]);
+
+  const handleServiceSelect = (service: typeof agedCareServices[0]) => {
+    setSelectedService(service);
+    
+    // Update URL hash without triggering page reload
+    const newUrl = window.location.pathname + '#' + service.slug;
+    window.history.pushState({}, '', newUrl);
+    
+    // Scroll to the service detail section with smooth animation
+    setTimeout(() => {
+      serviceDetailRef.current?.scrollIntoView({ 
+        behavior: "smooth", 
+        block: "start"
+      });
+    }, 100);
+  };
+
   return (
     <>
       <Helmet>
@@ -128,173 +218,43 @@ const AgedCare = () => {
         </div>
       </section>
 
-      {/* Service Types Section */}
-      <section className="py-20 bg-[hsl(var(--neutral-light))]">
+      {/* Service Cards Section */}
+      <section id="service-list" className="py-16 bg-[hsl(var(--neutral-light))]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold mb-4">Our Aged Care Services</h2>
             <p className="text-lg max-w-3xl mx-auto">
-              We offer a range of aged care services to meet your specific needs and preferences.
+              Select a service to learn more about how we can support you.
             </p>
           </div>
 
-          {/* Home Care Package */}
-          <div className="mb-16 bg-white rounded-xl overflow-hidden shadow-md">
-            <div className="md:flex">
-              <div className="md:w-1/3">
-                <img 
-                  src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" 
-                  alt="Home Care Package" 
-                  className="w-full h-full object-cover"
+          <div ref={servicesListRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 scroll-mt-32">
+            {agedCareServices.map((service) => (
+              <div id={service.slug} key={service.id}>
+                <ServiceCard 
+                  service={service}
+                  isActive={selectedService.id === service.id}
+                  onClick={() => handleServiceSelect(service)}
                 />
               </div>
-              <div className="md:w-2/3 p-6 md:p-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[hsl(var(--vitality-blue))] text-white">
-                    <Home size={20} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-[hsl(var(--vitality-blue))]">Home Care Package</h3>
-                </div>
-                <p className="mb-6 text-lg">
-                  Our Home Care Package (HCP) services provide government-funded support to help you remain independent in your own home. We work with you to make the most of your funding, delivering personalized care that enhances your quality of life.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={20} className="text-[hsl(var(--vitality-green))] mt-1 flex-shrink-0" />
-                    <span>Personal care assistance</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={20} className="text-[hsl(var(--vitality-green))] mt-1 flex-shrink-0" />
-                    <span>Household cleaning and maintenance</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={20} className="text-[hsl(var(--vitality-green))] mt-1 flex-shrink-0" />
-                    <span>Meal preparation and nutrition</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={20} className="text-[hsl(var(--vitality-green))] mt-1 flex-shrink-0" />
-                    <span>Social support and companionship</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={20} className="text-[hsl(var(--vitality-green))] mt-1 flex-shrink-0" />
-                    <span>Transportation services</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={20} className="text-[hsl(var(--vitality-green))] mt-1 flex-shrink-0" />
-                    <span>Medication management</span>
-                  </div>
-                </div>
-                <Button asChild className="rounded-full bg-[hsl(var(--vitality-blue))] hover:bg-[hsl(var(--vitality-blue-75))]">
-                  <a href="/contact">Learn More <ArrowRight className="ml-2 h-5 w-5" /></a>
-                </Button>
-              </div>
-            </div>
+            ))}
           </div>
 
-          {/* Commonwealth Home Support Programme */}
-          <div className="mb-16 bg-white rounded-xl overflow-hidden shadow-md">
-            <div className="md:flex flex-row-reverse">
-              <div className="md:w-1/3">
-                <img 
-                  src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" 
-                  alt="Commonwealth Home Support Programme" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="md:w-2/3 p-6 md:p-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[hsl(var(--vitality-green))] text-white">
-                    <Calendar size={20} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-[hsl(var(--vitality-green))]">Commonwealth Home Support Programme (CHSP)</h3>
-                </div>
-                <p className="mb-6 text-lg">
-                  The Commonwealth Home Support Programme (CHSP) offers entry-level support services for older Australians who need assistance to continue living independently at home and in their community.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={20} className="text-[hsl(var(--vitality-blue))] mt-1 flex-shrink-0" />
-                    <span>Domestic assistance</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={20} className="text-[hsl(var(--vitality-blue))] mt-1 flex-shrink-0" />
-                    <span>Personal care</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={20} className="text-[hsl(var(--vitality-blue))] mt-1 flex-shrink-0" />
-                    <span>Home maintenance</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={20} className="text-[hsl(var(--vitality-blue))] mt-1 flex-shrink-0" />
-                    <span>Home modifications</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={20} className="text-[hsl(var(--vitality-blue))] mt-1 flex-shrink-0" />
-                    <span>Social support</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={20} className="text-[hsl(var(--vitality-blue))] mt-1 flex-shrink-0" />
-                    <span>Transport assistance</span>
-                  </div>
-                </div>
-                <Button asChild className="rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))]">
-                  <a href="/contact">Learn More <ArrowRight className="ml-2 h-5 w-5" /></a>
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          {/* Private Care */}
-          <div className="mb-10 bg-white rounded-xl overflow-hidden shadow-md">
-            <div className="md:flex">
-              <div className="md:w-1/3">
-                <img 
-                  src="https://images.unsplash.com/photo-1544126592-807ade215a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800&q=80" 
-                  alt="Private Care" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="md:w-2/3 p-6 md:p-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[hsl(var(--vitality-blue))] text-white">
-                    <Sparkles size={20} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-[hsl(var(--vitality-blue))]">Private Care</h3>
-                </div>
-                <p className="mb-6 text-lg">
-                  For those who don't qualify for government funding or need additional services beyond what's covered, our private care options provide flexible, pay-as-you-go support tailored to your exact requirements.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={20} className="text-[hsl(var(--vitality-green))] mt-1 flex-shrink-0" />
-                    <span>Fully customizable care plans</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={20} className="text-[hsl(var(--vitality-green))] mt-1 flex-shrink-0" />
-                    <span>No eligibility requirements</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={20} className="text-[hsl(var(--vitality-green))] mt-1 flex-shrink-0" />
-                    <span>Flexible scheduling options</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={20} className="text-[hsl(var(--vitality-green))] mt-1 flex-shrink-0" />
-                    <span>No waiting periods</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={20} className="text-[hsl(var(--vitality-green))] mt-1 flex-shrink-0" />
-                    <span>Transparent pricing</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle size={20} className="text-[hsl(var(--vitality-green))] mt-1 flex-shrink-0" />
-                    <span>Short or long-term options</span>
-                  </div>
-                </div>
-                <Button asChild className="rounded-full bg-[hsl(var(--vitality-blue))] hover:bg-[hsl(var(--vitality-blue-75))]">
-                  <a href="/contact">Learn More <ArrowRight className="ml-2 h-5 w-5" /></a>
-                </Button>
-              </div>
-            </div>
+          <ServiceSelectionGuide />
+          
+          <div ref={serviceDetailRef} className="scroll-mt-24">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selectedService.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className={`${animateDetail ? 'animate-pulse' : ''}`}
+              >
+                <ServiceDetail service={selectedService} />
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </section>

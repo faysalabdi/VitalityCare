@@ -243,7 +243,7 @@ const NDIS = () => {
       </section>
 
       {/* Service Cards Section */}
-      <section id="service-list" className="py-16 bg-[hsl(var(--neutral-light))]">
+      <section id="service-list" className="py-16 bg-[hsl(var(--vitality-blue-10))]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold mb-4">Our NDIS Services</h2>
@@ -257,7 +257,7 @@ const NDIS = () => {
               <div id={service.slug} key={service.id}>
                 <ServiceCard 
                   service={service}
-                  isSelected={selectedService.id === service.id}
+                  isActive={selectedService.id === service.id}
                   onClick={() => handleServiceSelect(service)}
                 />
               </div>

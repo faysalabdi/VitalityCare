@@ -76,20 +76,21 @@ export const services: ServiceType[] = [
     id: "therapy",
     title: "Therapy Services",
     slug: "therapy",
-    shortDescription: "Specialized therapy and intervention to develop skills and enhance quality of life.",
-    description: "Our Therapy Services include specialized interventions delivered by qualified professionals. We offer occupational therapy, speech therapy, behavior support, and more, all designed to enhance skills, address challenges, and improve quality of life.",
+    shortDescription: "Specialized therapeutic interventions to support your health and development goals.",
+    description: "Our Therapy Services provide specialized interventions to help you achieve your health, wellbeing, and developmental goals. Our qualified therapists work collaboratively with you to design personalized therapy plans that address your specific needs and aspirations.",
     color: "blue",
-    image: "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=350",
+    image: "https://images.unsplash.com/photo-1519824145371-296894a0daa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=350",
+    detailImage: "https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
     features: [
       "Occupational therapy for daily living skills",
       "Speech therapy for communication development",
-      "Behavior support and positive intervention strategies",
-      "Sensory processing assessment and intervention",
-      "Motor skills development",
-      "Specialized assessments and tailored therapy plans"
+      "Physiotherapy for mobility and physical function",
+      "Behavioral therapy for positive behavior support",
+      "Group therapy sessions for social skills",
+      "In-home and community-based therapy options"
     ],
-    quote: "The therapy team really understood my needs and developed strategies that work for me. I've seen real progress in areas I've struggled with for years.",
-    icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01' />"
+    quote: "The therapy team at Vitality helped me achieve goals I didn't think were possible. They're patient, encouraging, and incredibly skilled at what they do.",
+    icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' />"
   },
   {
     id: "support-coordination",
@@ -129,5 +130,65 @@ export const services: ServiceType[] = [
     ],
     quote: "The SIL program has completely changed my life. I have my own space and independence, but also the support I need exactly when I need it.",
     icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' />"
+  },
+  {
+    id: "home-care-package",
+    title: "Home Care Package",
+    slug: "home-care-package",
+    shortDescription: "Government-funded support to help seniors remain independent in their own home.",
+    description: "Our Home Care Package (HCP) services provide government-funded support to help you remain independent in your own home. We work with you to make the most of your funding, delivering personalized care that enhances your quality of life.",
+    color: "blue",
+    image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=350",
+    detailImage: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    features: [
+      "Personal care assistance",
+      "Household cleaning and maintenance",
+      "Meal preparation and nutrition",
+      "Social support and companionship",
+      "Transportation services",
+      "Medication management"
+    ],
+    quote: "The Home Care Package has allowed me to stay in my own home with dignity. The support I receive is personalized and professional.",
+    icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' />"
+  },
+  {
+    id: "chsp",
+    title: "Commonwealth Home Support Programme",
+    slug: "chsp",
+    shortDescription: "Entry-level support services for older Australians who need assistance to continue living independently.",
+    description: "The Commonwealth Home Support Programme (CHSP) offers entry-level support services for older Australians who need assistance to continue living independently at home and in their community.",
+    color: "green",
+    image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=350",
+    detailImage: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    features: [
+      "Domestic assistance",
+      "Personal care",
+      "Home maintenance",
+      "Home modifications",
+      "Social support",
+      "Transport assistance"
+    ],
+    quote: "CHSP services have helped me maintain my independence. The team is always reliable and a pleasure to have in my home.",
+    icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' />"
+  },
+  {
+    id: "private-care",
+    title: "Private Care",
+    slug: "private-care",
+    shortDescription: "Flexible, pay-as-you-go support tailored to your exact requirements without eligibility restrictions.",
+    description: "For those who don't qualify for government funding or need additional services beyond what's covered, our private care options provide flexible, pay-as-you-go support tailored to your exact requirements.",
+    color: "blue",
+    image: "https://images.unsplash.com/photo-1544126592-807ade215a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=350",
+    detailImage: "https://images.unsplash.com/photo-1544126592-807ade215a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    features: [
+      "Fully customizable care plans",
+      "No eligibility requirements",
+      "Flexible scheduling options",
+      "No waiting periods",
+      "Transparent pricing",
+      "Short or long-term options"
+    ],
+    quote: "The private care options give me exactly what I need, when I need it. The flexibility is perfect for my changing schedule.",
+    icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z' />"
   }
 ];

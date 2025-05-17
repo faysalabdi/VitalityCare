@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ServiceType } from "@/data/services";
-import { ArrowRight, Heart, HelpingHand, Users, Activity, ChevronDown } from "lucide-react";
+import { ArrowRight, Heart, HelpingHand, Users, Activity, ChevronDown, Home, ClipboardList, Calendar, Sparkles } from "lucide-react";
 
 interface ServiceCardProps {
   service: ServiceType;
@@ -8,18 +8,28 @@ interface ServiceCardProps {
   onClick?: () => void;
 }
 
-const getServiceIcon = (serviceSlug: string, size = 24) => {
-  switch(serviceSlug) {
+const getServiceIcon = (slug: string) => {
+  switch (slug) {
     case 'daily-living':
-      return <Heart size={size} />;
+      return <Home size={20} />;
     case 'personal-care':
-      return <HelpingHand size={size} />;
+      return <Heart size={20} />;
     case 'community-participation':
-      return <Users size={size} />;
+      return <Users size={20} />;
     case 'therapy':
-      return <Activity size={size} />;
+      return <Activity size={20} />;
+    case 'support-coordination':
+      return <ClipboardList size={20} />;
+    case 'supported-independent-living':
+      return <Home size={20} />;
+    case 'home-care-package':
+      return <Home size={20} />;
+    case 'chsp':
+      return <Calendar size={20} />;
+    case 'private-care':
+      return <Sparkles size={20} />;
     default:
-      return <Activity size={size} />;
+      return <Activity size={20} />;
   }
 };
 
