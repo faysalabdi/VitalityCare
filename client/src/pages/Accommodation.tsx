@@ -22,7 +22,6 @@ const HousingCard = ({ vacancy }: { vacancy: typeof housingVacancies[0] }) => {
       <div className="p-6">
         <h3 className="text-2xl font-bold mb-2 text-[hsl(var(--vitality-blue))]">{vacancy.location}</h3>
         <p className="text-lg mb-4 font-medium">{vacancy.title}</p>
-        <p className="mb-4 text-[hsl(var(--neutral-dark))]">The rent you will pay is equivalent to {vacancy.rent}</p>
         
         <div className="grid grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-6 mb-6">
           <div className="flex items-center gap-2">
@@ -33,21 +32,10 @@ const HousingCard = ({ vacancy }: { vacancy: typeof housingVacancies[0] }) => {
             <Bath size={20} className="text-[hsl(var(--vitality-green))]" />
             <span>Bathroom: {vacancy.features.bathrooms}</span>
           </div>
+
           <div className="flex items-center gap-2">
-            <Square size={20} className="text-[hsl(var(--vitality-green))]" />
-            <span>Toilet: {vacancy.features.toilets}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Car size={20} className="text-[hsl(var(--vitality-green))]" />
-            <span>Standard parking: {vacancy.features.standardParking}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Car size={20} className="text-[hsl(var(--vitality-green))]" />
-            <span>Accessible parking: {vacancy.features.accessibleParking ? 'Available' : 'Not Available'}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Bed size={20} className="text-[hsl(var(--vitality-green))]" />
-            <span>Bedrooms available: {vacancy.features.bedroomsAvailable}</span>
+            <Bed size={40} className="text-[hsl(var(--vitality-green))]" />
+            <span>Vacancies available: {vacancy.features.bedroomsAvailable}</span>
           </div>
         </div>
         
@@ -74,7 +62,7 @@ const Accommodation = () => {
           <div className="flex flex-col items-center justify-center text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Housing Vacancies</h1>
             <p className="text-xl max-w-3xl mx-auto">
-              Make a Referral
+              For supported independent living. 
             </p>
           </div>
         </div>
@@ -145,17 +133,32 @@ const Accommodation = () => {
                 <ul className="space-y-2">
                   <li>
                     <Link to="/accommodation/1" className="text-[hsl(var(--vitality-blue))] hover:underline font-medium">
-                      Heidelberg West, VIC
+                      Broadmeadows, VIC
                     </Link>
                   </li>
                   <li>
                     <Link to="/accommodation/2" className="text-[hsl(var(--vitality-blue))] hover:underline font-medium">
-                      Bundoora, VIC
+                    Strathtulloh, VIC
                     </Link>
                   </li>
                   <li>
                     <Link to="/accommodation/3" className="text-[hsl(var(--vitality-blue))] hover:underline font-medium">
-                      Laverton, VIC
+                    Mickleham, VIC
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/accommodation/4" className="text-[hsl(var(--vitality-blue))] hover:underline font-medium">
+                    Dandenong North, VIC
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/accommodation/5" className="text-[hsl(var(--vitality-blue))] hover:underline font-medium">
+                    Gosnells, WA
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/accommodation/6" className="text-[hsl(var(--vitality-blue))] hover:underline font-medium">
+                    Southern River, WA
                     </Link>
                   </li>
                 </ul>

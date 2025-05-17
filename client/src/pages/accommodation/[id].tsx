@@ -124,18 +124,6 @@ const AccommodationDetail = () => {
                     <span>Bathroom: {property.features.bathrooms}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Square size={20} className="text-[hsl(var(--vitality-green))]" />
-                    <span>Toilet: {property.features.toilets}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Car size={20} className="text-[hsl(var(--vitality-green))]" />
-                    <span>Standard parking: {property.features.standardParking}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Car size={20} className="text-[hsl(var(--vitality-green))]" />
-                    <span>Accessible parking: {property.features.accessibleParking ? 'Available' : 'Not Available'}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
                     <Bed size={20} className="text-[hsl(var(--vitality-green))]" />
                     <span>Bedrooms available: {property.features.bedroomsAvailable}</span>
                   </div>
@@ -156,7 +144,7 @@ const AccommodationDetail = () => {
                 </div>
 
                 <Button asChild size="lg" className="w-full rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))]">
-                  <Link to="/referral">Make A Referral</Link>
+                  <Link to="/contact">Contact Us</Link>
                 </Button>
               </div>
             </div>
@@ -186,46 +174,6 @@ const AccommodationDetail = () => {
               </div>
             </div>
 
-            <div className="mt-12">
-              <h3 className="text-xl font-bold mb-4">House mates</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div>
-                  <div className="flex items-center gap-3 mb-2">
-                    <User size={18} className="text-[hsl(var(--vitality-blue))]" />
-                    <span className="font-medium">Age:</span>
-                  </div>
-                  <p>{property.housemates.age}</p>
-                </div>
-                <div>
-                  <div className="flex items-center gap-3 mb-2">
-                    <User size={18} className="text-[hsl(var(--vitality-blue))]" />
-                    <span className="font-medium">Gender:</span>
-                  </div>
-                  <p>{property.housemates.gender}</p>
-                </div>
-                <div>
-                  <div className="flex items-center gap-3 mb-2">
-                    <Users size={18} className="text-[hsl(var(--vitality-blue))]" />
-                    <span className="font-medium">Number of tenants:</span>
-                  </div>
-                  <p>{property.housemates.tenants}</p>
-                </div>
-              </div>
-
-              <h4 className="font-medium mb-3">Suitable for housemates who:</h4>
-              <ul className="list-disc ml-6 space-y-1 mb-6">
-                {property.housemates.qualities.map((quality, index) => (
-                  <li key={index}>{quality}</li>
-                ))}
-              </ul>
-
-              <h4 className="font-medium mb-3">How tenants choose their housemates:</h4>
-              <p className="mb-8">
-                At Vitality Community Care, tenant selection is based on each individual's specific needs and how well we can accommodate those needs. 
-                We carefully consider factors such as compatibility, support requirements, and personal preferences to ensure a harmonious living environment. 
-                Our goal is to match participants with tenants who will best meet their needs and contribute to a supportive and comfortable community.
-              </p>
-            </div>
           </div>
         </div>
       </section>
