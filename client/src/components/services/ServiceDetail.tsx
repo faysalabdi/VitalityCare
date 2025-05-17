@@ -4,6 +4,7 @@ import PuzzlePiece from "@/components/shared/PuzzlePiece";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, Check } from "lucide-react";
+import ServicePageButton from "@/components/shared/ServicePageButton";
 
 interface ServiceDetailProps {
   service: ServiceType;
@@ -126,9 +127,11 @@ const ServiceDetail = ({ service }: ServiceDetailProps) => {
                 <ArrowRight size={16} />
               </Link>
             </Button>
-            <Button asChild variant="outline" className={`rounded-full border-[hsl(var(--vitality-${service.color}))] text-[hsl(var(--vitality-${service.color}))] hover:bg-[hsl(var(--vitality-${service.color}))] hover:text-white`}>
-              <Link href="/services" onClick={scrollToTop}>View All Services</Link>
-            </Button>
+            <ServicePageButton 
+              serviceId={service.id}
+              variant="outline"
+              className={`border-[hsl(var(--vitality-${service.color}))] text-[hsl(var(--vitality-${service.color}))] hover:bg-[hsl(var(--vitality-${service.color}))] hover:text-white`}
+            />
           </motion.div>
         </div>
       </div>

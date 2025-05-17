@@ -219,7 +219,7 @@ const AgedCare = () => {
       </section>
 
       {/* Service Cards Section */}
-      <section id="service-list" className="py-16 bg-[hsl(var(--neutral-light))]">
+      <section id="service-list" className="py-16 bg-[hsl(var(--vitality-blue-10))]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold mb-4">Our Aged Care Services</h2>

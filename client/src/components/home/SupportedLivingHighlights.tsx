@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, Home, Bed, Bath, Users, MapPin, Shield, HeartHandshake } from "lucide-react";
 import housingVacancies from "@/data/housingVacancies";
+import ServicePageButton from "@/components/shared/ServicePageButton";
 
 const SupportedLivingHighlights = () => {
   const container = {
@@ -180,9 +181,20 @@ const SupportedLivingHighlights = () => {
             </div>
           </div>
           
-          <Button asChild variant="default" size="lg" className="rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))]">
-            <Link to="/accommodation">View All Properties <ArrowRight className="ml-2 h-5 w-5" /></Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button asChild variant="default" size="lg" className="rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))]">
+              <Link to="/accommodation">View All Properties <ArrowRight className="ml-2 h-5 w-5" /></Link>
+            </Button>
+            
+            <ServicePageButton 
+              serviceId="supported-independent-living"
+              size="lg"
+              variant="outline"
+              className="border-[hsl(var(--vitality-blue))] text-[hsl(var(--vitality-blue))] hover:bg-[hsl(var(--vitality-blue))] hover:text-white"
+            >
+              Learn About SIL Services
+            </ServicePageButton>
+          </div>
         </motion.div>
       </div>
     </section>

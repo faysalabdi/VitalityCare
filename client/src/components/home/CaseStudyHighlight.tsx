@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import ServicePageButton from "@/components/shared/ServicePageButton";
 
 const CaseStudyHighlight = () => {
   return (
@@ -28,9 +29,12 @@ const CaseStudyHighlight = () => {
             <p className="mb-8 opacity-80">
               Discharge doesn't have to mean disruption. We partner with hospitals and health professionals to ensure vulnerable individuals receive timely, high-quality support when they leave medical care.
             </p>
-            <Button asChild size="lg" className="rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))] text-white px-8 shadow-lg">
-              <Link href="/services">View Case Studies</Link>
-            </Button>
+            <ServicePageButton 
+              size="lg"
+              className="bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))] text-white px-8 shadow-lg"
+            >
+              View Case Studies
+            </ServicePageButton>
           </motion.div>
           
           <motion.div 

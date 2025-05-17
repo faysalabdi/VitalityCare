@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, Heart, Brain, Activity, Users } from "lucide-react";
+import ServicePageButton from "@/components/shared/ServicePageButton";
 
 const ServiceHighlights = () => {
   const container = {
@@ -88,12 +89,14 @@ const ServiceHighlights = () => {
                 
                 <h3 className="text-xl font-semibold text-[hsl(var(--neutral-dark))] mb-3">{service.title}</h3>
                 <p className="text-[hsl(var(--neutral-dark))] mb-6 opacity-80">{service.shortDescription}</p>
-                <Button asChild variant="link" className={`text-[hsl(var(--vitality-${service.color}))] font-medium p-0 flex items-center group mx-auto`}>
-                  <Link href={`/services#${service.slug}`}>
-                    Learn More 
-                    <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </Button>
+                <ServicePageButton 
+                  serviceId={service.id}
+                  variant="link" 
+                  className={`text-[hsl(var(--vitality-${service.color}))] font-medium p-0 flex items-center group mx-auto`}
+                >
+                  Learn More 
+                  <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+                </ServicePageButton>
               </div>
             </motion.div>
           ))}
@@ -106,12 +109,10 @@ const ServiceHighlights = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center mt-12"
         >
-          <Button asChild size="lg" className="rounded-full bg-[hsl(var(--vitality-blue))] hover:bg-[hsl(var(--vitality-blue-75))] text-white px-8 shadow-lg">
-            <Link href="/services" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-              View All Services
-              <span className="ml-2">&rarr;</span>  
-            </Link>
-          </Button>
+          <ServicePageButton 
+            size="lg"
+            className="bg-[hsl(var(--vitality-blue))] hover:bg-[hsl(var(--vitality-blue-75))] text-white px-8 shadow-lg"
+          />
         </motion.div>
       </div>
 
