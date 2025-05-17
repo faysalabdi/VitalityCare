@@ -167,9 +167,9 @@ const Navbar = () => {
                   Accommodation
                 </Link>
                 
-                <Link href="/blog" className={`flex items-center gap-1.5 text-lg font-bold transition-colors ${location === '/blog' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}>
+                {/* <Link href="/blog" className={`flex items-center gap-1.5 text-lg font-bold transition-colors ${location === '/blog' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}>
                   Blog
-                </Link>
+                </Link> */}
               </nav>
               
               {/* Action Button & Mobile Menu */}
