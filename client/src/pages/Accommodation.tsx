@@ -21,7 +21,8 @@ const HousingCard = ({ vacancy }: { vacancy: typeof housingVacancies[0] }) => {
       </div>
       <div className="p-6">
         <h3 className="text-2xl font-bold mb-2 text-[hsl(var(--vitality-blue))]">{vacancy.location}</h3>
-        <p className="text-lg mb-4 font-medium">{vacancy.title}</p>
+        <p className="text-lg mb-1 font-medium">{vacancy.title}</p>
+        <p className="text-base mb-4 font-medium text-[hsl(var(--vitality-green))]">{vacancy.type}</p>
         
         <div className="grid grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-6 mb-6">
           <div className="flex items-center gap-2">
@@ -34,7 +35,7 @@ const HousingCard = ({ vacancy }: { vacancy: typeof housingVacancies[0] }) => {
           </div>
 
           <div className="flex items-center gap-2">
-            <Bed size={40} className="text-[hsl(var(--vitality-green))]" />
+            <Bed size={20} className="text-[hsl(var(--vitality-green))]" />
             <span>Vacancies available: {vacancy.features.bedroomsAvailable}</span>
           </div>
         </div>
@@ -57,18 +58,64 @@ const Accommodation = () => {
         <meta property="og:description" content="Find quality supported independent living accommodation options tailored to your needs." />
       </Helmet>
 
-      <section className="bg-gradient-to-br from-[hsl(var(--vitality-blue))] to-[hsl(var(--vitality-green-75))] text-white pt-28 pb-16 md:pt-32 md:pb-20">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col items-center justify-center text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Housing Vacancies</h1>
-            <p className="text-xl max-w-3xl mx-auto">
-              For supported independent living. 
+      <section className="relative bg-gradient-to-br from-[hsl(var(--vitality-blue))] to-[hsl(var(--vitality-green-75))] text-white pt-20 pb-0 overflow-hidden">
+        {/* Dot pattern overlay */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xNSkiLz48L3N2Zz4=')] opacity-80 z-0"></div>
+        
+        {/* Decorative patterns */}
+        <PuzzlePiece variant="blue" size="lg" className="absolute -top-10 -right-20 opacity-20 animate-rotate" />
+        <PuzzlePiece variant="green" size="md" className="absolute -top-0 -left-1 opacity-20 animate-rotate-reverse" />
+        
+        <div className="container mx-auto px-4 relative z-10 pb-16 md:pb-20 lg:pb-24">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <div className="flex justify-center mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20 text-white">
+                <Home size={28} />
+              </div>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl font-semibold mb-4">Housing Vacancies</h1>
+            <p className="text-xl mb-8 opacity-90">
+              For supported independent living.
             </p>
-          </div>
+            
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white">
+                <Home size={16} />
+                <span>Supported Independent Living (SIL)</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white">
+                <MapPin size={16} />
+                <span>Multiple Locations</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+        
+        {/* Wave SVG divider at bottom */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+          <svg 
+            viewBox="0 0 1200 120" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg" 
+            className="relative block w-full"
+            preserveAspectRatio="none"
+            style={{ height: '140px', width: '100%', display: 'block', marginBottom: '-30px' }}
+          >
+            <path 
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V120H0Z" 
+              fill="white"
+            ></path>
+          </svg>
         </div>
       </section>
 
-      <section className="bg-white py-8">
+      <section className="bg-white pt-0 pb-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between mb-8">
             <nav className="flex" aria-label="Breadcrumb">
