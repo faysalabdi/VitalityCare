@@ -312,7 +312,7 @@ const About = () => {
                       <span className="ml-2">&rarr;</span>
                     </Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="rounded-full border-2 border-white text-white hover:bg-white hover:text-[hsl(var(--vitality-blue))] px-8">
+                  <Button asChild variant="outline" size="lg" className="rounded-full border-2 border-white text-black hover:bg-white hover:text-[hsl(var(--vitality-blue))] px-8">
                     <Link href="/referral" className="flex items-center">
                       Make a Referral
                       <span className="ml-2">&rarr;</span>
