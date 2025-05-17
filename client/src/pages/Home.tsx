@@ -9,6 +9,7 @@ import BlogHighlights from "@/components/home/BlogHighlights";
 import FAQ from "@/components/home/FAQ";
 import CTA from "@/components/home/CTA";
 import { Helmet } from "react-helmet";
+import SupportedLivingHighlights from "@/components/home/SupportedLivingHighlights";
 
 const Home = () => {
   return (
@@ -27,7 +28,7 @@ const Home = () => {
       <AboutSection />
       {/* <CaseStudyHighlight /> */}
       <Testimonials />
-      <BlogHighlights />
+      <SupportedLivingHighlights />
       <FAQ />
       <CTA />
     </>
