@@ -20,6 +20,10 @@ import Career from "@/pages/Career";
 import NotFound from "@/pages/not-found";
 import AccessibilityWidget from "@/components/shared/AccessibilityWidget";
 import ScrollToTop from "@/components/ScrollToTop";
+import { inject } from '@vercel/analytics';
+
+// Initialize Vercel Analytics
+inject();
 
 function Router() {
   return (
