@@ -1,4 +1,23 @@
 // Housing vacancy data for SIL properties
+import beaconPlace1 from '@/assets/houses/Beacon-place1.png';
+import beaconPlace2 from '@/assets/houses/Beacon-place2.png';
+import beaconPlace3 from '@/assets/houses/Beacon-place3.png';
+import silverFern1 from '@/assets/houses/Silver-fern-house1.png';
+import silverFern2 from '@/assets/houses/Silver-fern-house2.png';
+import silverFern3 from '@/assets/houses/Silver-fern-house3.png';
+import auroraHouse1 from '@/assets/houses/Aurora-house1.png';
+import auroraHouse2 from '@/assets/houses/Aurora-house2.png';
+import auroraHouse3 from '@/assets/houses/Aurora-house3.png';
+import edenGrove1 from '@/assets/houses/Eden-grove1.png';
+import edenGrove2 from '@/assets/houses/Eden-grove2.png';
+import edenGrove3 from '@/assets/houses/Eden-grove3.png';
+import serenityPlace1 from '@/assets/houses/Serenity-place1.png';
+import serenityPlace2 from '@/assets/houses/Serenity-place2.png';
+import serenityPlace3 from '@/assets/houses/Serenity-place3.png';
+import harmonyLodge1 from '@/assets/houses/Harmony-lodge1.png';
+import harmonyLodge2 from '@/assets/houses/Harmony-lodge2.png';
+import harmonyLodge3 from '@/assets/houses/Harmony-lodge3.png';
+
 const housingVacancies = [
   {
     id: 1,
@@ -7,9 +26,9 @@ const housingVacancies = [
     type: "SIL - Improved Liveability",
     description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
     images: [
-      "/assets/houses/Beacon-place3.png",
-      "/assets/houses/Beacon-place2.png",
-      "/assets/houses/Beacon-place1.png"
+      beaconPlace3,
+      beaconPlace2,
+      beaconPlace1
     ],
     features: {
       bedrooms: 4,
@@ -30,9 +49,9 @@ const housingVacancies = [
     type: "SIL - High Fully Accessible",
     description: "A contemporary supported living environment designed to promote independence and community engagement in a vibrant neighborhood.",
     images: [
-      "/assets/houses/Silver-fern-house1.png",
-      "/assets/houses/Silver-fern-house2.png",
-      "/assets/houses/Silver-fern-house3.png"
+      silverFern1,
+      silverFern2,
+      silverFern3
     ],
     features: {
       bedrooms: 4,
@@ -53,9 +72,9 @@ const housingVacancies = [
     type: "SIL - Improved Liveability",
     description: "This exceptional SIL home features fully furnished bedrooms with kitchenettes, private ensuites, and spacious common areas in Melbourne's vibrant Western suburbs.",
     images: [
-      "/assets/houses/Aurora-house1.png",
-      "/assets/houses/Aurora-house2.png",
-      "/assets/houses/Aurora-house3.png"
+      auroraHouse1,
+      auroraHouse2,
+      auroraHouse3
     ],
     features: {
       bedrooms: 3,
@@ -77,9 +96,9 @@ const housingVacancies = [
   type: "SIL - Improved Liveability",
   description: "A welcoming SIL home offering accessible living spaces, modern amenities, and a supportive environment in a peaceful neighborhood of Melbourne's eastern suburbs. Perfect for those seeking independence with dedicated support.",
   images: [
-    "/assets/houses/Eden-grove1.png",
-    "/assets/houses/Eden-grove2.png",
-    "/assets/houses/Eden-grove3.png"
+    edenGrove1,
+    edenGrove2,
+    edenGrove3
   ],
   features: {
     bedrooms: 3,
@@ -101,9 +120,9 @@ const housingVacancies = [
   type: "SIL - High Physical Support",
   description: "A modern SIL home nestled in Perth's southeastern suburbs, offering spacious accessible living areas, contemporary amenities, and a tranquil garden setting. Ideal for residents seeking a supportive community environment with independence.",
   images: [
-    "/assets/houses/Serenity-place1.png",
-    "/assets/houses/Serenity-place2.png",
-    "/assets/houses/Serenity-place3.png"
+    serenityPlace1,
+    serenityPlace2,
+    serenityPlace3
   ],
   features: {
     bedrooms: 3,
@@ -125,9 +144,9 @@ const housingVacancies = [
   type: "SIL Robust",
   description: "A welcoming SIL residence in Southern River featuring contemporary design, accessible living spaces, and a vibrant community atmosphere. This thoughtfully designed home provides 24/7 support while promoting independence, with easy access to local amenities and recreational activities.",
   images: [
-    "/assets/houses/Harmony-lodge1.png",
-    "/assets/houses/Harmony-lodge2.png",
-    "/assets/houses/Harmony-lodge3.png"
+    harmonyLodge1,
+    harmonyLodge2,
+    harmonyLodge3
   ],
   features: {
     bedrooms: 2,
