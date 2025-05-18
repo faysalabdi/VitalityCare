@@ -1,0 +1,62 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the NDIS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The National Disability Insurance Scheme (NDIS) is an Australian government initiative that provides funding and support for people with permanent and significant disability. It helps eligible participants access the supports they need to achieve their goals, increase their independence, and participate in the community."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I access NDIS services from Vitality Community Care?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To access our NDIS services, you need to be an approved NDIS participant with funding in your plan for the supports you require. Contact us at (03) 9068 5795 or email info@vitalitycommunitycare.com.au to discuss your needs. Our team will guide you through the process, help you understand how we can support your goals, and establish a service agreement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What NDIS services does Vitality Community Care provide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vitality Community Care offers a comprehensive range of NDIS services including daily living supports, community participation, support coordination, specialist disability accommodation (SIL), respite care, skills development, and more. Our services are tailored to each participant's individual needs and goals as outlined in their NDIS plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas does Vitality Community Care service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide NDIS services across multiple states in Australia including Victoria, Western Australia, South Australia, Queensland, and New South Wales. Our head office is located in Melbourne, but we have regional offices to ensure quality service delivery throughout our service areas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I apply for Specialist Disability Accommodation (SIL)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To apply for Specialist Disability Accommodation (SIL), you need to have SIL funding included in your NDIS plan. This requires an SIL assessment and approval from the NDIS. Contact our team at (03) 9068 5795, and we can help guide you through the process, explain the housing options available, and support your application with the necessary documentation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I choose my own support workers with Vitality Community Care?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we believe in participant choice and control. You can request specific support workers or express preferences regarding the characteristics of your support team. We strive to match you with support workers who have the right skills, experience, and personal qualities to meet your needs and help you achieve your goals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Vitality Community Care ensure quality services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We maintain high standards through comprehensive staff training, regular supervision, continuous improvement processes, and adherence to the NDIS Practice Standards and Code of Conduct. We also gather regular feedback from participants and their families to ensure our services remain responsive to their needs and preferences."
+      }
+    }
+  ]
+} 

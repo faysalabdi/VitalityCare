@@ -19,7 +19,8 @@ cp -r client/public/assets/social/* dist/assets/social/
 # Copy SEO files
 cp client/public/robots.txt dist/
 cp client/public/sitemap.xml dist/
-cp -r client/public/seo/* dist/seo/
+cp client/public/.htaccess dist/
 cp client/public/google-site-verification.html dist/
+cp -r client/public/seo/* dist/seo/
 
 echo "Static assets copied successfully!" 
