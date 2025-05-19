@@ -23,12 +23,12 @@ const Home = () => {
       </Helmet>
       <Hero />
       <ServiceHighlights />
-      <Benefits />
+      <SupportedLivingHighlights />
       <Features />
       <AboutSection />
       {/* <CaseStudyHighlight /> */}
       <Testimonials />
-      <SupportedLivingHighlights />
+      <Benefits />
       <FAQ />
       <CTA />
     </>
