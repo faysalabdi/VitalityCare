@@ -248,7 +248,67 @@ export const services: ServiceType[] = [
       "Transparent pricing",
       "Short or long-term options"
     ],
-    quote: "The private care options give me exactly what I need, when I need it. The flexibility is perfect for my changing schedule.",
-    icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z' />"
+    quote: "Private care has given me the exact support I need, when I need it, without any of the paperwork and restrictions of funded packages.",
+    icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z' />"
+  },
+  {
+    id: "occupational-therapy",
+    title: "Occupational Therapy",
+    slug: "occupational-therapy",
+    shortDescription: "Specialized therapy to improve daily living skills and independence.",
+    description: "Our Occupational Therapy services help individuals develop, recover, and maintain the skills needed for daily living and working. Our qualified therapists assess how your condition affects your emotional, social, and physical needs and develop personalized interventions to help you achieve maximum independence.",
+    color: "green",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=350",
+    detailImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    features: [
+      "Assessments of home and workplace environments",
+      "Recommendations for assistive technology and equipment",
+      "Development of fine and gross motor skills",
+      "Sensory processing interventions",
+      "Training in activities of daily living",
+      "Cognitive and perceptual rehabilitation"
+    ],
+    quote: "The occupational therapist helped me adapt my home environment and daily routines to manage my disability effectively. I've gained confidence and independence.",
+    icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01' />"
+  },
+  {
+    id: "speech-therapy",
+    title: "Speech Therapy",
+    slug: "speech-therapy",
+    shortDescription: "Therapy to improve communication, language, social skills, and swallowing disorders.",
+    description: "Our Speech Therapy services address communication challenges, language development, social skills, and swallowing disorders. Our qualified speech pathologists provide personalized therapy plans to help you or your loved one communicate more effectively and confidently.",
+    color: "blue",
+    image: "https://images.unsplash.com/photo-1567057419565-4349c49d8a04?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=350",
+    detailImage: "https://images.unsplash.com/photo-1567057419565-4349c49d8a04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    features: [
+      "Assessment and treatment of speech disorders",
+      "Language development and enhancement",
+      "Social communication skills training",
+      "Swallowing therapy",
+      "Augmentative and alternative communication (AAC)",
+      "Voice therapy and maintenance"
+    ],
+    quote: "The speech therapist's patience and expertise have been incredible. My child has made remarkable progress in both speech clarity and confidence.",
+    icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z' />"
+  },
+  {
+    id: "behaviour-support",
+    title: "Behaviour Support",
+    slug: "behaviour-support",
+    shortDescription: "Specialized support to understand, manage, and reduce behaviors of concern.",
+    description: "Our Behaviour Support services help individuals and families understand, manage, and reduce behaviors of concern. Our qualified practitioners develop comprehensive, person-centered behavior support plans that focus on improving quality of life, increasing social inclusion, and developing positive behavior skills.",
+    color: "green",
+    image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=350",
+    detailImage: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    features: [
+      "Comprehensive behavioral assessments",
+      "Development of personalized behavior support plans",
+      "Positive behavior strategies and interventions",
+      "Crisis prevention and management",
+      "Family and caregiver training",
+      "Regular monitoring and plan adjustments"
+    ],
+    quote: "The behavior support team has transformed how we understand and respond to behaviors. We now have effective strategies and a much more peaceful household.",
+    icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' />"
   }
 ];

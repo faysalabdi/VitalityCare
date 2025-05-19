@@ -320,7 +320,7 @@ const Services = () => {
                   </div>
                   <div>
                     <h3 className="font-medium text-lg">Core Supports</h3>
-                    <p>Daily personal activities, transport, consumables, and social and community participation.</p>
+                    <p>Daily personal activities, community participation, consumables, and therapeutic services including Occupational Therapy, Speech Therapy, and Behaviour Support.</p>
                   </div>
                 </div>
                 

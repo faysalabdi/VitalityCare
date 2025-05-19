@@ -30,7 +30,9 @@ const ServicePageButton = ({
       "therapy", 
       "support-coordination",
       "supported-independent-living",
-      "transport",
+      "occupational-therapy",
+      "speech-therapy",
+      "behaviour-support",
       "cleaning",
       "early-childhood"
     ];
