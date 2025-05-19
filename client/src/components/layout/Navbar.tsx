@@ -37,6 +37,16 @@ import {
   Bed,
   Sparkles
 } from "lucide-react";
+import { services } from "@/data/services";
+
+// Get NDIS and Aged Care services
+const ndisServices = services.filter(service => 
+  ["daily-living", "personal-care", "community-participation", "therapy", "support-coordination", "supported-independent-living", "occupational-therapy", "speech-therapy", "behaviour-support", "cleaning", "early-childhood"].includes(service.id)
+);
+
+const agedCareServices = services.filter(service => 
+  ["home-care-package", "chsp", "private-care"].includes(service.id)
+);
 
 // Debounce function to smooth out scroll handling
 const debounce = (func: Function, wait: number) => {
@@ -146,19 +156,53 @@ const Navbar = () => {
                   About Us
                 </Link>
                 
-                <Link 
-                  href="/ndis" 
-                  className={`flex items-center gap-1.5 text-lg font-bold transition-colors ${location === '/ndis' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}
-                >
-                  NDIS
-                </Link>
+                {/* NDIS Dropdown */}
+                <div className="relative group">
+                  <Link 
+                    href="/ndis" 
+                    className={`flex items-center gap-1.5 text-lg font-bold transition-colors ${location === '/ndis' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}
+                  >
+                    NDIS
+                    <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-200" />
+                  </Link>
+                  <div className="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div className="bg-white rounded-md shadow-md py-2 overflow-hidden">
+                      {ndisServices.map((service) => (
+                        <Link 
+                          key={service.id}
+                          href={`/ndis#${service.slug}`}
+                          className="block px-4 py-1.5 text-sm hover:bg-[hsl(var(--vitality-green-5))] text-[hsl(var(--neutral-dark))]"
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
                 
-                <Link 
-                  href="/aged-care" 
-                  className={`flex items-center gap-1.5 text-lg font-bold transition-colors ${location === '/aged-care' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}
-                >
-                  Aged Care
-                </Link>
+                {/* Aged Care Dropdown */}
+                <div className="relative group">
+                  <Link 
+                    href="/aged-care" 
+                    className={`flex items-center gap-1.5 text-lg font-bold transition-colors ${location === '/aged-care' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}
+                  >
+                    Aged Care
+                    <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-200" />
+                  </Link>
+                  <div className="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div className="bg-white rounded-md shadow-md py-2 overflow-hidden">
+                      {agedCareServices.map((service) => (
+                        <Link 
+                          key={service.id}
+                          href={`/aged-care#${service.slug}`}
+                          className="block px-4 py-1.5 text-sm hover:bg-[hsl(var(--vitality-green-5))] text-[hsl(var(--neutral-dark))]"
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
                 
                 <Link 
                   href="/accommodation" 
@@ -209,19 +253,59 @@ const Navbar = () => {
                             </Link>
                           </SheetClose>
                           
-                          <SheetClose asChild>
-                            <Link href="/ndis" className={`py-3 px-4 rounded-md font-bold flex items-center ${location === '/ndis' ? 'bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))]' : ''}`}>
-                              <Heart size={18} className="mr-3" />
-                              NDIS
-                            </Link>
-                          </SheetClose>
+                          {/* NDIS Services Mobile Section */}
+                          <div className="py-3 px-4 rounded-md font-bold flex items-center">
+                            <Heart size={18} className="mr-3" />
+                            NDIS Services
+                          </div>
                           
-                          <SheetClose asChild>
-                            <Link href="/aged-care" className={`py-3 px-4 rounded-md font-bold flex items-center ${location === '/aged-care' ? 'bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))]' : ''}`}>
-                              <Sparkles size={18} className="mr-3" />
-                              Aged Care
-                            </Link>
-                          </SheetClose>
+                          <div className="pl-8 mb-2 border-l border-gray-100 ml-7">
+                            <SheetClose asChild>
+                              <Link 
+                                href="/ndis"
+                                className="py-2 px-4 text-sm block font-medium text-[hsl(var(--vitality-green))]"
+                              >
+                                All NDIS Services
+                              </Link>
+                            </SheetClose>
+                            {ndisServices.map((service) => (
+                              <SheetClose key={service.id} asChild>
+                                <Link 
+                                  href={`/ndis#${service.slug}`}
+                                  className="py-1.5 px-4 text-sm block text-[hsl(var(--neutral-dark))]"
+                                >
+                                  {service.title}
+                                </Link>
+                              </SheetClose>
+                            ))}
+                          </div>
+                          
+                          {/* Aged Care Services Mobile Section */}
+                          <div className="py-3 px-4 rounded-md font-bold flex items-center">
+                            <Sparkles size={18} className="mr-3" />
+                            Aged Care Services
+                          </div>
+                          
+                          <div className="pl-8 mb-2 border-l border-gray-100 ml-7">
+                            <SheetClose asChild>
+                              <Link 
+                                href="/aged-care"
+                                className="py-2 px-4 text-sm block font-medium text-[hsl(var(--vitality-green))]"
+                              >
+                                All Aged Care Services
+                              </Link>
+                            </SheetClose>
+                            {agedCareServices.map((service) => (
+                              <SheetClose key={service.id} asChild>
+                                <Link 
+                                  href={`/aged-care#${service.slug}`}
+                                  className="py-1.5 px-4 text-sm block text-[hsl(var(--neutral-dark))]"
+                                >
+                                  {service.title}
+                                </Link>
+                              </SheetClose>
+                            ))}
+                          </div>
                           
                           <SheetClose asChild>
                             <Link href="/accommodation" className={`py-3 px-4 rounded-md font-bold flex items-center ${location === '/accommodation' ? 'bg-[hsl(var(--vitality-green-10))] text-[hsl(var(--vitality-green))]' : ''}`}>
