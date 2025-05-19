@@ -10,6 +10,7 @@ import FAQ from "@/components/home/FAQ";
 import CTA from "@/components/home/CTA";
 import { Helmet } from "react-helmet";
 import SupportedLivingHighlights from "@/components/home/SupportedLivingHighlights";
+import AccreditationLogos from "@/components/home/AccreditationLogos";
 
 const Home = () => {
   return (
@@ -29,6 +30,7 @@ const Home = () => {
       {/* <CaseStudyHighlight /> */}
       <Testimonials />
       <Benefits />
+      <AccreditationLogos />
       <FAQ />
       <CTA />
     </>
