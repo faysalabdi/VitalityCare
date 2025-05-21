@@ -58,7 +58,7 @@ const Footer = () => {
                 <Link href="/referral" className="text-gray-400 hover:text-white transition-colors">Referral</Link>
               </li>
               <li>
-                <Link href="/careers" className="text-gray-400 hover:text-white transition-colors">Career</Link>
+                <Link href="/career" className="text-gray-400 hover:text-white transition-colors">Career</Link>
               </li>
               <li>
                 <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link>
@@ -107,12 +107,7 @@ const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span className="text-gray-400">123 Community Drive, Sydney NSW 2000</span>
-              </li>
-              <li className="flex items-start mt-4">
-                <a href="https://vitalitycommunitycare.com.au/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                  vitalitycommunitycare.com.au
-                </a>
+                <span className="text-gray-400">84 Hotham St, Preston, 3072</span>
               </li>
             </ul>
           </div>
