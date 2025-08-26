@@ -41,7 +41,7 @@ const Hero = () => {
             </h2>
             
             <p className="text-lg md:text-xl lg:text-2xl mb-10 text-white opacity-80 max-w-2xl">
-              Vitality Community Care brings effective Behaviour Support, Occupational Therapy, Speech Therapy and Support Coordination to communities across Australia.
+            Vitality Community Care brings effective & compassionate supported Accommodation, Behaviour Support, Community Access and more across Australia.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mt-10">

@@ -2,7 +2,7 @@ import { services } from "@/data/services";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowRight, Heart, Brain, Activity, Users } from "lucide-react";
+import { ArrowRight, Heart, Brain, Activity, Users, Home } from "lucide-react";
 import ServicePageButton from "@/components/shared/ServicePageButton";
 
 const ServiceHighlights = () => {
@@ -21,6 +21,42 @@ const ServiceHighlights = () => {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
   };
+
+  // Custom service data for the home page
+  const homeServices = [
+    {
+      id: "core-supports",
+      title: "Core Supports",
+      slug: "core-supports",
+      shortDescription: "Assistance with daily tasks, building independence and life skills development.",
+      color: "green",
+      icon: <Heart size={32} />
+    },
+    {
+      id: "accommodation",
+      title: "Accommodation",
+      slug: "accommodation",
+      shortDescription: "Dignified assistance with personal hygiene, dressing, and daily health routines.",
+      color: "blue",
+      icon: <Home size={32} />
+    },
+    {
+      id: "therapy-services",
+      title: "Therapy Services",
+      slug: "therapy-services",
+      shortDescription: "Support to engage in social activities and build meaningful community connections.",
+      color: "green",
+      icon: <Brain size={32} />
+    },
+    {
+      id: "support-coordination",
+      title: "Support Coordination",
+      slug: "support-coordination",
+      shortDescription: "Expert guidance to navigate the NDIS and connect with the right service providers.",
+      color: "green",
+      icon: <Activity size={32} />
+    }
+  ];
 
   return (
     <section 
@@ -69,7 +105,7 @@ const ServiceHighlights = () => {
           whileInView="show"
           viewport={{ once: true, amount: 0.1 }}
         >
-          {services.slice(0, 4).map((service) => (
+          {homeServices.map((service) => (
             <motion.div 
               key={service.id}
               id={service.slug}
@@ -80,10 +116,7 @@ const ServiceHighlights = () => {
                 {/* Circular icon container */}
                 <div className="mx-auto mb-6">
                   <div className={`w-20 h-20 rounded-full bg-[hsl(var(--vitality-${service.color}-10))] flex items-center justify-center text-[hsl(var(--vitality-${service.color}))] mx-auto`}>
-                    {service.slug === 'daily-living' && <Heart size={32} />}
-                    {service.slug === 'personal-care' && <Users size={32} />}
-                    {service.slug === 'community-participation' && <Activity size={32} />}
-                    {service.slug === 'therapy' && <Brain size={32} />}
+                    {service.icon}
                   </div>
                 </div>
                 

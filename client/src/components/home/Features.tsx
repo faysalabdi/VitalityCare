@@ -46,9 +46,9 @@ const Features = () => {
             <div className="w-16 h-16 rounded-full bg-[hsl(var(--vitality-blue-25))] flex items-center justify-center text-[hsl(var(--vitality-blue))] mx-auto mb-6">
               <Shield size={28} />
             </div>
-            <h3 className="text-xl font-semibold mb-4">Quality Assurance</h3>
+            <h3 className="text-xl font-semibold mb-4">💛 Care With Heart</h3>
             <p className="text-[hsl(var(--neutral-dark))] opacity-80">
-              Rigorous standards and continuous evaluation ensure our services consistently exceed expectations.
+              We prioritise genuine connection. Through empathy, understanding, and trust, we build lasting relationships that elevate care beyond the ordinary.
             </p>
           </motion.div>
 

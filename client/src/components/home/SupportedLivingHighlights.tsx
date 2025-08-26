@@ -56,9 +56,9 @@ const SupportedLivingHighlights = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-semibold text-[hsl(var(--neutral-dark))] mb-4">Supported Independent Living</h2>
+          <h2 className="text-3xl font-semibold text-[hsl(var(--neutral-dark))] mb-4">Supported Accommodation</h2>
           <p className="text-lg text-[hsl(var(--neutral-dark))] max-w-3xl mx-auto">
-            Discover our quality housing options designed to promote independence with the right level of support.
+          Discover our quality housing options whether it's a Specialist Disability Accommodation or Supported Independent Living with the right level of support.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mt-8">
@@ -138,44 +138,89 @@ const SupportedLivingHighlights = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center mt-12"
         >
-          <div className="max-w-xl mx-auto bg-[hsl(var(--vitality-blue-5))] rounded-xl p-6 mb-8">
-            <h3 className="text-xl font-semibold mb-3">What is Supported Independent Living?</h3>
-            <p className="text-base mb-4">
-              SIL provides the support you need to live as independently as possible in a shared home environment. 
-              With 24/7 support available, you can focus on developing skills and enjoying community life.
-            </p>
-            
-            <div className="grid grid-cols-2 gap-4 text-left">
-              <div className="flex items-start gap-2">
-                <div className="mt-1">
-                  <HeartHandshake size={16} className="text-[hsl(var(--vitality-blue))]" />
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="bg-[hsl(var(--vitality-blue-5))] rounded-xl p-6">
+              <h3 className="text-xl font-semibold mb-3">What is Supported Independent Living?</h3>
+              <p className="text-base mb-4">
+                SIL provides the support you need to live as independently as possible in a shared home environment. 
+                With 24/7 support available, you can focus on developing skills and enjoying community life.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-4 text-left">
+                <div className="flex items-start gap-2">
+                  <div className="mt-1">
+                    <HeartHandshake size={16} className="text-[hsl(var(--vitality-blue))]" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">Daily Living Support</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm font-medium">Daily Living Support</p>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1">
+                    <Users size={16} className="text-[hsl(var(--vitality-blue))]" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">Shared Living</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1">
+                    <Home size={16} className="text-[hsl(var(--vitality-blue))]" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">Quality Housing</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1">
+                    <Shield size={16} className="text-[hsl(var(--vitality-blue))]" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">NDIS Funded</p>
+                  </div>
                 </div>
               </div>
-              <div className="flex items-start gap-2">
-                <div className="mt-1">
-                  <Users size={16} className="text-[hsl(var(--vitality-blue))]" />
+            </div>
+
+            <div className="bg-[hsl(var(--vitality-green-5))] rounded-xl p-6">
+              <h3 className="text-xl font-semibold mb-3">What is Specialist Disability Accommodation?</h3>
+              <p className="text-base mb-4">
+                SDA provides housing designed for people with extreme functional impairment or very high support needs. 
+                These homes are built to improve independence, safety, and access to daily supports.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-4 text-left">
+                <div className="flex items-start gap-2">
+                  <div className="mt-1">
+                    <Home size={16} className="text-[hsl(var(--vitality-green))]" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">Purpose-Built Homes</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm font-medium">Shared Living</p>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1">
+                    <Shield size={16} className="text-[hsl(var(--vitality-green))]" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">Accessible Design</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <div className="mt-1">
-                  <Home size={16} className="text-[hsl(var(--vitality-blue))]" />
+                <div className="flex items-start gap-2">
+                  <div className="mt-1">
+                    <Users size={16} className="text-[hsl(var(--vitality-green))]" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">High Support Needs</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm font-medium">Quality Housing</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <div className="mt-1">
-                  <Shield size={16} className="text-[hsl(var(--vitality-blue))]" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium">NDIS Funded</p>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1">
+                    <HeartHandshake size={16} className="text-[hsl(var(--vitality-green))]" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">NDIS Funded</p>
+                  </div>
                 </div>
               </div>
             </div>
