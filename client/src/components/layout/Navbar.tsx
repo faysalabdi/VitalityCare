@@ -186,7 +186,7 @@ const Navbar = () => {
                     href="/aged-care" 
                     className={`flex items-center gap-1.5 text-lg font-bold transition-colors ${location === '/aged-care' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}
                   >
-                    Aged Care
+                    Allied Health
                     <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-200" />
                   </Link>
                   <div className="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
