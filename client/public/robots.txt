@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://vitalitycommunitycare.com.au/sitemap.xml 
+Sitemap: https://www.vitalitycommunitycare.com.au/sitemap.xml 
