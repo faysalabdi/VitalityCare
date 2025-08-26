@@ -24,13 +24,13 @@ const ServiceSelectionGuide = () => {
   );
 };
 
-// Filter aged care services only
-const agedCareServices = services.filter(service => 
-  ["home-care-package", "chsp", "private-care"].includes(service.id)
+// Filter allied health services only
+const alliedHealthServices = services.filter(service => 
+  ["occupational-therapy", "speech-therapy", "behaviour-support"].includes(service.id)
 );
 
-const AgedCare = () => {
-  const [selectedService, setSelectedService] = useState(agedCareServices[0]);
+const AlliedHealth = () => {
+  const [selectedService, setSelectedService] = useState(alliedHealthServices[0]);
   const [animateDetail, setAnimateDetail] = useState(false);
   const serviceDetailRef = useRef<HTMLDivElement>(null);
   const servicesListRef = useRef<HTMLDivElement>(null);
@@ -41,7 +41,7 @@ const AgedCare = () => {
       const hash = window.location.hash.replace('#', '');
       
       if (hash) {
-        const matchingService = agedCareServices.find(s => s.slug === hash);
+        const matchingService = alliedHealthServices.find(s => s.slug === hash);
         if (matchingService) {
           setSelectedService(matchingService);
           
@@ -79,7 +79,7 @@ const AgedCare = () => {
     return () => clearTimeout(timer);
   }, [selectedService]);
 
-  const handleServiceSelect = (service: typeof agedCareServices[0]) => {
+  const handleServiceSelect = (service: typeof alliedHealthServices[0]) => {
     setSelectedService(service);
     
     // Update URL hash without triggering page reload
@@ -98,10 +98,10 @@ const AgedCare = () => {
   return (
     <>
       <Helmet>
-        <title>Aged Care Services | Vitality Community Care</title>
-        <meta name="description" content="We provide high-quality aged care services including Home Care Packages, Commonwealth Home Support Programme, and private care options." />
-        <meta property="og:title" content="Aged Care Services | Vitality Community Care" />
-        <meta property="og:description" content="Comprehensive aged care services to support independent living for seniors." />
+        <title>Allied Health Services | Vitality Community Care</title>
+        <meta name="description" content="We provide high-quality allied health services including Occupational Therapy, Speech Therapy, and Behaviour Support." />
+        <meta property="og:title" content="Allied Health Services | Vitality Community Care" />
+        <meta property="og:description" content="Comprehensive allied health services to support independent living." />
       </Helmet>
 
       <section id="services-top" className="relative bg-gradient-to-br from-[hsl(var(--vitality-blue))] to-[hsl(var(--vitality-green-75))] text-white pt-20 pb-28 md:pb-32 lg:pb-36 overflow-hidden">
@@ -125,24 +125,24 @@ const AgedCare = () => {
               </div>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-semibold mb-4">Aged Care Services</h1>
+            <h1 className="text-4xl md:text-5xl font-semibold mb-4">Allied Health Services</h1>
             <p className="text-xl mb-8 opacity-90">
-              Vitality Community Care offers personalized aged care services
-              to help seniors maintain their independence and quality of life.
+              Vitality Community Care offers personalized allied health services
+              to help you achieve your goals and improve your quality of life.
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white">
                 <Home size={16} />
-                <span>Home Care Package</span>
+                <span>Occupational Therapy</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white">
                 <Calendar size={16} />
-                <span>CHSP</span>
+                <span>Speech Therapy</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white">
                 <Sparkles size={16} />
-                <span>Private Care</span>
+                <span>Behaviour Support</span>
               </div>
             </div>
           </motion.div>
@@ -166,15 +166,15 @@ const AgedCare = () => {
         </div>
       </section>
 
-      {/* Aged Care Overview Section */}
+      {/* Allied Health Overview Section */}
       <section className="relative bg-white text-[hsl(var(--neutral-dark))] -mt-16 pt-28 md:pt-32 lg:pt-36 pb-20 md:pb-24 lg:pb-28 overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <span className="text-[hsl(var(--vitality-blue))] font-medium uppercase tracking-wider">AGED CARE PROVIDER</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">Personalized Support for Seniors</h2>
+            <span className="text-[hsl(var(--vitality-blue))] font-medium uppercase tracking-wider">ALLIED HEALTH PROVIDER</span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">Personalized Support for Your Goals</h2>
             <p className="text-lg max-w-3xl mx-auto opacity-80">
-              We provide comprehensive aged care services designed to help seniors maintain their independence 
-              while receiving the support they need to live comfortably at home.
+              We provide comprehensive allied health services designed to help you achieve your goals 
+              and improve your quality of life.
             </p>
           </div>
           
@@ -185,7 +185,7 @@ const AgedCare = () => {
                 <ClipboardCheck className="w-12 h-12 mx-auto text-[hsl(var(--vitality-blue))]" />
               </div>
               <h3 className="text-xl font-medium mb-2">Assessment</h3>
-              <p>We thoroughly assess your needs and preferences to develop a personalized care plan.</p>
+              <p>We thoroughly assess your needs and preferences to develop a personalized therapy plan.</p>
             </div>
             
             <div className="bg-white p-8 rounded-xl text-center relative shadow-md hover:shadow-lg transition-shadow">
@@ -193,8 +193,8 @@ const AgedCare = () => {
               <div className="mt-4 mb-4">
                 <FileText className="w-12 h-12 mx-auto text-[hsl(var(--vitality-green))]" />
               </div>
-              <h3 className="text-xl font-medium mb-2">Care Planning</h3>
-              <p>We develop a tailored care plan that addresses your specific needs and goals.</p>
+              <h3 className="text-xl font-medium mb-2">Therapy Planning</h3>
+              <p>We develop a tailored therapy plan that addresses your specific needs and goals.</p>
             </div>
             
             <div className="bg-white p-8 rounded-xl text-center relative shadow-md hover:shadow-lg transition-shadow">
@@ -202,8 +202,8 @@ const AgedCare = () => {
               <div className="mt-4 mb-4">
                 <Heart className="w-12 h-12 mx-auto text-[hsl(var(--vitality-blue))]" />
               </div>
-              <h3 className="text-xl font-medium mb-2">Caregiver Matching</h3>
-              <p>We carefully match you with compassionate and skilled caregivers suited to your preferences.</p>
+              <h3 className="text-xl font-medium mb-2">Therapist Matching</h3>
+              <p>We carefully match you with compassionate and skilled therapists suited to your preferences.</p>
             </div>
             
             <div className="bg-white p-8 rounded-xl text-center relative shadow-md hover:shadow-lg transition-shadow">
@@ -212,7 +212,7 @@ const AgedCare = () => {
                 <CheckCircle className="w-12 h-12 mx-auto text-[hsl(var(--vitality-green))]" />
               </div>
               <h3 className="text-xl font-medium mb-2">Ongoing Support</h3>
-              <p>We provide regular check-ins and plan reviews to ensure your care adapts to your changing needs.</p>
+              <p>We provide regular check-ins and plan reviews to ensure your therapy adapts to your changing needs.</p>
             </div>
           </div>
         </div>
@@ -240,14 +240,14 @@ const AgedCare = () => {
         
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-semibold mb-4">Our Aged Care Services</h2>
+            <h2 className="text-3xl font-semibold mb-4">Our Allied Health Services</h2>
             <p className="text-lg max-w-3xl mx-auto">
               Select a service to learn more about how we can support you.
             </p>
           </div>
 
           <div ref={servicesListRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 scroll-mt-32">
-            {agedCareServices.map((service) => (
+            {alliedHealthServices.map((service) => (
               <div id={service.slug} key={service.id}>
                 <ServiceCard 
                   service={service}
@@ -281,9 +281,9 @@ const AgedCare = () => {
       <section className="py-16 bg-[hsl(var(--vitality-blue-5))]">
         <div className="container mx-auto px-4">
           <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4">Ready to Discuss Your Aged Care Needs?</h2>
+            <h2 className="text-3xl font-bold mb-4">Ready to Discuss Your Allied Health Needs?</h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto">
-              Contact us today to learn how our aged care services can help you or your loved one maintain independence and quality of life.
+              Contact us today to learn how our allied health services can help you or your loved one achieve your goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))]">
@@ -300,4 +300,4 @@ const AgedCare = () => {
   );
 };
 
-export default AgedCare; 
+export default AlliedHealth; 

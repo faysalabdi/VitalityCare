@@ -41,11 +41,16 @@ import { services } from "@/data/services";
 
 // Get NDIS and Aged Care services
 const ndisServices = services.filter(service => 
-  ["daily-living", "personal-care", "community-participation", "therapy", "support-coordination", "supported-independent-living", "occupational-therapy", "speech-therapy", "behaviour-support", "cleaning", "early-childhood"].includes(service.id)
+  ["daily-living", "personal-care", "community-participation", "support-coordination", "supported-independent-living", "cleaning", "early-childhood"].includes(service.id)
 );
 
 const agedCareServices = services.filter(service => 
-  ["home-care-package", "chsp", "private-care"].includes(service.id)
+  ["home-care-package", "chsp", "private-care", "occupational-therapy", "speech-therapy", "behaviour-support"].includes(service.id)
+);
+
+// Get Allied Health services
+const alliedHealthServices = services.filter(service => 
+  ["occupational-therapy", "speech-therapy", "behaviour-support"].includes(service.id)
 );
 
 // Debounce function to smooth out scroll handling
@@ -183,8 +188,8 @@ const Navbar = () => {
                 {/* Aged Care Dropdown */}
                 <div className="relative group">
                   <Link 
-                    href="/aged-care" 
-                    className={`flex items-center gap-1.5 text-lg font-bold transition-colors ${location === '/aged-care' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}
+                    href="/allied-health" 
+                    className={`flex items-center gap-1.5 text-lg font-bold transition-colors ${location === '/allied-health' ? 'text-[hsl(var(--vitality-green))]' : 'text-[hsl(var(--neutral-dark))] hover:text-[hsl(var(--vitality-green))]'}`}
                   >
                     Allied Health
                     <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-200" />
@@ -194,7 +199,7 @@ const Navbar = () => {
                       {agedCareServices.map((service) => (
                         <Link 
                           key={service.id}
-                          href={`/aged-care#${service.slug}`}
+                          href={`/allied-health#${service.slug}`}
                           className="block px-4 py-1.5 text-sm hover:bg-[hsl(var(--vitality-green-5))] text-[hsl(var(--neutral-dark))]"
                         >
                           {service.title}
@@ -280,25 +285,25 @@ const Navbar = () => {
                             ))}
                           </div>
                           
-                          {/* Aged Care Services Mobile Section */}
+                          {/* Allied Health Services Mobile Section */}
                           <div className="py-3 px-4 rounded-md font-bold flex items-center">
                             <Sparkles size={18} className="mr-3" />
-                            Aged Care Services
+                            Allied Health Services
                           </div>
                           
                           <div className="pl-8 mb-2 border-l border-gray-100 ml-7">
                             <SheetClose asChild>
                               <Link 
-                                href="/aged-care"
+                                href="/allied-health"
                                 className="py-2 px-4 text-sm block font-medium text-[hsl(var(--vitality-green))]"
                               >
-                                All Aged Care Services
+                                All Allied Health Services
                               </Link>
                             </SheetClose>
-                            {agedCareServices.map((service) => (
+                            {alliedHealthServices.map((service) => (
                               <SheetClose key={service.id} asChild>
                                 <Link 
-                                  href={`/aged-care#${service.slug}`}
+                                  href={`/allied-health#${service.slug}`}
                                   className="py-1.5 px-4 text-sm block text-[hsl(var(--neutral-dark))]"
                                 >
                                   {service.title}

@@ -81,7 +81,7 @@ const ServicePageButton = ({
         }}
       >
         {children}
-        {!children.toString().includes("ArrowRight") && <ArrowRight className="ml-2 h-5 w-5" />}
+        {children && !children.toString().includes("ArrowRight") && <ArrowRight className="ml-2 h-5 w-5" />}
       </Link>
     </Button>
   );

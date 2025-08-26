@@ -73,26 +73,6 @@ export const services: ServiceType[] = [
     icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' />"
   },
   {
-    id: "therapy",
-    title: "Therapy Services",
-    slug: "therapy",
-    shortDescription: "Specialized therapeutic interventions to support your health and development goals.",
-    description: "Our Therapy Services provide specialized interventions to help you achieve your health, wellbeing, and developmental goals. Our qualified therapists work collaboratively with you to design personalized therapy plans that address your specific needs and aspirations.",
-    color: "blue",
-    image: "https://images.unsplash.com/photo-1519824145371-296894a0daa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=350",
-    detailImage: "https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-    features: [
-      "Occupational therapy for daily living skills",
-      "Speech therapy for communication development",
-      "Physiotherapy for mobility and physical function",
-      "Behavioral therapy for positive behavior support",
-      "Group therapy sessions for social skills",
-      "In-home and community-based therapy options"
-    ],
-    quote: "The therapy team at Vitality helped me achieve goals I didn't think were possible. They're patient, encouraging, and incredibly skilled at what they do.",
-    icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' />"
-  },
-  {
     id: "support-coordination",
     title: "Support Coordination",
     slug: "support-coordination",
@@ -191,66 +171,7 @@ export const services: ServiceType[] = [
     quote: "The early childhood program has been transformative for our family. The progress we've seen in our child's development has exceeded all our expectations.",
     icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' />"
   },
-  {
-    id: "home-care-package",
-    title: "Home Care Package",
-    slug: "home-care-package",
-    shortDescription: "Government-funded support to help seniors remain independent in their own home.",
-    description: "Our Home Care Package (HCP) services provide government-funded support to help you remain independent in your own home. We work with you to make the most of your funding, delivering personalized care that enhances your quality of life and addresses your specific needs.",
-    color: "blue",
-    image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=350",
-    detailImage: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-    features: [
-      "Personal care assistance",
-      "Household cleaning and maintenance",
-      "Meal preparation and nutrition",
-      "Social support and companionship",
-      "Transportation services",
-      "Medication management"
-    ],
-    quote: "The Home Care Package has allowed me to stay in my own home with dignity. The support I receive is personalized and professional.",
-    icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' />"
-  },
-  {
-    id: "chsp",
-    title: "Commonwealth Home Support Programme",
-    slug: "chsp",
-    shortDescription: "Entry-level support services for older Australians who need assistance to continue living independently.",
-    description: "The Commonwealth Home Support Programme (CHSP) offers streamlined care for elders through entry-level support services designed to help older Australians continue living independently at home and participate in their community, with access to basic support tailored to individual needs.",
-    color: "green",
-    image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=350",
-    detailImage: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-    features: [
-      "Domestic assistance",
-      "Personal care",
-      "Home maintenance",
-      "Home modifications",
-      "Social support",
-      "Transport assistance"
-    ],
-    quote: "CHSP services have helped me maintain my independence. The team is always reliable and a pleasure to have in my home.",
-    icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' />"
-  },
-  {
-    id: "private-care",
-    title: "Private Care",
-    slug: "private-care",
-    shortDescription: "Flexible, pay-as-you-go support tailored to your exact requirements without eligibility restrictions.",
-    description: "For those who don't qualify for government funding or need additional services beyond what's covered, our private care options provide flexible, pay-as-you-go support tailored to your exact requirements with no eligibility criteria or waiting periods.",
-    color: "blue",
-    image: "https://images.unsplash.com/photo-1544126592-807ade215a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=350",
-    detailImage: "https://images.unsplash.com/photo-1544126592-807ade215a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-    features: [
-      "Fully customizable care plans",
-      "No eligibility requirements",
-      "Flexible scheduling options",
-      "No waiting periods",
-      "Transparent pricing",
-      "Short or long-term options"
-    ],
-    quote: "Private care has given me the exact support I need, when I need it, without any of the paperwork and restrictions of funded packages.",
-    icon: "<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z' />"
-  },
+  
   {
     id: "occupational-therapy",
     title: "Occupational Therapy",

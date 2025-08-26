@@ -78,9 +78,7 @@ const Footer = () => {
               <li>
                 <Link href="/services#community-participation" className="text-gray-400 hover:text-white transition-colors">Community Participation</Link>
               </li>
-              <li>
-                <Link href="/services#therapy" className="text-gray-400 hover:text-white transition-colors">Therapy Services</Link>
-              </li>
+              
               <li>
                 <Link href="/services#support-coordination" className="text-gray-400 hover:text-white transition-colors">NDIS Support Coordination</Link>
               </li>

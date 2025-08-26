@@ -242,7 +242,7 @@ const ContactForm = ({ isCareerForm = false }: ContactFormProps) => {
                     <SelectItem value="daily-living">Daily Living Support</SelectItem>
                     <SelectItem value="personal-care">Personal Care</SelectItem>
                     <SelectItem value="community-participation">Community Participation</SelectItem>
-                    <SelectItem value="therapy">Therapy Services</SelectItem>
+                    
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>

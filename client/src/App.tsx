@@ -8,7 +8,7 @@ import Footer from "@/components/layout/Footer";
 import Home from "@/pages/Home";
 import Services from "@/pages/Services";
 import NDIS from "@/pages/NDIS";
-import AgedCare from "@/pages/AgedCare";
+import AlliedHealth from "@/pages/AlliedHealth";
 import Accommodation from "@/pages/Accommodation";
 import AccommodationDetail from "@/pages/accommodation/[id]";
 import About from "@/pages/About";
@@ -35,7 +35,7 @@ function Router() {
           <Route path="/" component={Home} />
           <Route path="/services" component={Services} />
           <Route path="/ndis" component={NDIS} />
-          <Route path="/aged-care" component={AgedCare} />
+          <Route path="/allied-health" component={AlliedHealth} />
           <Route path="/accommodation" component={Accommodation} />
           <Route path="/accommodation/:id" component={AccommodationDetail} />
           <Route path="/about" component={About} />

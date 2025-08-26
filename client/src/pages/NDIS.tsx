@@ -26,7 +26,7 @@ const ServiceSelectionGuide = () => {
 
 // Filter NDIS services only
 const ndisServices = services.filter(service => 
-  ["daily-living", "personal-care", "community-participation", "therapy", "support-coordination", "supported-independent-living", "occupational-therapy", "speech-therapy", "behaviour-support", "cleaning", "early-childhood"].includes(service.id)
+  ["daily-living", "personal-care", "community-participation", "support-coordination", "supported-independent-living", "cleaning", "early-childhood"].includes(service.id)
 );
 
 const NDIS = () => {
@@ -144,18 +144,7 @@ const NDIS = () => {
                 <Users size={16} />
                 <span>Community Participation</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white">
-                <Activity size={16} />
-                <span>Occupational Therapy</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white">
-                <Activity size={16} />
-                <span>Speech Therapy</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white">
-                <Activity size={16} />
-                <span>Behaviour Support</span>
-              </div>
+              
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white">
                 <FileText size={16} />
                 <span>Support Coordination</span>
