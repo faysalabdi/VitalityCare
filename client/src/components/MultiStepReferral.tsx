@@ -150,14 +150,15 @@ const MultiStepReferral = () => {
   const onSubmit = async (data: ReferralFormData) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("https://formspree.io/f/mldbpjnr", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
+          access_key: "47a1d80a-1c68-4ce4-bc64-889f71d4e27c",
           ...data,
-          _subject: `New referral for ${data.participantName}`,
+          subject: `New referral for ${data.participantName}`,
           formType: "referral"
         }),
       });

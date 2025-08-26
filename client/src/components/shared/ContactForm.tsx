@@ -74,13 +74,13 @@ const ContactForm = ({ isCareerForm = false }: ContactFormProps) => {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-      // Use Formspree to send the form data
+      // Use web3forms to send the form data
       const formType = isCareerForm ? 'career' : 'general';
       
       // Use different endpoint for career form
       const endpoint = isCareerForm 
-        ? "https://formspree.io/f/xldbzagj" 
-        : "https://formspree.io/f/mjkwaywz";
+        ? "https://api.web3forms.com/submit" 
+        : "https://api.web3forms.com/submit";
       
       const response = await fetch(endpoint, {
         method: "POST",
@@ -88,8 +88,11 @@ const ContactForm = ({ isCareerForm = false }: ContactFormProps) => {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
+          access_key: isCareerForm 
+            ? "3dff5ecf-e042-44e7-b3ae-78ec473f5795"
+            : "47a1d80a-1c68-4ce4-bc64-889f71d4e27c",
           ...data,
-          _subject: `New ${formType} inquiry from ${data.firstName} ${data.lastName}`,
+          subject: `New ${formType} inquiry from ${data.firstName} ${data.lastName}`,
           formType
         }),
       });

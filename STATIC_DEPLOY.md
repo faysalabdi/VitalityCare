@@ -1,12 +1,12 @@
 # Deploying VitalityCare as a Static Site
 
-This guide explains how to deploy VitalityCare as a completely static site with Formspree for handling form submissions.
+This guide explains how to deploy VitalityCare as a completely static site with web3forms for handling form submissions.
 
 ## What Changed
 
 The application has been simplified to a static site:
 - Removed backend API dependencies
-- Contact forms now use Formspree to send emails directly
+- Contact forms now use web3forms to send emails directly
 - Configuration optimized for Vercel static site hosting
 
 ## Deployment Steps
@@ -24,16 +24,16 @@ The application has been simplified to a static site:
 3. **Deploy**
    - Click "Deploy" and Vercel will handle the rest
 
-### Formspree Configuration
+### web3forms Configuration
 
-The contact form is configured to send emails to contact@vitalitycommunityvare.com.au using Formspree.
+The contact form is configured to send emails to contact@vitalitycommunityvare.com.au using web3forms.
 
 You need to:
-1. Register at [Formspree](https://formspree.io/)
-2. Create a form with your email address
-3. Replace the URL in `ContactForm.tsx` with your Formspree form ID:
+1. Register at [web3forms](https://web3forms.com/)
+2. Create a form and get your access key
+3. Replace the access_key in `ContactForm.tsx` with your web3forms access key:
    ```typescript
-   const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+   access_key: "YOUR_ACCESS_KEY",
    ```
 
 ## Benefits of Static Deployment
