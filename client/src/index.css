@@ -117,3 +117,53 @@ link[rel="icon"] {
 .puzzle-corner {
   clip-path: polygon(100% 0, 0 0, 100% 100%);
 }
+
+/* iOS Safari Mobile Menu Fixes */
+@supports (-webkit-touch-callout: none) {
+  /* iOS Safari specific styles */
+  [data-radix-dialog-content] {
+    /* Ensure proper positioning on iOS */
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    /* Use env() for safe area insets */
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    /* Remove any default margins or padding that might cause gaps */
+    margin: 0 !important;
+  }
+  
+  /* Fix for the specific gap issue on iOS */
+  [data-radix-dialog-content] .flex.flex-col.h-full {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  /* Additional fix for mobile menu content */
+  .mobile-menu-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* Additional mobile menu positioning fixes */
+@media (max-width: 768px) {
+  [data-radix-dialog-content] {
+    /* Ensure full height on mobile */
+    height: 100vh !important;
+    height: 100dvh !important; /* Use dynamic viewport height */
+  }
+  
+  /* Fix for mobile menu content positioning */
+  [data-radix-dialog-content] > div {
+    /* Ensure content fills the entire sheet */
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  /* Remove any potential gaps in mobile menu */
+  [data-radix-dialog-content] .flex.flex-col.h-full {
+    min-height: 100% !important;
+  }
+}

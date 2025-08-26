@@ -228,14 +228,14 @@ const Navbar = () => {
                 {/* Mobile Menu */}
                 <Sheet>
                   <SheetTrigger asChild>
-                    <Button variant="ghost" size="icon" className="md:hidden">
+                    <Button variant="ghost" size="icon" className="md:hidden relative z-10">
                       <Menu size={24} />
                       <span className="sr-only">Toggle menu</span>
                     </Button>
                   </SheetTrigger>
-                  <SheetContent side="right" className="w-full max-w-xs p-0">
-                    <div className="flex flex-col h-full">
-                      <div className="p-6 border-b">
+                  <SheetContent side="right" className="w-full max-w-xs p-0 overflow-hidden">
+                    <div className="flex flex-col h-full min-h-full mobile-menu-content">
+                      <div className="p-6 border-b flex-shrink-0">
                         <PuzzleLogo variant="full" size="lg" />
                       </div>
                       <div className="flex-1 overflow-auto py-4">
@@ -342,7 +342,7 @@ const Navbar = () => {
                           </SheetClose>
                         </nav>
                       </div>
-                      <div className="p-6 border-t">
+                      <div className="p-6 border-t flex-shrink-0">
                         <div className="space-y-3">
                           <div className="flex items-center gap-2">
                             <Phone size={18} className="text-[hsl(var(--vitality-blue))]" />
