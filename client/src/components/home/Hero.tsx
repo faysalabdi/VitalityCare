@@ -8,6 +8,10 @@ import { Heart, Clipboard, MessageCircle } from "lucide-react";
 // import backgroundGraphic from '@/assets/Vitality CC - Logo02.png';
 import ndisLogo from '@/assets/IHeartNDIS_2020.svg';
 import music from '@/assets/music.png';
+import musicWebP800 from '@/assets/music-800w.webp';
+import musicWebP600 from '@/assets/music-600w.webp';
+import musicWebP400 from '@/assets/music-400w.webp';
+import musicJPG800 from '@/assets/music-800w.jpg';
 
 const Hero = () => {
   return (
@@ -86,11 +90,33 @@ const Hero = () => {
             <div className="relative">
               {/* Circular image container */}
               <div className="relative rounded-full overflow-hidden border-4 border-white shadow-xl aspect-square max-w-[500px] lg:max-w-[600px] mx-auto">
-                <img 
-                  src={music} 
-                  alt="Healthcare professional supporting a client" 
-                  className="w-full h-full object-cover pointer-events-none"
-                />
+                <picture>
+                  {/* WebP sources for modern browsers */}
+                  <source 
+                    media="(max-width: 480px)" 
+                    srcSet={musicWebP400}
+                    type="image/webp"
+                  />
+                  <source 
+                    media="(max-width: 768px)" 
+                    srcSet={musicWebP600}
+                    type="image/webp"
+                  />
+                  <source 
+                    media="(min-width: 769px)" 
+                    srcSet={musicWebP800}
+                    type="image/webp"
+                  />
+                  {/* Fallback JPEG for browsers that don't support WebP */}
+                  <img 
+                    src={musicJPG800}
+                    alt="Healthcare professional supporting a client" 
+                    className="w-full h-full object-cover pointer-events-none"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                  />
+                </picture>
               </div>
               
               {/* Decorative elements */}

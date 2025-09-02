@@ -1,10 +1,22 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
+import { viteImagemin } from "vite-plugin-imagemin";
 
 export default defineConfig({
   plugins: [
-    react()
+    react(),
+    viteImagemin({
+      optipng: { optimizationLevel: 7 },
+      mozjpeg: { quality: 85 },
+      webp: { quality: 85 },
+      svgo: {
+        plugins: [
+          { name: 'removeViewBox', active: false },
+          { name: 'removeEmptyAttrs', active: false }
+        ]
+      }
+    })
   ],
   resolve: {
     alias: {
@@ -16,6 +28,14 @@ export default defineConfig({
   root: path.resolve(import.meta.dirname, "client"),
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
-    emptyOutDir: true
+    emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'ui-vendor': ['framer-motion', 'lucide-react']
+        }
+      }
+    }
   }
 });

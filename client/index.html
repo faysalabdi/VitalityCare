@@ -37,6 +37,17 @@
     <meta name="author" content="Vitality Community Care" />
     <link rel="canonical" href="https://vitalitycommunitycare.com.au/" />
     
+    <!-- Critical Resource Preloading for LCP optimization -->
+    <link rel="preload" as="image" href="/src/assets/music-800w.webp" type="image/webp" media="(min-width: 769px)" />
+    <link rel="preload" as="image" href="/src/assets/music-600w.webp" type="image/webp" media="(max-width: 768px) and (min-width: 481px)" />
+    <link rel="preload" as="image" href="/src/assets/music-400w.webp" type="image/webp" media="(max-width: 480px)" />
+    <link rel="preload" as="image" href="/src/assets/music-800w.jpg" type="image/jpeg" />
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
     <!-- Structured Data for Google -->
     <script type="application/ld+json">
       {
