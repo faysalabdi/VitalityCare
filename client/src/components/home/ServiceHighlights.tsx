@@ -53,7 +53,7 @@ const ServiceHighlights = () => {
       title: "Support Coordination",
       slug: "support-coordination",
       shortDescription: "Clear guidance through the NDIS. Our Support Coordinators connect participants with the right services, simplify the process, and ensure every plan is used to its full potential.",
-      color: "green",
+      color: "blue",
       icon: <Activity size={32} />
     }
   ];
