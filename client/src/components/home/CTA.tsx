@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import PuzzlePiece from "@/components/shared/PuzzlePiece";
 import { Phone, Mail, UserPlus } from "lucide-react";
 import ndisLogo from "@/assets/LOGO-I-Heart-NDIS-PNG-768x768.png";
+import backgroundImage from "@/assets/504973531_1073137401542499_3189903183962444117_n.jpg";
 
 const CTA = () => {
   return (
@@ -43,7 +44,7 @@ const CTA = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80')"
+          backgroundImage: `url(${backgroundImage})`
         }}
       ></div>
 
