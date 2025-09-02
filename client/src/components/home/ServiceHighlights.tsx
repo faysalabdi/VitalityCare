@@ -28,7 +28,7 @@ const ServiceHighlights = () => {
       id: "core-supports",
       title: "Core Supports",
       slug: "core-supports",
-      shortDescription: "Assistance with daily tasks, building independence and life skills development.",
+      shortDescription: "Practical, everyday assistance to build confidence and independence. From daily tasks to developing life skills, we help participants live more freely and with dignity.",
       color: "green",
       icon: <Heart size={32} />
     },
@@ -36,7 +36,7 @@ const ServiceHighlights = () => {
       id: "accommodation",
       title: "Accommodation",
       slug: "accommodation",
-      shortDescription: "Dignified assistance with personal hygiene, dressing, and daily health routines.",
+      shortDescription: "Whether it's SIL or SDA our safe, comfortable housing with the right supports in place. Our accommodation services focus on building a homely environment designed for independence.",
       color: "blue",
       icon: <Home size={32} />
     },
@@ -44,7 +44,7 @@ const ServiceHighlights = () => {
       id: "therapy-services",
       title: "Therapy Services",
       slug: "therapy-services",
-      shortDescription: "Support to engage in social activities and build meaningful community connections.",
+      shortDescription: "Whether its Behaviour Support or Occupational Therapy, our personalised support overall wellbeing. Delivered by qualified professionals who understand participant needs.",
       color: "green",
       icon: <Brain size={32} />
     },
@@ -52,7 +52,7 @@ const ServiceHighlights = () => {
       id: "support-coordination",
       title: "Support Coordination",
       slug: "support-coordination",
-      shortDescription: "Expert guidance to navigate the NDIS and connect with the right service providers.",
+      shortDescription: "Clear guidance through the NDIS. Our Support Coordinators connect participants with the right services, simplify the process, and ensure every plan is used to its full potential.",
       color: "green",
       icon: <Activity size={32} />
     }
@@ -92,7 +92,7 @@ const ServiceHighlights = () => {
           className="text-center mb-12"
         >
           <span className="text-[hsl(var(--vitality-green))] font-medium uppercase tracking-wider">OUR NDIS SERVICES</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--neutral-dark))] mt-3 mb-6">Empowering Lives with Comprehensive Support</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--neutral-dark))] mt-3 mb-6">Core Supports</h2>
           <p className="text-lg text-[hsl(var(--neutral-dark))] max-w-3xl mx-auto opacity-80">
             Vitality Community Care offers personalized therapeutic and support services, delivered by our team of friendly practitioners.
           </p>
@@ -109,10 +109,10 @@ const ServiceHighlights = () => {
             <motion.div 
               key={service.id}
               id={service.slug}
-              className="bg-white rounded-xl overflow-hidden shadow-lg transition-all hover:shadow-xl hover:-translate-y-1"
+              className="bg-white rounded-xl overflow-hidden shadow-lg transition-all hover:shadow-xl hover:-translate-y-1 flex flex-col h-full"
               variants={item}
             >
-              <div className="p-6 text-center">
+              <div className="p-6 text-center flex flex-col h-full">
                 {/* Circular icon container */}
                 <div className="mx-auto mb-6">
                   <div className={`w-20 h-20 rounded-full bg-[hsl(var(--vitality-${service.color}-10))] flex items-center justify-center text-[hsl(var(--vitality-${service.color}))] mx-auto`}>
@@ -121,11 +121,11 @@ const ServiceHighlights = () => {
                 </div>
                 
                 <h3 className="text-xl font-semibold text-[hsl(var(--neutral-dark))] mb-3">{service.title}</h3>
-                <p className="text-[hsl(var(--neutral-dark))] mb-6 opacity-80">{service.shortDescription}</p>
+                <p className="text-[hsl(var(--neutral-dark))] mb-6 opacity-80 flex-grow">{service.shortDescription}</p>
                 <ServicePageButton 
                   serviceId={service.id}
                   variant="link" 
-                  className={`text-[hsl(var(--vitality-${service.color}))] font-medium p-0 flex items-center group mx-auto`}
+                  className={`text-[hsl(var(--vitality-${service.color}))] font-medium p-0 flex items-center group mx-auto mt-auto`}
                 >
                   Learn More 
                   <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
