@@ -13,11 +13,6 @@ const AccreditationLogos = () => {
       width: 180
     },
     { 
-      src: "/accreditation-logos/Aphra.webp", 
-      alt: "Aphra & National Boards Logo", 
-      width: 200
-    },
-    { 
       src: "/accreditation-logos/NDIS-Certified-Vitality-NDIS.webp", 
       alt: "NDIS Certified Logo", 
       width: 180
