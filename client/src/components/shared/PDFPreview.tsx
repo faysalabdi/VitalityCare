@@ -30,15 +30,25 @@ const PDFPreview = ({
   const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
-    if (containerRef.current) {
-      setContainerWidth(containerRef.current.offsetWidth);
-    }
+    const updateWidth = () => {
+      if (containerRef.current) {
+        const width = containerRef.current.offsetWidth;
+        setContainerWidth(width > 0 ? width : 400);
+      }
+    };
+
+    // Set initial width
+    updateWidth();
+
+    // Update width on resize
+    window.addEventListener('resize', updateWidth);
 
     // Intersection Observer for lazy loading
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
           setShouldLoad(true);
+          updateWidth(); // Update width when becoming visible
           observer.disconnect();
         }
       },
@@ -49,7 +59,10 @@ const PDFPreview = ({
       observer.observe(containerRef.current);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener('resize', updateWidth);
+      observer.disconnect();
+    };
   }, []);
 
   // Handle ESC key to close modal
@@ -191,11 +204,11 @@ const PDFPreview = ({
                   </div>
                 }
               >
-                <div className="relative h-full flex flex-col">
-                  <div className="flex-shrink-0 flex items-center justify-center bg-white" style={{ height: 'calc(100% - 60px)' }}>
+                <div className="relative flex flex-col">
+                  <div className="flex-shrink-0 flex items-center justify-center bg-white">
                     <Page 
                       pageNumber={1} 
-                      height={containerRef.current ? containerRef.current.offsetHeight - 60 : 200}
+                      width={containerWidth || 400}
                       renderTextLayer={false}
                       renderAnnotationLayer={false}
                       className="pdf-page"
