@@ -164,9 +164,9 @@ const PDFPreview = ({
 
   return (
     <>
-      <div ref={containerRef} className={`relative bg-white rounded-lg overflow-hidden shadow-inner ${className}`}>
+      <div ref={containerRef} className={`relative bg-white overflow-hidden ${className}`}>
         {!shouldLoad ? (
-          <div className="flex items-center justify-center h-full min-h-[300px] bg-gradient-to-br from-blue-50 to-indigo-100">
+          <div className="flex items-center justify-center w-full h-full bg-gradient-to-br from-blue-50 to-indigo-100">
             <div className="text-center">
               <FileText size={48} className="text-[hsl(var(--vitality-blue))] mx-auto mb-2" />
               <p className="text-sm text-gray-600">Loading preview...</p>
@@ -180,66 +180,67 @@ const PDFPreview = ({
               </div>
             )}
 
-            <div className="flex flex-col">
+            <div className="flex flex-col h-full">
               <Document
                 file={src}
                 onLoadSuccess={onDocumentLoadSuccess}
                 onLoadError={onDocumentLoadError}
                 loading={
-                  <div className="flex items-center justify-center h-full min-h-[300px] bg-gradient-to-br from-blue-50 to-indigo-100">
+                  <div className="flex items-center justify-center w-full h-full bg-gradient-to-br from-blue-50 to-indigo-100">
                     <Loader2 className="animate-spin text-[hsl(var(--vitality-blue))]" size={48} />
                   </div>
                 }
               >
-                <div className="relative">
-                  <Page 
-                    pageNumber={1} 
-                    width={containerWidth}
-                    renderTextLayer={false}
-                    renderAnnotationLayer={false}
-                    className="pdf-page"
-                    scale={0.8}
-                  />
+                <div className="relative h-full flex flex-col">
+                  <div className="flex-shrink-0 flex items-center justify-center bg-white" style={{ height: 'calc(100% - 60px)' }}>
+                    <Page 
+                      pageNumber={1} 
+                      height={containerRef.current ? containerRef.current.offsetHeight - 60 : 200}
+                      renderTextLayer={false}
+                      renderAnnotationLayer={false}
+                      className="pdf-page"
+                    />
+                  </div>
 
                   {/* PDF Badge */}
                   <div className="absolute top-2 right-2 bg-[hsl(var(--vitality-green))] text-white text-xs px-3 py-1 rounded-full font-bold shadow-lg z-10">
                     PDF {numPages && `• ${numPages} pages`}
                   </div>
+                  
+                  {/* Action buttons below PDF */}
+                  <div className="bg-gradient-to-t from-gray-900 to-gray-800 p-3 flex-shrink-0">
+                    <div className="flex gap-2 justify-center">
+                      <motion.button
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          handleOpenFullPreview();
+                        }}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="flex items-center gap-1.5 bg-white text-[hsl(var(--vitality-blue))] px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors font-medium shadow-lg cursor-pointer text-sm"
+                      >
+                        <Eye size={16} />
+                        View Full PDF
+                      </motion.button>
+                      
+                      <motion.button
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          handleDownload();
+                        }}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="flex items-center gap-1.5 bg-[hsl(var(--vitality-blue))] text-white px-3 py-2 rounded-lg hover:bg-[hsl(var(--vitality-blue-75))] transition-colors font-medium shadow-lg cursor-pointer text-sm"
+                      >
+                        <Download size={16} />
+                        Download
+                      </motion.button>
+                    </div>
+                  </div>
                 </div>
               </Document>
-              
-              {/* Action buttons below PDF */}
-              <div className="bg-gradient-to-t from-gray-900 to-gray-800 p-4">
-                <div className="flex gap-3 justify-center">
-                  <motion.button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      handleOpenFullPreview();
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 bg-white text-[hsl(var(--vitality-blue))] px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold shadow-lg cursor-pointer"
-                  >
-                    <Eye size={18} />
-                    View Full PDF
-                  </motion.button>
-                  
-                  <motion.button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      handleDownload();
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 bg-[hsl(var(--vitality-blue))] text-white px-6 py-3 rounded-lg hover:bg-[hsl(var(--vitality-blue-75))] transition-colors font-semibold shadow-lg cursor-pointer"
-                  >
-                    <Download size={18} />
-                    Download
-                  </motion.button>
-                </div>
-              </div>
             </div>
           </>
         )}

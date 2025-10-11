@@ -125,53 +125,100 @@ const AccommodationDetail = () => {
       {/* Property Images */}
       <section className="py-8 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             <div>
               <div className="bg-[hsl(var(--neutral-light))] rounded-lg overflow-hidden mb-4">
                 <SmartImageDisplay 
-                  src={property.images[0]} 
-                  alt={`${property.location} - Property Brochure`}
+                  src={property.images[activeImage]} 
+                  alt={`${property.location} - ${property.images.length > 1 ? `Image ${activeImage + 1}` : 'Property Brochure'}`}
                   title={`${property.location} - Property Brochure`}
                   className="w-full"
                 />
               </div>
+              
+              {/* Thumbnail gallery for multiple images (PNG properties only) */}
+              {property.images.length > 1 && (
+                <div className="grid grid-cols-3 gap-3">
+                  {property.images.map((image, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setActiveImage(index)}
+                      className={`relative rounded-lg overflow-hidden border-2 transition-all ${
+                        activeImage === index 
+                          ? 'border-[hsl(var(--vitality-blue))] shadow-lg scale-105' 
+                          : 'border-gray-200 hover:border-[hsl(var(--vitality-green))] opacity-70 hover:opacity-100'
+                      }`}
+                    >
+                      <img 
+                        src={image} 
+                        alt={`${property.location} thumbnail ${index + 1}`}
+                        className="w-full h-24 object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
-            <div>
-              <h2 className="text-3xl font-bold mb-4">{property.title}</h2>
+            <div className="flex flex-col">
+              <h2 className="text-3xl font-bold mb-6 text-[hsl(var(--vitality-blue))]">{property.title}</h2>
 
-              <div className="mb-8">
-                <div className="grid grid-cols-2 gap-y-3 mb-4">
-                  <div className="flex items-center gap-2">
-                    <Bed size={20} className="text-[hsl(var(--vitality-green))]" />
-                    <span>Bedroom: {property.features.bedrooms}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Bath size={20} className="text-[hsl(var(--vitality-green))]" />
-                    <span>Bathroom: {property.features.bathrooms}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Bed size={20} className="text-[hsl(var(--vitality-green))]" />
-                    <span>Bedrooms available: {property.features.bedroomsAvailable}</span>
+              <div className="space-y-6">
+                {/* Property Stats */}
+                <div className="bg-gray-50 rounded-lg p-5 border border-gray-200">
+                  <div className="grid grid-cols-1 gap-4">
+                    <div className="flex items-center gap-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-[hsl(var(--vitality-green-5))] rounded-full flex items-center justify-center">
+                        <Bed size={20} className="text-[hsl(var(--vitality-green))]" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-600">Bedrooms</p>
+                        <p className="font-semibold text-gray-900">{property.features.bedrooms}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-[hsl(var(--vitality-blue-5))] rounded-full flex items-center justify-center">
+                        <Bath size={20} className="text-[hsl(var(--vitality-blue))]" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-600">Bathrooms</p>
+                        <p className="font-semibold text-gray-900">{property.features.bathrooms}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-[hsl(var(--vitality-green-5))] rounded-full flex items-center justify-center">
+                        <Users size={20} className="text-[hsl(var(--vitality-green))]" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-600">Vacancies Available</p>
+                        <p className="font-semibold text-gray-900">{property.features.bedroomsAvailable}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="mb-6">
-                  <h3 className="text-xl font-semibold mb-3">Contact Details</h3>
-                  <div className="space-y-2">
-                    <div className="flex items-center">
-                      <Phone className="w-5 h-5 text-[hsl(var(--vitality-green))] mr-3" />
-                      <span>(03) 9068 5795</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Mail className="w-5 h-5 text-[hsl(var(--vitality-green))] mr-3" />
-                      <span>info@vitalitycommunitycare.com.au</span>
-                    </div>
+                {/* Contact Details */}
+                <div className="bg-white rounded-lg p-5 border border-gray-200">
+                  <h3 className="text-lg font-bold mb-4 text-[hsl(var(--vitality-blue))]">Contact Details</h3>
+                  <div className="space-y-3">
+                    <a href="tel:0390685795" className="flex items-center gap-3 hover:text-[hsl(var(--vitality-green))] transition-colors">
+                      <div className="flex-shrink-0 w-10 h-10 bg-[hsl(var(--vitality-green-5))] rounded-full flex items-center justify-center">
+                        <Phone size={18} className="text-[hsl(var(--vitality-green))]" />
+                      </div>
+                      <span className="font-medium">(03) 9068 5795</span>
+                    </a>
+                    <a href="mailto:info@vitalitycommunitycare.com.au" className="flex items-center gap-3 hover:text-[hsl(var(--vitality-blue))] transition-colors">
+                      <div className="flex-shrink-0 w-10 h-10 bg-[hsl(var(--vitality-blue-5))] rounded-full flex items-center justify-center">
+                        <Mail size={18} className="text-[hsl(var(--vitality-blue))]" />
+                      </div>
+                      <span className="font-medium text-sm break-all">info@vitalitycommunitycare.com.au</span>
+                    </a>
                   </div>
                 </div>
 
-                <Button asChild size="lg" className="w-full rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))]">
-                  <Link to="/contact">Contact Us</Link>
+                {/* CTA Button */}
+                <Button asChild size="lg" className="w-full rounded-full bg-[hsl(var(--vitality-green))] hover:bg-[hsl(var(--vitality-green-75))] shadow-lg">
+                  <Link to="/contact">Contact Us <ArrowRight className="ml-2 h-5 w-5" /></Link>
                 </Button>
               </div>
             </div>

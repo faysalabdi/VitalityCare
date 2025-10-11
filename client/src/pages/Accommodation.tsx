@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Home, Phone, Mail, MapPin, Building, Bed, Bath, Car, Square, ShieldCheck, CheckCircle } from "lucide-react";
+import { ArrowRight, Home, Phone, Mail, MapPin, Building, Bed, Bath, Car, Square, ShieldCheck, CheckCircle, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import PuzzlePiece from "@/components/shared/PuzzlePiece";
 import SmartImageDisplay from "@/components/shared/SmartImageDisplay";
@@ -9,40 +9,56 @@ import housingVacancies from "@/data/housingVacancies";
 
 const HousingCard = ({ vacancy }: { vacancy: typeof housingVacancies[0] }) => {
   return (
-    <div className="bg-white rounded-xl overflow-hidden shadow-lg mb-8 hover:shadow-xl transition-shadow">
-      <div className="relative">
+    <div className="bg-white rounded-xl overflow-hidden shadow-lg mb-8 hover:shadow-xl transition-shadow flex flex-col h-full">
+      <div className="relative h-64 bg-gray-100">
         <SmartImageDisplay 
           src={vacancy.images[0]} 
           alt={vacancy.title}
           title={`${vacancy.location} - Property Brochure`}
-          className="w-full"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute top-0 left-0 bg-[hsl(var(--vitality-green))] text-white font-medium px-4 py-2 rounded-br-lg">
+        <div className="absolute top-0 left-0 bg-[hsl(var(--vitality-green))] text-white font-medium px-4 py-2 rounded-br-lg z-10">
           SIL Approved
         </div>
       </div>
-      <div className="p-6">
-        <h3 className="text-2xl font-bold mb-2 text-[hsl(var(--vitality-blue))]">{vacancy.location}</h3>
-        <p className="text-lg mb-1 font-medium">{vacancy.title}</p>
-        <p className="text-base mb-4 font-medium text-[hsl(var(--vitality-green))]">{vacancy.type}</p>
-        
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-6 mb-6">
-          <div className="flex items-center gap-2">
-            <Bed size={20} className="text-[hsl(var(--vitality-green))]" />
-            <span>Bedroom: {vacancy.features.bedrooms}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Bath size={20} className="text-[hsl(var(--vitality-green))]" />
-            <span>Bathroom: {vacancy.features.bathrooms}</span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <Bed size={20} className="text-[hsl(var(--vitality-green))]" />
-            <span>Vacancies available: {vacancy.features.bedroomsAvailable}</span>
+      <div className="p-6 pt-8 flex flex-col flex-grow">
+        <div className="flex-grow">
+          <h3 className="text-2xl font-bold mb-2 text-[hsl(var(--vitality-blue))]">{vacancy.location}</h3>
+          <p className="text-base mb-1 font-medium text-gray-700">{vacancy.title}</p>
+          <p className="text-sm mb-6 font-semibold text-[hsl(var(--vitality-green))]">{vacancy.type}</p>
+          
+          <div className="space-y-3 mb-6">
+            <div className="flex items-center gap-3">
+              <div className="flex-shrink-0 w-8 h-8 bg-[hsl(var(--vitality-green-5))] rounded-full flex items-center justify-center">
+                <Bed size={16} className="text-[hsl(var(--vitality-green))]" />
+              </div>
+              <div className="flex-1">
+                <span className="text-sm text-gray-600">Bedroom:</span>
+                <span className="ml-2 font-semibold text-gray-900">{vacancy.features.bedrooms}</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="flex-shrink-0 w-8 h-8 bg-[hsl(var(--vitality-blue-5))] rounded-full flex items-center justify-center">
+                <Bath size={16} className="text-[hsl(var(--vitality-blue))]" />
+              </div>
+              <div className="flex-1">
+                <span className="text-sm text-gray-600">Bathroom:</span>
+                <span className="ml-2 font-semibold text-gray-900">{vacancy.features.bathrooms}</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="flex-shrink-0 w-8 h-8 bg-[hsl(var(--vitality-green-5))] rounded-full flex items-center justify-center">
+                <Users size={16} className="text-[hsl(var(--vitality-green))]" />
+              </div>
+              <div className="flex-1">
+                <span className="text-sm text-gray-600">Vacancies available:</span>
+                <span className="ml-2 font-semibold text-gray-900">{vacancy.features.bedroomsAvailable}</span>
+              </div>
+            </div>
           </div>
         </div>
         
-        <Button asChild className="w-full rounded-full bg-[hsl(var(--vitality-blue))] hover:bg-[hsl(var(--vitality-blue-75))]">
+        <Button asChild className="w-full rounded-full bg-[hsl(var(--vitality-blue))] hover:bg-[hsl(var(--vitality-blue-75))] mt-auto">
           <Link to={`/accommodation/${vacancy.id}`}>View House <ArrowRight className="ml-2 h-5 w-5" /></Link>
         </Button>
       </div>
