@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Home, Bed, Bath, Users, MapPin, Shield, HeartHandshake } from "lucide-react";
 import housingVacancies from "@/data/housingVacancies";
 import ServicePageButton from "@/components/shared/ServicePageButton";
+import SmartImageDisplay from "@/components/shared/SmartImageDisplay";
 
 const SupportedLivingHighlights = () => {
   const container = {
@@ -89,11 +90,12 @@ const SupportedLivingHighlights = () => {
               }}
               className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
-              <div className="relative h-60">
-                <img 
+              <div className="relative">
+                <SmartImageDisplay 
                   src={property.images[0]} 
-                  alt={property.title} 
-                  className="w-full h-full object-cover"
+                  alt={property.title}
+                  title={`${property.location} - Property Brochure`}
+                  className="w-full"
                 />
                 <div className="absolute top-0 left-0 bg-[hsl(var(--vitality-green))] text-white font-medium px-4 py-2 rounded-br-lg">
                   SIL Approved

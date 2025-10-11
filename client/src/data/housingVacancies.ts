@@ -18,6 +18,107 @@ import harmonyLodge1 from '@/assets/houses/Harmony-lodge1.png';
 import harmonyLodge2 from '@/assets/houses/Harmony-lodge2.png';
 import harmonyLodge3 from '@/assets/houses/Harmony-lodge3.png';
 
+// PDF imports for new properties
+import holtStreetArdeer from '@/assets/houses/Holt-Street-Ardeer.pdf';
+import mansfieldStreetBerwick from '@/assets/houses/Mansfield-Street-Berwick.pdf';
+import royalAveEssendonNorth from '@/assets/houses/Royal-Ave-Essendon-North.pdf';
+import warrigalRoadSurreyHills from '@/assets/houses/Warrigal-Rd-Surrey-Hills.pdf';
+import dunneStreetKingsbury from '@/assets/houses/Dunne-Street-Kingsbury.pdf';
+import lawrenceRoadMtWaverley from '@/assets/houses/Lawrence-Road-Mt-Waverley.pdf';
+import horizonBlvdHamptonPark from '@/assets/houses/Horizon-Blvd-Hampton-Park.pdf';
+import normanRoadCroydon from '@/assets/houses/Norman-Road-Croydon.pdf';
+import gordonStreetCoburg from '@/assets/houses/Gordon-Street-Coburg.pdf';
+import exmoorStreetAintree from '@/assets/houses/Exmoor-Street-Aintree.pdf';
+import sumacStBrookfield from '@/assets/houses/Sumac-St-Brookfield.pdf';
+import cookhouseStreetDeanside from '@/assets/houses/Cookhouse-Street-Deanside.pdf';
+import skylineRoadFraserRise from '@/assets/houses/Skyline-Road-Fraser-Rise.pdf';
+import wallangaraBoulevardHarkness from '@/assets/houses/Wallangara-Boulevard-Harkness.pdf';
+import bessieStreetMambourin from '@/assets/houses/Bessie-Street-Mambourin.pdf';
+import produceDriveMambourin from '@/assets/houses/Produce-Drive-Mambourin.pdf';
+import corinthStreetManorLakes from '@/assets/houses/Corinth-Street-Manor-Lakes.pdf';
+import bonitoStreetMeltonSouth from '@/assets/houses/Bonito-Street-Melton-South.pdf';
+import rosetteCrescentRockbank from '@/assets/houses/Rosette-Crescent-Rockbank.pdf';
+import westbourneStreetStrathtulloh from '@/assets/houses/Westbourne-Street-Strathtulloh.pdf';
+import hilmaStreetSunshine from '@/assets/houses/Hilma-Street-Sunshine.pdf';
+import eloquenceRoadTarneit from '@/assets/houses/Eloquence-Road-Tarneit.pdf';
+import tolhurstStreetTarneit from '@/assets/houses/Tolhurst-Street-Tarneit.pdf';
+import pinkAvenueTarneit from '@/assets/houses/Pink-Avenue-Tarneit.pdf';
+import houdiniDriveTarneit from '@/assets/houses/Houdini-Drive-Tarneit.pdf';
+import aristidesCrescentThornhillPark from '@/assets/houses/Aristides-Crescent-Thornhill-Park .pdf';
+import weybaStreetTruganina from '@/assets/houses/Weyba-Street-Truganina.pdf';
+import taxonRoadWeirViews from '@/assets/houses/Taxon-Road-Weir-Views.pdf';
+import cobungraRoadWeirViews from '@/assets/houses/Cobungra-Road-Weir-Views.pdf';
+import bensonDriveWerribee from '@/assets/houses/Benson-Drive-Werribee.pdf';
+import grandvistaBoulevardWerribee from '@/assets/houses/Grandvista-Boulevard-Werribee.pdf';
+import peterboroughRiseWerribee from '@/assets/houses/Peterborough-Rise-Werribee.pdf';
+import ariannaStreetWyndhamVale from '@/assets/houses/Arianna-Street-Wyndham-Vale_2.pdf';
+import fritelliCircuitWyndhamVale from '@/assets/houses/Fritelli-Circuit-Wyndham-Vale.pdf';
+import greenmontRoadWyndhamVale from '@/assets/houses/Greenmont-Road-Wyndham-Vale.pdf';
+import lyndeyStreetWyndhamVale from '@/assets/houses/Lyndey-Street-Wyndham-Vale.pdf';
+import wattleCrescentBeaconsfield from '@/assets/houses/Wattle-Crescent-Beaconsfield-VIC-3807.pdf';
+import rimpleWayBeaconsfield from '@/assets/houses/Beaconsfield-Rimple-Way.pdf';
+import belcelloStreetBotanicRidge from '@/assets/houses/Belcello-Street-Botanic-Ridge.pdf';
+import pieroStreetClydeNorth from '@/assets/houses/Piero-Street-Clyde-North.pdf';
+import greenlandAvenueClyde from '@/assets/houses/Greenland-Avenue-Clyde.pdf';
+import aegeanStreetClydeNorth from '@/assets/houses/Aegean-Street-Clyde-North_2.pdf';
+import heartloopClydeNorth from '@/assets/houses/Heartloop-Clyde-North.pdf';
+import kenmoreWayClydeNorth from '@/assets/houses/Kenmore-Way-Clyde-North.pdf';
+import heiferAvenueClydeNorth from '@/assets/houses/Heifer-Avenue-Clyde-North.pdf';
+import pobblebonkCrescentClydeNorth from '@/assets/houses/Pobblebonk-Crescent-Clyde-North.pdf';
+import portburyCircuitCranbourneEast from '@/assets/houses/Portbury-Circuit-Cranbourne-East-PDH.pdf';
+import dalmationStreetCranbourneEast from '@/assets/houses/Dalmation-Street-Cranbourne-East.pdf';
+import auroraDriveCranbourneWest from '@/assets/houses/Aurora-Drive-Cranbourne-West.pdf';
+import proteaStJunctionVillage from '@/assets/houses/Protea-St-Junction-Village.pdf';
+import proteaStJunctionVillage2 from '@/assets/houses/Protea-St-Junction-Village_2.pdf';
+import habitatWayKooWeeRup from '@/assets/houses/Habitat-Way-Koo-Wee-Rup.pdf';
+import blossomStOfficer from '@/assets/houses/Blossom-St-Officer.pdf';
+import forageStreetOfficer from '@/assets/houses/Forage-Street-Officer.pdf';
+import rebeccaCourtPakenham from '@/assets/houses/Rebecca-Court-Pakenham.pdf';
+import earlStreetAirportWest from '@/assets/houses/Earl-Street-Airport-West.pdf';
+import bristleconeStBeveridge from '@/assets/houses/Bristlecone-St-Beveridge.pdf';
+import dotterelStreetBeveridge from '@/assets/houses/Dotterel-Street-Beveridge.pdf';
+import centralGroveBroadmeadows from '@/assets/houses/Central-Grove-Broadmeadows.pdf';
+import nicholasStBroadmeadows from '@/assets/houses/Nicholas-St-Broadmeadows.pdf';
+import valiantCrescentCraigieburn from '@/assets/houses/Valiant-Crescent-Craigieburn.pdf';
+import tanneryStreetDonnybrook from '@/assets/houses/Tannery-Street-Donnybrook.pdf';
+import brushRoadEpping from '@/assets/houses/Brush-Road-Epping-House.pdf';
+import ladislawDriveEpping from '@/assets/houses/Ladislaw-Drive-Epping.pdf';
+import flockhartStreetMickleham from '@/assets/houses/Flockhart-Street-Mickleham.pdf';
+import honniballDrThomastown from '@/assets/houses/Honniball-Dr-Thomastown.pdf';
+import arugulaCircuitThomastown from '@/assets/houses/Arugula-Circuit-Thomastown.pdf';
+import falconRoadWallan from '@/assets/houses/Falcon-Road-Wallan.pdf';
+import haystackDriveWollert from '@/assets/houses/Haystack-Drive-Wollert.pdf';
+import rogueAvenueWollert from '@/assets/houses/Rogue-Avenue-Wollert.pdf';
+import davisCircuitWollert from '@/assets/houses/Davis-Circuit-Wollert.pdf';
+import lightStreetWollert from '@/assets/houses/Light-Street-Wollert.pdf';
+import lightStreetWollert2 from '@/assets/houses/Light-Street-Wollert_2.pdf';
+import loksRoadWollert from '@/assets/houses/Loks-Road-Wollert.pdf';
+import sheepyardLaneWollert from '@/assets/houses/Sheepyard-Lane-Wollert.pdf';
+import marijorelleBoulevardWollert from '@/assets/houses/Marijorelle-Boulevard-Wollert.pdf';
+import monakeebaBlvdWoodstock from '@/assets/houses/Monakeeba-Blvd-Woodstock.pdf';
+import monakeebaRoadWoodstock from '@/assets/houses/Monakeeba-Road-Woodstock-PDH.pdf';
+import gearyPlaceWinterValley from '@/assets/houses/Geary-Place-Winter-Valley.pdf';
+import brewsterAlfredtonBallarat from '@/assets/houses/Brewster-Alfredton-Ballarat-Vic.pdf';
+import webbRdBonshaw from '@/assets/houses/Webb-Rd-Bonshaw.pdf';
+import savannahCourtDelacombe from '@/assets/houses/Savannah-Court-Delacombe.pdf';
+import stricklandRoadEastBendigo from '@/assets/houses/Strickland-Road-East-Bendigo.pdf';
+import terrapeeStreetStrathfieldsaye from '@/assets/houses/Terrapee-Street-Strathfieldsaye.pdf';
+import ungudWayArmstrongCreek from '@/assets/houses/Ungud-Way-Armstrong-Creek.pdf';
+import consawStreetArmstrongCreek from '@/assets/houses/Consaw-Street-Armstrong-Creek.pdf';
+import greenmountAvenueArmstrongCreek from '@/assets/houses/Greenmount-Avenue-Armstrong-Creek.pdf';
+import singletonCircuitArmstrongCreek from '@/assets/houses/Singleton-Circuit-Armstrong-Creek.pdf';
+import farndaleDriveLara from '@/assets/houses/Farndale-Drive-Lara.pdf';
+import derwentStreetLara from '@/assets/houses/Derwent-Street-Lara.pdf';
+import supenStreetMountDuneed from '@/assets/houses/Supen-Street-Mount-Duneed.pdf';
+import wildernessDriveMountDuneed from '@/assets/houses/Wilderness-Drive-Mount-Duneed.pdf';
+import sednaStLeopold from '@/assets/houses/Sedna-St-Leopold.pdf';
+import ashRoadLeopold from '@/assets/houses/Ash-Road-Leopold.pdf';
+import georgeAlbertDriveTraralgon from '@/assets/houses/George-Albert-Drive-Traralgon.pdf';
+import mapletonAvenue from '@/assets/houses/Mapleton-Avenue.pdf';
+import ivanhoeEast from '@/assets/houses/192-Lower-Heidelberg-Road-Ivanhoe-East.pdf';
+import serviceStSunshine from '@/assets/houses/15-19-Service-St-Sunshine.pdf';
+import stanleyStWestMelbourne from '@/assets/houses/218-228-Stanley-St-West-Melbourne.pdf';
+
 const housingVacancies = [
   {
     id: 1,
@@ -167,11 +268,7 @@ const housingVacancies = [
   title: "Holt Street, Ardeer, VIC",
   type: "High Physical Support/Robust",
   description: "This beautifully designed home offers the perfect balance of independence and support in a convenient location close to community amenities.",
-  images: [
-    "holtStreetArdeer1",
-    "holtStreetArdeer2",
-    "holtStreetArdeer3"
-  ],
+  images: [holtStreetArdeer],
   features: {
     bedrooms: 3,
     bathrooms: 2,
@@ -197,11 +294,7 @@ const housingVacancies = [
   title: "Mansfield Street, Berwick, VIC",
   type: "Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
-  images: [
-    "mansfieldStreetBerwick1",
-    "mansfieldStreetBerwick2",
-    "mansfieldStreetBerwick3"
-  ],
+  images: [mansfieldStreetBerwick],
   features: {
     bedrooms: 3,
     bathrooms: 3,
@@ -228,11 +321,7 @@ const housingVacancies = [
   title: "Royal Avenue, Essendon North, VIC",
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
-  images: [
-    "royalAveEssendonNorth1",
-    "royalAveEssendonNorth2",
-    "royalAveEssendonNorth3"
-  ],
+  images: [royalAveEssendonNorth],
   features: {
     bedrooms: 3,
     bathrooms: 3,
@@ -262,11 +351,7 @@ const housingVacancies = [
   title: "Warrigal Road, Surrey Hills, VIC",
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
-  images: [
-    "warrigalRoadSurreyHills1",
-    "warrigalRoadSurreyHills2",
-    "warrigalRoadSurreyHills3"
-  ],
+  images: [warrigalRoadSurreyHills],
   features: {
     bedrooms: 3,
     bathrooms: 1,
@@ -297,11 +382,7 @@ const housingVacancies = [
   title: "Dunne Street, Kingsbury, VIC",
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
-  images: [
-    "dunneStreetKingsbury1",
-    "dunneStreetKingsbury2",
-    "dunneStreetKingsbury3"
-  ],
+  images: [dunneStreetKingsbury],
   features: {
     bedrooms: 4,
     bathrooms: 4,
@@ -335,11 +416,7 @@ const housingVacancies = [
   title: "Lawrence Road, Mount Waverley, VIC",
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
-  images: [
-    "lawrenceRoadMtWaverley1",
-    "lawrenceRoadMtWaverley2",
-    "lawrenceRoadMtWaverley3"
-  ],
+  images: [lawrenceRoadMtWaverley],
   features: {
     bedrooms: 2,
     bathrooms: 1,
@@ -374,11 +451,7 @@ const housingVacancies = [
   title: "Horizon Boulevard, Hampton Park, VIC",
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
-  images: [
-    "horizonBlvdHamptonPark1",
-    "horizonBlvdHamptonPark2",
-    "horizonBlvdHamptonPark3"
-  ],
+  images: [horizonBlvdHamptonPark],
   features: {
     bedrooms: 3,
     bathrooms: 1,
@@ -414,11 +487,7 @@ const housingVacancies = [
   title: "Norman Road, Croydon, VIC",
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
-  images: [
-    "normanRoadCroydon1",
-    "normanRoadCroydon2",
-    "normanRoadCroydon3"
-  ],
+  images: [normanRoadCroydon],
   features: {
     bedrooms: 2,
     bathrooms: 1,
@@ -454,11 +523,7 @@ const housingVacancies = [
   title: "Gordon Street, Coburg, VIC",
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
-  images: [
-    "gordonStreetCoburg1",
-    "gordonStreetCoburg2",
-    "gordonStreetCoburg3"
-  ],
+  images: [gordonStreetCoburg],
   features: {
     bedrooms: 3,
     bathrooms: 1,
@@ -494,11 +559,7 @@ const housingVacancies = [
   title: "Exmoor Street, Aintree, VIC",
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
-  images: [
-    "exmoorStreetAintree1",
-    "exmoorStreetAintree2",
-    "exmoorStreetAintree3"
-  ],
+  images: [exmoorStreetAintree],
   features: {
     bedrooms: 3,
     bathrooms: 3,
@@ -534,11 +595,7 @@ const housingVacancies = [
   title: "Sumac Street, Brookfield, VIC",
   type: "High Physical Support / Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
-  images: [
-    "sumacStBrookfield1",
-    "sumacStBrookfield2",
-    "sumacStBrookfield3"
-  ],
+  images: [sumacStBrookfield],
   features: {
     bedrooms: 3,
     bathrooms: 1,
@@ -576,11 +633,7 @@ const housingVacancies = [
   title: "Cookhouse Street, Deanside, VIC",
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
-  images: [
-    "cookhouseStreetDeanside1",
-    "cookhouseStreetDeanside2",
-    "cookhouseStreetDeanside3"
-  ],
+  images: [cookhouseStreetDeanside],
   features: {
     bedrooms: 2,
     bathrooms: 2,
@@ -619,9 +672,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "clipstoneRoadFraserRise1",
-    "clipstoneRoadFraserRise2",
-    "clipstoneRoadFraserRise3"
+    skylineRoadFraserRise,
+    skylineRoadFraserRise,
+    skylineRoadFraserRise
   ],
   features: {
     bedrooms: 2,
@@ -659,9 +712,9 @@ const housingVacancies = [
   type: "Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "skylineRoadFraserRise1",
-    "skylineRoadFraserRise2",
-    "skylineRoadFraserRise3"
+    skylineRoadFraserRise,
+    skylineRoadFraserRise,
+    skylineRoadFraserRise
   ],
   features: {
     bedrooms: 2,
@@ -699,9 +752,9 @@ const housingVacancies = [
   type: "Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "wallangaraBoulevardHarkness1",
-    "wallangaraBoulevardHarkness2",
-    "wallangaraBoulevardHarkness3"
+    wallangaraBoulevardHarkness,
+    wallangaraBoulevardHarkness,
+    wallangaraBoulevardHarkness
   ],
   features: {
     bedrooms: 2,
@@ -739,9 +792,9 @@ const housingVacancies = [
   type: "High Physical Support / Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "bessieStreetMambourin1",
-    "bessieStreetMambourin2",
-    "bessieStreetMambourin3"
+    bessieStreetMambourin,
+    bessieStreetMambourin,
+    bessieStreetMambourin
   ],
   features: {
     bedrooms: 2,
@@ -780,9 +833,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "produceDriveMambourin1",
-    "produceDriveMambourin2",
-    "produceDriveMambourin3"
+    produceDriveMambourin,
+    produceDriveMambourin,
+    produceDriveMambourin
   ],
   features: {
     bedrooms: 3,
@@ -821,9 +874,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "corinthStreetManorLakes1",
-    "corinthStreetManorLakes2",
-    "corinthStreetManorLakes3"
+    corinthStreetManorLakes,
+    corinthStreetManorLakes,
+    corinthStreetManorLakes
   ],
   features: {
     bedrooms: 2,
@@ -863,9 +916,9 @@ const housingVacancies = [
   type: "Improved Liveability",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "bonitoStreetMeltonSouth1",
-    "bonitoStreetMeltonSouth2",
-    "bonitoStreetMeltonSouth3"
+    bonitoStreetMeltonSouth,
+    bonitoStreetMeltonSouth,
+    bonitoStreetMeltonSouth
   ],
   features: {
     bedrooms: 2,
@@ -902,9 +955,9 @@ const housingVacancies = [
   type: "Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "rosetteCrescentRockbank1",
-    "rosetteCrescentRockbank2",
-    "rosetteCrescentRockbank3"
+    rosetteCrescentRockbank,
+    rosetteCrescentRockbank,
+    rosetteCrescentRockbank
   ],
   features: {
     bedrooms: 2,
@@ -942,9 +995,9 @@ const housingVacancies = [
   type: "Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "westbourneStreetStrathtulloh1",
-    "westbourneStreetStrathtulloh2",
-    "westbourneStreetStrathtulloh3"
+    westbourneStreetStrathtulloh,
+    westbourneStreetStrathtulloh,
+    westbourneStreetStrathtulloh
   ],
   features: {
     bedrooms: 3,
@@ -983,9 +1036,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "hilmaStreetSunshine1",
-    "hilmaStreetSunshine2",
-    "hilmaStreetSunshine3"
+    hilmaStreetSunshine,
+    hilmaStreetSunshine,
+    hilmaStreetSunshine
   ],
   features: {
     bedrooms: 2,
@@ -1027,9 +1080,9 @@ const housingVacancies = [
   type: "Robust/FA/IL",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "eloquenceRoadTarneit1",
-    "eloquenceRoadTarneit2",
-    "eloquenceRoadTarneit3"
+    eloquenceRoadTarneit,
+    eloquenceRoadTarneit,
+    eloquenceRoadTarneit
   ],
   features: {
     bedrooms: 2,
@@ -1067,9 +1120,9 @@ const housingVacancies = [
   type: "Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "tolhurstStreetTarneit1",
-    "tolhurstStreetTarneit2",
-    "tolhurstStreetTarneit3"
+    tolhurstStreetTarneit,
+    tolhurstStreetTarneit,
+    tolhurstStreetTarneit
   ],
   features: {
     bedrooms: 2,
@@ -1107,9 +1160,9 @@ const housingVacancies = [
   type: "Improved Liveability",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "pinkAvenueTarneit1",
-    "pinkAvenueTarneit2",
-    "pinkAvenueTarneit3"
+    pinkAvenueTarneit,
+    pinkAvenueTarneit,
+    pinkAvenueTarneit
   ],
   features: {
     bedrooms: 2,
@@ -1147,9 +1200,9 @@ const housingVacancies = [
   type: "High Physical Support / Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "houdiniDriveTarneit1",
-    "houdiniDriveTarneit2",
-    "houdiniDriveTarneit3"
+    houdiniDriveTarneit,
+    houdiniDriveTarneit,
+    houdiniDriveTarneit
   ],
   features: {
     bedrooms: 3,
@@ -1190,9 +1243,9 @@ const housingVacancies = [
   type: "Robust/FA/IL",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "aristidesCrescentThornhillPark1",
-    "aristidesCrescentThornhillPark2",
-    "aristidesCrescentThornhillPark3"
+    aristidesCrescentThornhillPark,
+    aristidesCrescentThornhillPark,
+    aristidesCrescentThornhillPark
   ],
   features: {
     bedrooms: 4,
@@ -1232,9 +1285,9 @@ const housingVacancies = [
   type: "Improved Liveability",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "weybaStreetTruganina1",
-    "weybaStreetTruganina2",
-    "weybaStreetTruganina3"
+    weybaStreetTruganina,
+    weybaStreetTruganina,
+    weybaStreetTruganina
   ],
   features: {
     bedrooms: 2,
@@ -1272,9 +1325,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "taxonRoadWeirViews1",
-    "taxonRoadWeirViews2",
-    "taxonRoadWeirViews3"
+    taxonRoadWeirViews,
+    taxonRoadWeirViews,
+    taxonRoadWeirViews
   ],
   features: {
     bedrooms: 2,
@@ -1312,9 +1365,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "cobungraRoadWeirViews1",
-    "cobungraRoadWeirViews2",
-    "cobungraRoadWeirViews3"
+    cobungraRoadWeirViews,
+    cobungraRoadWeirViews,
+    cobungraRoadWeirViews
   ],
   features: {
     bedrooms: 3,
@@ -1354,9 +1407,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "bensonDriveWerribee1",
-    "bensonDriveWerribee2",
-    "bensonDriveWerribee3"
+    bensonDriveWerribee,
+    bensonDriveWerribee,
+    bensonDriveWerribee
   ],
   features: {
     bedrooms: 2,
@@ -1394,9 +1447,9 @@ const housingVacancies = [
   type: "Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "grandvistaBoulevardWerribee1",
-    "grandvistaBoulevardWerribee2",
-    "grandvistaBoulevardWerribee3"
+    grandvistaBoulevardWerribee,
+    grandvistaBoulevardWerribee,
+    grandvistaBoulevardWerribee
   ],
   features: {
     bedrooms: 2,
@@ -1434,9 +1487,9 @@ const housingVacancies = [
   type: "Improved Liveability",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "peterboroughRiseWerribee1",
-    "peterboroughRiseWerribee2",
-    "peterboroughRiseWerribee3"
+    peterboroughRiseWerribee,
+    peterboroughRiseWerribee,
+    peterboroughRiseWerribee
   ],
   features: {
     bedrooms: 2,
@@ -1474,9 +1527,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "ariannaStreetWyndhamVale1",
-    "ariannaStreetWyndhamVale2",
-    "ariannaStreetWyndhamVale3"
+    ariannaStreetWyndhamVale,
+    ariannaStreetWyndhamVale,
+    ariannaStreetWyndhamVale
   ],
   features: {
     bedrooms: 2,
@@ -1517,9 +1570,9 @@ const housingVacancies = [
   type: "Robust/FA/IL",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "fritelliCircuitWyndhamVale1",
-    "fritelliCircuitWyndhamVale2",
-    "fritelliCircuitWyndhamVale3"
+    fritelliCircuitWyndhamVale,
+    fritelliCircuitWyndhamVale,
+    fritelliCircuitWyndhamVale
   ],
   features: {
     bedrooms: 4,
@@ -1557,9 +1610,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "greenmontRoadWyndhamVale1",
-    "greenmontRoadWyndhamVale2",
-    "greenmontRoadWyndhamVale3"
+    greenmontRoadWyndhamVale,
+    greenmontRoadWyndhamVale,
+    greenmontRoadWyndhamVale
   ],
   features: {
     bedrooms: 3,
@@ -1598,9 +1651,9 @@ const housingVacancies = [
   type: "Improved Liveability",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "lyndeyStreetWyndhamVale1",
-    "lyndeyStreetWyndhamVale2",
-    "lyndeyStreetWyndhamVale3"
+    lyndeyStreetWyndhamVale,
+    lyndeyStreetWyndhamVale,
+    lyndeyStreetWyndhamVale
   ],
   features: {
     bedrooms: 2,
@@ -1639,9 +1692,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "wattleCrescentBeaconsfield1",
-    "wattleCrescentBeaconsfield2",
-    "wattleCrescentBeaconsfield3"
+    wattleCrescentBeaconsfield,
+    wattleCrescentBeaconsfield,
+    wattleCrescentBeaconsfield
   ],
   features: {
     bedrooms: 2,
@@ -1679,9 +1732,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "rimpleWayBeaconsfield1",
-    "rimpleWayBeaconsfield2",
-    "rimpleWayBeaconsfield3"
+    rimpleWayBeaconsfield,
+    rimpleWayBeaconsfield,
+    rimpleWayBeaconsfield
   ],
   features: {
     bedrooms: 3,
@@ -1719,9 +1772,9 @@ const housingVacancies = [
   type: "Improved Liveability",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "belcelloStreetBotanicRidge1",
-    "belcelloStreetBotanicRidge2",
-    "belcelloStreetBotanicRidge3"
+    belcelloStreetBotanicRidge,
+    belcelloStreetBotanicRidge,
+    belcelloStreetBotanicRidge
   ],
   features: {
     bedrooms: 3,
@@ -1758,9 +1811,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "pieroStreetClydeNorth1",
-    "pieroStreetClydeNorth2",
-    "pieroStreetClydeNorth3"
+    pieroStreetClydeNorth,
+    pieroStreetClydeNorth,
+    pieroStreetClydeNorth
   ],
   features: {
     bedrooms: 2,
@@ -1798,9 +1851,9 @@ const housingVacancies = [
   type: "High Physical Support - Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "greenlandAvenueClyde1",
-    "greenlandAvenueClyde2",
-    "greenlandAvenueClyde3"
+    greenlandAvenueClyde,
+    greenlandAvenueClyde,
+    greenlandAvenueClyde
   ],
   features: {
     bedrooms: 2,
@@ -1840,9 +1893,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "aegeanStreetClydeNorth1",
-    "aegeanStreetClydeNorth2",
-    "aegeanStreetClydeNorth3"
+    aegeanStreetClydeNorth,
+    aegeanStreetClydeNorth,
+    aegeanStreetClydeNorth
   ],
   features: {
     bedrooms: 2,
@@ -1883,9 +1936,9 @@ const housingVacancies = [
   type: "Improved Liveability",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "heartloopClydeNorth1",
-    "heartloopClydeNorth2",
-    "heartloopClydeNorth3"
+    heartloopClydeNorth,
+    heartloopClydeNorth,
+    heartloopClydeNorth
   ],
   features: {
     bedrooms: 2,
@@ -1922,9 +1975,9 @@ const housingVacancies = [
   type: "Improved Liveability",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "kenmoreWayClydeNorth1",
-    "kenmoreWayClydeNorth2",
-    "kenmoreWayClydeNorth3"
+    kenmoreWayClydeNorth,
+    kenmoreWayClydeNorth,
+    kenmoreWayClydeNorth
   ],
   features: {
     bedrooms: 2,
@@ -1962,9 +2015,9 @@ const housingVacancies = [
   type: "HPS + Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "heiferAvenueClydeNorth1",
-    "heiferAvenueClydeNorth2",
-    "heiferAvenueClydeNorth3"
+    heiferAvenueClydeNorth,
+    heiferAvenueClydeNorth,
+    heiferAvenueClydeNorth
   ],
   features: {
     bedrooms: 2,
@@ -2004,9 +2057,9 @@ const housingVacancies = [
   type: "Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "pobblebonkCrescentClydeNorth1",
-    "pobblebonkCrescentClydeNorth2",
-    "pobblebonkCrescentClydeNorth3"
+    pobblebonkCrescentClydeNorth,
+    pobblebonkCrescentClydeNorth,
+    pobblebonkCrescentClydeNorth
   ],
   features: {
     bedrooms: 2,
@@ -2044,9 +2097,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "portburyCircuitCranbourneEast1",
-    "portburyCircuitCranbourneEast2",
-    "portburyCircuitCranbourneEast3"
+    portburyCircuitCranbourneEast,
+    portburyCircuitCranbourneEast,
+    portburyCircuitCranbourneEast
   ],
   features: {
     bedrooms: 2,
@@ -2086,9 +2139,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "dalmationStreetCranbourneEast1",
-    "dalmationStreetCranbourneEast2",
-    "dalmationStreetCranbourneEast3"
+    dalmationStreetCranbourneEast,
+    dalmationStreetCranbourneEast,
+    dalmationStreetCranbourneEast
   ],
   features: {
     bedrooms: 3,
@@ -2126,9 +2179,9 @@ const housingVacancies = [
   type: "Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "auroraDriveCranbourneWest1",
-    "auroraDriveCranbourneWest2",
-    "auroraDriveCranbourneWest3"
+    auroraDriveCranbourneWest,
+    auroraDriveCranbourneWest,
+    auroraDriveCranbourneWest
   ],
   features: {
     bedrooms: 2,
@@ -2166,9 +2219,9 @@ const housingVacancies = [
   type: "Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "proteaStJunctionVillage1",
-    "proteaStJunctionVillage2",
-    "proteaStJunctionVillage3"
+    proteaStJunctionVillage,
+    proteaStJunctionVillage,
+    proteaStJunctionVillage
   ],
   features: {
     bedrooms: 2,
@@ -2207,9 +2260,9 @@ const housingVacancies = [
   type: "High Physical Support - Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "proteaStJunctionVillage_2_1",
-    "proteaStJunctionVillage_2_2",
-    "proteaStJunctionVillage_2_3"
+    proteaStJunctionVillage2,
+    proteaStJunctionVillage2,
+    proteaStJunctionVillage2
   ],
   features: {
     bedrooms: 3,
@@ -2248,9 +2301,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "habitatWayKooWeeRup1",
-    "habitatWayKooWeeRup2",
-    "habitatWayKooWeeRup3"
+    habitatWayKooWeeRup,
+    habitatWayKooWeeRup,
+    habitatWayKooWeeRup
   ],
   features: {
     bedrooms: 2,
@@ -2290,9 +2343,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "blossomStOfficer1",
-    "blossomStOfficer2",
-    "blossomStOfficer3"
+    blossomStOfficer,
+    blossomStOfficer,
+    blossomStOfficer
   ],
   features: {
     bedrooms: 2,
@@ -2330,9 +2383,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "forageStreetOfficer1",
-    "forageStreetOfficer2",
-    "forageStreetOfficer3"
+    forageStreetOfficer,
+    forageStreetOfficer,
+    forageStreetOfficer
   ],
   features: {
     bedrooms: 3,
@@ -2370,9 +2423,9 @@ const housingVacancies = [
   type: "Independent Living - High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "rebeccaCourtPakenham1",
-    "rebeccaCourtPakenham2",
-    "rebeccaCourtPakenham3"
+    rebeccaCourtPakenham,
+    rebeccaCourtPakenham,
+    rebeccaCourtPakenham
   ],
   features: {
     bedrooms: 4,
@@ -2416,9 +2469,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "earlStreetAirportWest1",
-    "earlStreetAirportWest2",
-    "earlStreetAirportWest3"
+    earlStreetAirportWest,
+    earlStreetAirportWest,
+    earlStreetAirportWest
   ],
   features: {
     bedrooms: 2,
@@ -2456,9 +2509,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "bristleconeStBeveridge1",
-    "bristleconeStBeveridge2",
-    "bristleconeStBeveridge3"
+    bristleconeStBeveridge,
+    bristleconeStBeveridge,
+    bristleconeStBeveridge
   ],
   features: {
     bedrooms: 2,
@@ -2496,9 +2549,9 @@ const housingVacancies = [
   type: "Improved Liveability + Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "dotterelStreetBeveridge1",
-    "dotterelStreetBeveridge2",
-    "dotterelStreetBeveridge3"
+    dotterelStreetBeveridge,
+    dotterelStreetBeveridge,
+    dotterelStreetBeveridge
   ],
   features: {
     bedrooms: 2,
@@ -2537,9 +2590,9 @@ const housingVacancies = [
   type: "Robust + IL",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "centralGroveBroadmeadows1",
-    "centralGroveBroadmeadows2",
-    "centralGroveBroadmeadows3"
+    centralGroveBroadmeadows,
+    centralGroveBroadmeadows,
+    centralGroveBroadmeadows
   ],
   features: {
     bedrooms: 2,
@@ -2577,9 +2630,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "nicholasStBroadmeadows1",
-    "nicholasStBroadmeadows2",
-    "nicholasStBroadmeadows3"
+    nicholasStBroadmeadows,
+    nicholasStBroadmeadows,
+    nicholasStBroadmeadows
   ],
   features: {
     bedrooms: 2,
@@ -2618,9 +2671,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "nicksonStBundoora1",
-    "nicksonStBundoora2",
-    "nicksonStBundoora3"
+    nicholasStBroadmeadows,
+    nicholasStBroadmeadows,
+    nicholasStBroadmeadows
   ],
   features: {
     bedrooms: 3,
@@ -2658,9 +2711,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "valiantCrescentCraigieburn1",
-    "valiantCrescentCraigieburn2",
-    "valiantCrescentCraigieburn3"
+    valiantCrescentCraigieburn,
+    valiantCrescentCraigieburn,
+    valiantCrescentCraigieburn
   ],
   features: {
     bedrooms: 2,
@@ -2698,9 +2751,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "tanneryStreetDonnybrook1",
-    "tanneryStreetDonnybrook2",
-    "tanneryStreetDonnybrook3"
+    tanneryStreetDonnybrook,
+    tanneryStreetDonnybrook,
+    tanneryStreetDonnybrook
   ],
   features: {
     bedrooms: 3,
@@ -2738,9 +2791,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "brushRoadEpping1",
-    "brushRoadEpping2",
-    "brushRoadEpping3"
+    brushRoadEpping,
+    brushRoadEpping,
+    brushRoadEpping
   ],
   features: {
     bedrooms: 3,
@@ -2778,9 +2831,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "ladislawDriveEpping1",
-    "ladislawDriveEpping2",
-    "ladislawDriveEpping3"
+    ladislawDriveEpping,
+    ladislawDriveEpping,
+    ladislawDriveEpping
   ],
   features: {
     bedrooms: 3,
@@ -2818,9 +2871,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "flockhartStreetMickleham1",
-    "flockhartStreetMickleham2",
-    "flockhartStreetMickleham3"
+    flockhartStreetMickleham,
+    flockhartStreetMickleham,
+    flockhartStreetMickleham
   ],
   features: {
     bedrooms: 3,
@@ -2858,9 +2911,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "honniballDrThomastown1",
-    "honniballDrThomastown2",
-    "honniballDrThomastown3"
+    honniballDrThomastown,
+    honniballDrThomastown,
+    honniballDrThomastown
   ],
   features: {
     bedrooms: 2,
@@ -2895,9 +2948,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "arugulaCircuitThomastown1",
-    "arugulaCircuitThomastown2",
-    "arugulaCircuitThomastown3"
+    arugulaCircuitThomastown,
+    arugulaCircuitThomastown,
+    arugulaCircuitThomastown
   ],
   features: {
     bedrooms: 2,
@@ -2935,9 +2988,9 @@ const housingVacancies = [
   type: "Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "falconRoadWallan1",
-    "falconRoadWallan2",
-    "falconRoadWallan3"
+    falconRoadWallan,
+    falconRoadWallan,
+    falconRoadWallan
   ],
   features: {
     bedrooms: 3,
@@ -2973,9 +3026,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "haystackDriveWollert1",
-    "haystackDriveWollert2",
-    "haystackDriveWollert3"
+    haystackDriveWollert,
+    haystackDriveWollert,
+    haystackDriveWollert
   ],
   features: {
     bedrooms: 2,
@@ -3011,9 +3064,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "rogueAvenueWollert1",
-    "rogueAvenueWollert2",
-    "rogueAvenueWollert3"
+    rogueAvenueWollert,
+    rogueAvenueWollert,
+    rogueAvenueWollert
   ],
   features: {
     bedrooms: 2,
@@ -3054,9 +3107,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "davisCircuitWollert1",
-    "davisCircuitWollert2",
-    "davisCircuitWollert3"
+    davisCircuitWollert,
+    davisCircuitWollert,
+    davisCircuitWollert
   ],
   features: {
     bedrooms: 2,
@@ -3094,9 +3147,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "lightStreetWollert1",
-    "lightStreetWollert2",
-    "lightStreetWollert3"
+    lightStreetWollert,
+    lightStreetWollert,
+    lightStreetWollert
   ],
   features: {
     bedrooms: 2,
@@ -3135,9 +3188,9 @@ const housingVacancies = [
   type: "Robust/HPS",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "lightStreetWollert_2_1",
-    "lightStreetWollert_2_2",
-    "lightStreetWollert_2_3"
+    lightStreetWollert2,
+    lightStreetWollert2,
+    lightStreetWollert2
   ],
   features: {
     bedrooms: 3,
@@ -3175,9 +3228,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "loksRoadWollert1",
-    "loksRoadWollert2",
-    "loksRoadWollert3"
+    loksRoadWollert,
+    loksRoadWollert,
+    loksRoadWollert
   ],
   features: {
     bedrooms: 2,
@@ -3219,9 +3272,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "sheepyardLaneWollert1",
-    "sheepyardLaneWollert2",
-    "sheepyardLaneWollert3"
+    sheepyardLaneWollert,
+    sheepyardLaneWollert,
+    sheepyardLaneWollert
   ],
   features: {
     bedrooms: 2,
@@ -3261,9 +3314,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "marijorelleBoulevardWollert1",
-    "marijorelleBoulevardWollert2",
-    "marijorelleBoulevardWollert3"
+    marijorelleBoulevardWollert,
+    marijorelleBoulevardWollert,
+    marijorelleBoulevardWollert
   ],
   features: {
     bedrooms: 3,
@@ -3301,9 +3354,9 @@ const housingVacancies = [
   type: "Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "monakeebaBlvdWoodstock1",
-    "monakeebaBlvdWoodstock2",
-    "monakeebaBlvdWoodstock3"
+    monakeebaBlvdWoodstock,
+    monakeebaBlvdWoodstock,
+    monakeebaBlvdWoodstock
   ],
   features: {
     bedrooms: 2,
@@ -3341,9 +3394,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "monakeebaRoadWoodstock1",
-    "monakeebaRoadWoodstock2",
-    "monakeebaRoadWoodstock3"
+    monakeebaRoadWoodstock,
+    monakeebaRoadWoodstock,
+    monakeebaRoadWoodstock
   ],
   features: {
     bedrooms: 2,
@@ -3380,9 +3433,9 @@ const housingVacancies = [
   type: "Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "gearyPlaceWinterValley1",
-    "gearyPlaceWinterValley2",
-    "gearyPlaceWinterValley3"
+    gearyPlaceWinterValley,
+    gearyPlaceWinterValley,
+    gearyPlaceWinterValley
   ],
   features: {
     bedrooms: 2,
@@ -3422,9 +3475,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "brewsterAlfredtonBallarat1",
-    "brewsterAlfredtonBallarat2",
-    "brewsterAlfredtonBallarat3"
+    brewsterAlfredtonBallarat,
+    brewsterAlfredtonBallarat,
+    brewsterAlfredtonBallarat
   ],
   features: {
     bedrooms: 3,
@@ -3461,9 +3514,9 @@ const housingVacancies = [
   type: "Improved Liveability",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "webbRdBonshaw1",
-    "webbRdBonshaw2",
-    "webbRdBonshaw3"
+    webbRdBonshaw,
+    webbRdBonshaw,
+    webbRdBonshaw
   ],
   features: {
     bedrooms: 2,
@@ -3501,9 +3554,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "savannahCourtDelacombe1",
-    "savannahCourtDelacombe2",
-    "savannahCourtDelacombe3"
+    savannahCourtDelacombe,
+    savannahCourtDelacombe,
+    savannahCourtDelacombe
   ],
   features: {
     bedrooms: 3,
@@ -3542,9 +3595,9 @@ const housingVacancies = [
   type: "Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "stricklandRoadEastBendigo1",
-    "stricklandRoadEastBendigo2",
-    "stricklandRoadEastBendigo3"
+    stricklandRoadEastBendigo,
+    stricklandRoadEastBendigo,
+    stricklandRoadEastBendigo
   ],
   features: {
     bedrooms: 3,
@@ -3582,9 +3635,9 @@ const housingVacancies = [
   type: "Improved Liveability",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "terrapeeStreetStrathfieldsaye1",
-    "terrapeeStreetStrathfieldsaye2",
-    "terrapeeStreetStrathfieldsaye3"
+    terrapeeStreetStrathfieldsaye,
+    terrapeeStreetStrathfieldsaye,
+    terrapeeStreetStrathfieldsaye
   ],
   features: {
     bedrooms: 2,
@@ -3621,9 +3674,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "ungudWayArmstrongCreek1",
-    "ungudWayArmstrongCreek2",
-    "ungudWayArmstrongCreek3"
+    ungudWayArmstrongCreek,
+    ungudWayArmstrongCreek,
+    ungudWayArmstrongCreek
   ],
   features: {
     bedrooms: 3,
@@ -3661,9 +3714,9 @@ const housingVacancies = [
   type: "Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "consawStreetArmstrongCreek1",
-    "consawStreetArmstrongCreek2",
-    "consawStreetArmstrongCreek3"
+    consawStreetArmstrongCreek,
+    consawStreetArmstrongCreek,
+    consawStreetArmstrongCreek
   ],
   features: {
     bedrooms: 2,
@@ -3699,9 +3752,9 @@ const housingVacancies = [
   type: "Improved Liveability",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "greenmountAvenueArmstrongCreek1",
-    "greenmountAvenueArmstrongCreek2",
-    "greenmountAvenueArmstrongCreek3"
+    greenmountAvenueArmstrongCreek,
+    greenmountAvenueArmstrongCreek,
+    greenmountAvenueArmstrongCreek
   ],
   features: {
     bedrooms: 2,
@@ -3739,9 +3792,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "singletonCircuitArmstrongCreek1",
-    "singletonCircuitArmstrongCreek2",
-    "singletonCircuitArmstrongCreek3"
+    singletonCircuitArmstrongCreek,
+    singletonCircuitArmstrongCreek,
+    singletonCircuitArmstrongCreek
   ],
   features: {
     bedrooms: 2,
@@ -3780,9 +3833,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "farndaleDriveLara1",
-    "farndaleDriveLara2",
-    "farndaleDriveLara3"
+    farndaleDriveLara,
+    farndaleDriveLara,
+    farndaleDriveLara
   ],
   features: {
     bedrooms: 2,
@@ -3822,9 +3875,9 @@ const housingVacancies = [
   type: "Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "derwentStreetLara1",
-    "derwentStreetLara2",
-    "derwentStreetLara3"
+    derwentStreetLara,
+    derwentStreetLara,
+    derwentStreetLara
   ],
   features: {
     bedrooms: 2,
@@ -3862,9 +3915,9 @@ const housingVacancies = [
   type: "Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "supenStreetMountDuneed1",
-    "supenStreetMountDuneed2",
-    "supenStreetMountDuneed3"
+    supenStreetMountDuneed,
+    supenStreetMountDuneed,
+    supenStreetMountDuneed
   ],
   features: {
     bedrooms: 2,
@@ -3903,9 +3956,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "wildernessDriveMountDuneed1",
-    "wildernessDriveMountDuneed2",
-    "wildernessDriveMountDuneed3"
+    wildernessDriveMountDuneed,
+    wildernessDriveMountDuneed,
+    wildernessDriveMountDuneed
   ],
   features: {
     bedrooms: 2,
@@ -3943,9 +3996,9 @@ const housingVacancies = [
   type: "Robust",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "sednaStLeopold1",
-    "sednaStLeopold2",
-    "sednaStLeopold3"
+    sednaStLeopold,
+    sednaStLeopold,
+    sednaStLeopold
   ],
   features: {
     bedrooms: 3,
@@ -3985,9 +4038,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "ashRoadLeopold1",
-    "ashRoadLeopold2",
-    "ashRoadLeopold3"
+    ashRoadLeopold,
+    ashRoadLeopold,
+    ashRoadLeopold
   ],
   features: {
     bedrooms: 2,
@@ -4025,9 +4078,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "georgeAlbertDriveTraralgon1",
-    "georgeAlbertDriveTraralgon2",
-    "georgeAlbertDriveTraralgon3"
+    georgeAlbertDriveTraralgon,
+    georgeAlbertDriveTraralgon,
+    georgeAlbertDriveTraralgon
   ],
   features: {
     bedrooms: 2,
@@ -4067,9 +4120,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "mapletonAvenue1",
-    "mapletonAvenue2",
-    "mapletonAvenue3"
+    mapletonAvenue,
+    mapletonAvenue,
+    mapletonAvenue
   ],
   features: {
     bedrooms: 2,
@@ -4109,9 +4162,9 @@ const housingVacancies = [
   type: "Improved Liveability",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "ivanhoeEast1",
-    "ivanhoeEast2",
-    "ivanhoeEast3"
+    ivanhoeEast,
+    ivanhoeEast,
+    ivanhoeEast
   ],
   features: {
     bedrooms: 2,
@@ -4150,9 +4203,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "serviceStSunshine1",
-    "serviceStSunshine2",
-    "serviceStSunshine3"
+    serviceStSunshine,
+    serviceStSunshine,
+    serviceStSunshine
   ],
   features: {
     bedrooms: 2,
@@ -4192,9 +4245,9 @@ const housingVacancies = [
   type: "High Physical Support",
   description: "This beautifully designed SIL home offers the perfect balance of independence and support in a convenient location close to community amenities.",
   images: [
-    "stanleyStWestMelbourne1",
-    "stanleyStWestMelbourne2",
-    "stanleyStWestMelbourne3"
+    stanleyStWestMelbourne,
+    stanleyStWestMelbourne,
+    stanleyStWestMelbourne
   ],
   features: {
     bedrooms: 2,

@@ -6,6 +6,7 @@ import { useState } from "react";
 import housingVacancies from "@/data/housingVacancies";
 import { motion } from "framer-motion";
 import PuzzlePiece from "@/components/shared/PuzzlePiece";
+import SmartImageDisplay from "@/components/shared/SmartImageDisplay";
 
 const AccommodationDetail = () => {
   const [match, params] = useRoute('/accommodation/:id');
@@ -126,31 +127,13 @@ const AccommodationDetail = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <div className="bg-[hsl(var(--neutral-light))] rounded-lg overflow-hidden mb-4 h-[400px]">
-                <img 
-                  src={property.images[activeImage]} 
-                  alt={`${property.location} - View ${activeImage + 1}`} 
-                  className="w-full h-full object-cover"
+              <div className="bg-[hsl(var(--neutral-light))] rounded-lg overflow-hidden mb-4">
+                <SmartImageDisplay 
+                  src={property.images[0]} 
+                  alt={`${property.location} - Property Brochure`}
+                  title={`${property.location} - Property Brochure`}
+                  className="w-full"
                 />
-              </div>
-              <div className="grid grid-cols-3 gap-4">
-                {property.images.map((image, index) => (
-                  <div 
-                    key={index}
-                    className={`h-24 rounded-lg overflow-hidden cursor-pointer border-2 ${
-                      activeImage === index 
-                        ? 'border-[hsl(var(--vitality-blue))]' 
-                        : 'border-transparent'
-                    }`}
-                    onClick={() => setActiveImage(index)}
-                  >
-                    <img 
-                      src={image} 
-                      alt={`${property.location} - Thumbnail ${index + 1}`} 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                ))}
               </div>
             </div>
 

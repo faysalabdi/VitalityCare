@@ -3,17 +3,19 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Home, Phone, Mail, MapPin, Building, Bed, Bath, Car, Square, ShieldCheck, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import PuzzlePiece from "@/components/shared/PuzzlePiece";
+import SmartImageDisplay from "@/components/shared/SmartImageDisplay";
 import { Link } from "wouter";
 import housingVacancies from "@/data/housingVacancies";
 
 const HousingCard = ({ vacancy }: { vacancy: typeof housingVacancies[0] }) => {
   return (
     <div className="bg-white rounded-xl overflow-hidden shadow-lg mb-8 hover:shadow-xl transition-shadow">
-      <div className="relative h-64">
-        <img 
+      <div className="relative">
+        <SmartImageDisplay 
           src={vacancy.images[0]} 
-          alt={vacancy.title} 
-          className="w-full h-full object-cover"
+          alt={vacancy.title}
+          title={`${vacancy.location} - Property Brochure`}
+          className="w-full"
         />
         <div className="absolute top-0 left-0 bg-[hsl(var(--vitality-green))] text-white font-medium px-4 py-2 rounded-br-lg">
           SIL Approved
