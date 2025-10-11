@@ -127,12 +127,12 @@ const AccommodationDetail = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             <div>
-              <div className="bg-[hsl(var(--neutral-light))] rounded-lg overflow-hidden mb-4">
+              <div className="bg-[hsl(var(--neutral-light))] rounded-lg overflow-hidden mb-4 min-h-[500px]">
                 <SmartImageDisplay 
                   src={property.images[activeImage]} 
                   alt={`${property.location} - ${property.images.length > 1 ? `Image ${activeImage + 1}` : 'Property Brochure'}`}
                   title={`${property.location} - Property Brochure`}
-                  className="w-full"
+                  className="w-full h-full"
                 />
               </div>
               
