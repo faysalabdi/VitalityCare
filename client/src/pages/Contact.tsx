@@ -32,16 +32,6 @@ const locations = [
     icon: <MapPin className="h-6 w-6 text-[hsl(var(--vitality-blue))]" />
   },
   {
-    city: "Adelaide (South Australia)",
-    address: "33 Warwick St, Walkerville, 5081 SA",
-    icon: <MapPin className="h-6 w-6 text-[hsl(var(--vitality-blue))]" />
-  },
-  {
-    city: "Brisbane (Queensland)",
-    address: "477 Boundary St, Spring Hill, 4000 QLD",
-    icon: <MapPin className="h-6 w-6 text-[hsl(var(--vitality-blue))]" />
-  },
-  {
     city: "Sydney (NSW)",
     address: "8 Parramatta Square, Parramatta, 2150 NSW",
     icon: <MapPin className="h-6 w-6 text-[hsl(var(--vitality-blue))]" />
