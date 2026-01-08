@@ -201,17 +201,17 @@ const AccommodationDetail = () => {
                 <div className="bg-white rounded-lg p-5 border border-gray-200">
                   <h3 className="text-lg font-bold mb-4 text-[hsl(var(--vitality-blue))]">Contact Details</h3>
                   <div className="space-y-3">
-                    <a href="tel:0390685795" className="flex items-center gap-3 hover:text-[hsl(var(--vitality-green))] transition-colors">
+                    <a href="tel:1300395852" className="flex items-center gap-3 hover:text-[hsl(var(--vitality-green))] transition-colors">
                       <div className="flex-shrink-0 w-10 h-10 bg-[hsl(var(--vitality-green-5))] rounded-full flex items-center justify-center">
                         <Phone size={18} className="text-[hsl(var(--vitality-green))]" />
                       </div>
-                      <span className="font-medium">(03) 9068 5795</span>
+                      <span className="font-medium">1300 395 852</span>
                     </a>
-                    <a href="mailto:info@vitalitycommunitycare.com.au" className="flex items-center gap-3 hover:text-[hsl(var(--vitality-blue))] transition-colors">
+                    <a href="mailto:contact@vitalitycommunitycare.com.au" className="flex items-center gap-3 hover:text-[hsl(var(--vitality-blue))] transition-colors">
                       <div className="flex-shrink-0 w-10 h-10 bg-[hsl(var(--vitality-blue-5))] rounded-full flex items-center justify-center">
                         <Mail size={18} className="text-[hsl(var(--vitality-blue))]" />
                       </div>
-                      <span className="font-medium text-sm break-all">info@vitalitycommunitycare.com.au</span>
+                      <span className="font-medium text-sm break-all">contact@vitalitycommunitycare.com.au</span>
                     </a>
                   </div>
                 </div>

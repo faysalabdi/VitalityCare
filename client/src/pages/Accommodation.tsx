@@ -182,13 +182,13 @@ const Accommodation = () => {
                   <div className="flex items-start">
                     <Phone className="w-5 h-5 text-[hsl(var(--vitality-green))] mr-3 mt-1" />
                     <div>
-                      <p className="font-medium">(03) 9068 5795</p>
+                      <p className="font-medium">1300 395 852</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <Mail className="w-5 h-5 text-[hsl(var(--vitality-green))] mr-3 mt-1" />
                     <div>
-                      <p className="font-medium">info@vitalitycommunitycare.com.au</p>
+                      <p className="font-medium">contact@vitalitycommunitycare.com.au</p>
                     </div>
                   </div>
                 </div>

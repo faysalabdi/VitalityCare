@@ -36,7 +36,7 @@
   "availableChannel": {
     "@type": "ServiceChannel",
     "serviceUrl": "https://vitalitycommunitycare.com.au/ndis",
-    "servicePhone": "(03) 9068 5795",
+    "servicePhone": "1300 395 852",
     "serviceLocation": {
       "@type": "Place",
       "name": "Vitality Community Care Main Office",
