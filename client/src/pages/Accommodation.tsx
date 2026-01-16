@@ -70,10 +70,10 @@ const Accommodation = () => {
   return (
     <>
       <Helmet>
-        <title>Housing Vacancies | Vitality Community Care</title>
-        <meta name="description" content="Explore our Supported Independent Living (SIL) housing vacancies across Melbourne, providing flexible living arrangements with personalized support." />
-        <meta property="og:title" content="SIL Housing Vacancies | Vitality Community Care" />
-        <meta property="og:description" content="Find quality supported independent living accommodation options tailored to your needs." />
+        <title>Accommodations | Vitality Community Care</title>
+        <meta name="description" content="Immediate SIL Vacancies & Specialist Disability Accommodation. Explore our Supported Independent Living (SIL) accommodations across Melbourne, providing flexible living arrangements with personalized support." />
+        <meta property="og:title" content="Accommodations | Vitality Community Care" />
+        <meta property="og:description" content="Immediate SIL Vacancies & Specialist Disability Accommodation. Find quality supported independent living accommodation options tailored to your needs." />
       </Helmet>
 
       <section className="relative bg-gradient-to-br from-[hsl(var(--vitality-blue))] to-[hsl(var(--vitality-green-75))] text-white pt-20 pb-0 overflow-hidden">
@@ -97,19 +97,19 @@ const Accommodation = () => {
               </div>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-semibold mb-4">Housing Vacancies</h1>
+            <h1 className="text-4xl md:text-5xl font-semibold mb-4">Accommodations</h1>
             <p className="text-xl mb-8 opacity-90">
-              For supported independent living.
+              Immediate SIL Vacancies & Specialist Disability Accommodation
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white">
                 <Home size={16} />
-                <span>Supported Independent Living (SIL)</span>
+                <span>Supported Independent Living</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white">
                 <MapPin size={16} />
-                <span>Multiple Locations</span>
+                <span>Specialist Disability Accommodation</span>
               </div>
             </div>
           </motion.div>
@@ -147,7 +147,7 @@ const Accommodation = () => {
                 <li aria-current="page">
                   <div className="flex items-center">
                     <span className="mx-2 text-gray-400">/</span>
-                    <span className="text-sm font-medium text-[hsl(var(--vitality-blue))]">Housing Vacancies</span>
+                    <span className="text-sm font-medium text-[hsl(var(--vitality-blue))]">Accommodations</span>
                   </div>
                 </li>
               </ol>
