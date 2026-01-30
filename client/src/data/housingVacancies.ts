@@ -343,17 +343,17 @@ const housingVacancies = [
 //     accessibleParking: true,
 //     bedroomsAvailable: 2
 //   },
-  propertyFeatures: [
-    "Heating",
-    "Cooling",
-    "Dishwasher",
-    "Outdoor Area",
-    "Wheelchair Accessible",
-    "Accessible Features",
-    "Built-in Wardrobes"
-  ],
-  fullDescription: "A modern Supported Independent Living (SIL) home in Armadale, WA. This HPS property offers 2 bedrooms and 2 bathrooms, designed to meet high physical support needs with SDA and SIL services."
-},
+//   propertyFeatures: [
+//     "Heating",
+//     "Cooling",
+//     "Dishwasher",
+//     "Outdoor Area",
+//     "Wheelchair Accessible",
+//     "Accessible Features",
+//     "Built-in Wardrobes"
+//   ],
+//   fullDescription: "A modern Supported Independent Living (SIL) home in Armadale, WA. This HPS property offers 2 bedrooms and 2 bathrooms, designed to meet high physical support needs with SDA and SIL services."
+// },
 {
   id: 4,
   location: "Baldivis",
